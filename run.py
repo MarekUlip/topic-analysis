@@ -7,6 +7,7 @@ import time
 from methods.Lda import Lda
 from methods.Lsa import Lsa
 from methods.Hdp import Hdp
+from methods.Lda_sklearn import LdaSklearn
 
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
@@ -32,14 +33,15 @@ def get_time_in_millis():
 log_writer = LogWriter("log.txt")
 base_path = os.getcwd()
 csv_folder = base_path+"\\csv_folder\\"
-data_sets = [(csv_folder+"4"+"\\train.csv",csv_folder+"4"+"\\test.csv",20,"-20newsgroups-"),(csv_folder+"1"+"\\train.csv",csv_folder+"1"+"\\test.csv",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
+data_sets = [(csv_folder+"1",10,"-reuters-")]#, (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 #data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 
 
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params]
-preproces_variations = []
-create_variations(0, [], preproces_all_vals, preproces_variations)
+#preproces_variations = []
+preproces_variations = [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
+#create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
 lda_tau = [2.0]
@@ -47,30 +49,26 @@ lda_minimum_probability = [0.0,0.01,0.1]
 lda_passes = [50]
 lda_iterations = [50]
 lda_all_vals = [lda_kappa,lda_tau, lda_passes,lda_iterations]
-lda_variations = []
-create_variations(0,[],lda_all_vals,lda_variations)
+#lda_variations = []
+#create_variations(0,[],lda_all_vals,lda_variations)
 
 lsa_one_pass = [False]
 lsa_power_iter = [2]
 lsa_use_tfidf = [True]
-lsa_topic_nums = [data_sets[0][2]]
+lsa_topic_nums = [data_sets[0][1]]
 lsa_extra_samples = [100,200]
 lsa_decay = [0.5,1.0,2.0]
 lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf,lsa_topic_nums]
-lsa_variations = []
-create_variations(0,[],lsa_all_vals,lsa_variations)
+#lsa_variations = []
+#create_variations(0,[],lsa_all_vals,lsa_variations)
 
 hdp_variations = []
-num_of_test = 15
+num_of_test = 10
 
 test_model = [True, True]
 start_time = get_time_in_millis()
 
 for i in range(len(data_sets)):
-    lsa_topic_nums = [data_sets[i][2], data_sets[i][2] * 4]
-    lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
-    lsa_variations = []
-    create_variations(0, [], lsa_all_vals, lsa_variations)
     statistics_to_merge = []
     for index, preproces_settings in enumerate(preproces_variations):
         seed = 5
@@ -83,60 +81,51 @@ for i in range(len(data_sets)):
         text_preprocessor = TextPreprocessor(settings)
 
         log_writer.add_log("Starting preprocessing texts of {} for training".format(data_sets[i][0]))
-        texts_for_train = text_preprocessor.load_and_prep_csv([data_sets[i][0]], "eng", False, 1, ';')
+        texts_for_train = text_preprocessor.load_and_prep_csv([data_sets[i][0]+"\\train.csv"], "eng", False, 1, ';')
         log_writer.add_log("Preprocessing finished")
 
-        log_writer.add_log("Starting preprocessing texts of {} for training".format(data_sets[i][0]))
-        texts_for_topic_asses = text_preprocessor.load_and_prep_csv([data_sets[i][0]], "eng", True, 1, ';')
+        #log_writer.add_log("Starting preprocessing texts of {} for training".format(data_sets[i][0]))
+        texts_for_topic_asses = text_preprocessor.load_and_prep_csv([data_sets[i][0]+"\\train.csv"], "eng", True, 1, ';')
+        #log_writer.add_log("Preprocessing finished")
+
+        log_writer.add_log("Starting preprocessing texts of {} for testing".format(data_sets[i][0]))
+        texts_for_testing = text_preprocessor.load_and_prep_csv([data_sets[i][0]+"\\test.csv"], "eng", True, 1, ';')
         log_writer.add_log("Preprocessing finished")
+        models_for_test = [Lda(data_sets[i][1], 15, kappa=lda_kappa[0], tau=lda_tau[0], passes=lda_passes[0], iterations=lda_iterations[0])]
+                           #Lsa(data_sets[i][1], 15, one_pass=lsa_one_pass[0],power_iter=lsa_power_iter[0], use_tfidf=lsa_use_tfidf[0])]
+#LdaSklearn(data_sets[i][1], passes=lda_passes[0],iterations=lda_iterations[0]),
+        topic_names = text_preprocessor.load_csv([data_sets[i][0]+"\\topic-names.csv"])
+        model_names = ["LDA"]
+        statistics = []
+        statistics.append(["{} strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}.".format(index,preproces_settings[0], preproces_settings[1], preproces_settings[2], preproces_settings[3])])
 
-        log_writer.add_log("Starting preprocessing texts of {} for testing".format(data_sets[i][1]))
-        texts_for_testing = text_preprocessor.load_and_prep_csv([data_sets[i][1]], "eng", True, 1, ';')
-        log_writer.add_log("Preprocessing finished")
-
-        lda_statistics = []
-        if test_model[0]:
-            # For every preprocesing add line that descripbes methods used
-            lda_statistics.append(["strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}.".format(preproces_settings[0], preproces_settings[1], preproces_settings[2], preproces_settings[3])])
-            for model_settings_index, model_settings in enumerate(lda_variations):
-                # every column means one settings variation
-                if model_settings_index == 0:
-                    lda_statistics.append([x for x in range(len(lda_variations))])
-                    lda_statistics.append([])
-                """for j in range(num_of_test):
-                    if model_settings_index == 0:
-                        lda_statistics.append([])"""
-
-                # every row means jth test
-                test_checker_lda = TestChecker(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer) #"""numpy.asfarray(test_checker_lda.topic_distributions)"""
-                lda = Lda(data_sets[i][2], 15, kappa=model_settings[0], tau=model_settings[1], passes=model_settings[2], iterations=model_settings[3]) #TODO remember random state
-                log_writer.add_log("Starting training LDA model")
-                lda.train(texts_for_train)
-                log_writer.add_log("Starting testing LDA model")
-                accuracy = test_checker_lda.test_model(lda, "\\results\\results{}{}\\lda\\{}\\{}\\{}\\{}".format(data_sets[i][3], start_time, i, model_settings_index, index, 0))#j))
-                lda_statistics[2].append(accuracy)
-                log_writer.add_log("Testing LDA model done with {}% accuracy".format(accuracy * 100))
-                log_writer.add_log("\n\n")
-            #statistics_to_merge.append(lda_statistics)
-
-        if test_model[1]:
-            lda_statistics.append([])
-            lda_statistics.append(["LSA"])
-            lda_statistics.append([x for x in range(len(lsa_variations))])
-            lda_statistics.append([])
-            for model_settings_index, model_settings in enumerate(lsa_variations):
+        for m_index, model in enumerate(models_for_test):
+            if test_model[m_index]:
+                # For every preprocesing add line that descripbes methods used
+                accuracies = []
+                statistics.append([])
+                statistics.append([model_names[m_index]])
+                statistics.append([x for x in range(num_of_test)])
+                statistics[len(statistics)-1].append("Average")
+                statistics.append([])
                 for j in range(num_of_test):
-                    test_checker_lsa = TestChecker(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer)
-                    lsa = Lsa(model_settings[3], 15, one_pass=model_settings[0],power_iter=model_settings[1], use_tfidf=model_settings[2])
-                    lsa.train(texts_for_train)
-                    log_writer.add_log("Starting testing LSA model")
-                    accuracy = test_checker_lsa.test_model(lsa, "\\results\\results{}{}\\lsa\\{}\\{}\\{}\\{}".format(data_sets[i][3], start_time, i, model_settings_index, index, j))
-                    lda_statistics[6].append(accuracy)
-                    log_writer.add_log("Testing LSA model done with {}% accuracy".format(accuracy * 100))
-                    log_writer.add_log("\n\n\n")
+                    # every row means jth test
+                    test_checker_lda = TestChecker(texts_for_topic_asses, texts_for_testing, data_sets[i][1], log_writer, topic_names) #"""numpy.asfarray(test_checker_lda.topic_distributions)"""
+                    log_writer.add_log("Starting training {} model".format(model_names[m_index]))
+                    model.train(texts_for_train)
+                    log_writer.add_log("Starting testing {} model".format(model_names[m_index]))
+                    accuracy = test_checker_lda.test_model(model, "\\results\\results{}{}\\{}\\preprocess{}\\test_num{}".format(data_sets[i][2], start_time, model_names[m_index], index, j))
+                    accuracies.append(accuracy)
+                    statistics[len(statistics)-1].append(accuracy)
+                    log_writer.add_log("Testing {} model done with {}% accuracy".format(model_names[m_index], accuracy * 100))
+                    log_writer.add_log("\n\n")
+                total_accuracy = sum(accuracies)/len(accuracies)
+                log_writer.save_as_plot("\\results\\results{0}{1}\\{2}\\preprocess{3}\\graph{3}-{2}{0}{1}".format(data_sets[i][2], start_time, model_names[m_index], index), accuracies)
+                statistics[len(statistics)-1].append(total_accuracy)
+                log_writer.add_log("Total accuracy is: {}".format(total_accuracy))
 
-            lda_statistics.append([])
-        statistics_to_merge.append(lda_statistics)
+        statistics.append([])
+        statistics_to_merge.append(statistics)
 
         """for model_settings_index, model_settings in enumerate(hdp_variations):
             for j in range(num_of_test):
@@ -152,6 +141,6 @@ for i in range(len(data_sets)):
     for item in statistics_to_merge:
         for statistic in item:
             output_lda_csv.append(statistic)
-    log_writer.write_2D_list("\\results\\results-stats\\stats{}{}".format(data_sets[i][3],start_time), output_lda_csv)
+    log_writer.write_2D_list("\\results\\results-stats\\stats{}{}".format(data_sets[i][2],start_time), output_lda_csv)
 
 log_writer.end_logging()

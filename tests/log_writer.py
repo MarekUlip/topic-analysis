@@ -1,6 +1,7 @@
 import datetime
 import csv
 import os
+import matplotlib.pyplot as plt
 
 class LogWriter:
     def __init__(self, log_file_path):
@@ -32,3 +33,8 @@ class LogWriter:
             for item in statistics:
                 list_writer.writerow(item)
 
+    def save_as_plot(self, file_name, points):
+        points = [x * 100 for x in points]
+        plt.plot(points)
+        plt.savefig(os.getcwd()+file_name+".png")
+        plt.clf()

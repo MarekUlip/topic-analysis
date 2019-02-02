@@ -1,7 +1,7 @@
 import operator
 
 class TestChecker:
-    def __init__(self, training_docs, testing_docs, num_of_topics, log_writer):
+    def __init__(self, training_docs, testing_docs, num_of_topics, log_writer, topic_names):
         """
 
         :param testing_docs: docs in form of list containing tuples (topic_index, doc) used in test
@@ -15,10 +15,16 @@ class TestChecker:
         self.topics_of_index = {}
         self.topic_distributions = []
         self.topic_numbers = []
+        self.topic_names = {}
         #count_of_filled_reps = 0
         self.prep_train_docs_for_assesment()
         self.count_topic_dist()
         self.confusion_matrix = [[0 for y in range(num_of_topics)] for x in range(num_of_topics)]
+        self.create_topic_names_dict(topic_names)
+
+    def create_topic_names_dict(self, topic_names_list):
+        for item in topic_names_list:
+            self.topic_names[int(item[0])] = item[1]
 
     def prep_train_docs_for_assesment(self, training_docs=None):
         if training_docs is not None:
@@ -44,11 +50,14 @@ class TestChecker:
             self.topic_numbers.append(key)
 
     def add_descriptions_to_confusion_matrix(self):
+        topic_names = []
+        for topic_num in self.topic_numbers:
+            topic_names.append(self.topic_names[topic_num])
         for index, row in enumerate(self.confusion_matrix):
-            row.insert(0,self.topic_numbers[index])
-        topic_nums_for_matrix = self.topic_numbers.copy()
-        topic_nums_for_matrix.insert(0,"")
-        self.confusion_matrix.insert(0,topic_nums_for_matrix)
+            row.insert(0,topic_names[index])
+        topic_names_for_matrix = topic_names.copy()
+        topic_names_for_matrix.insert(0,"")
+        self.confusion_matrix.insert(0,topic_names_for_matrix)
 
 
     def test_model(self, model, test_name):

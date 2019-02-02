@@ -61,6 +61,15 @@ class TextPreprocessor:
                             break
         return articles
 
+    def load_csv(self, csvs, delimeter=';'):
+        articles = []
+        for item in csvs:
+            with open(item, encoding='utf-8', errors='ignore') as csvfile:
+                csv_read = csv.reader(csvfile, delimiter=delimeter)
+                for row in csv_read:
+                    articles.append(row)
+        return articles
+
     def prep_texts(self, docs=None, lang=None):
         if docs is None:
             docs = self.get_texts()
@@ -169,8 +178,8 @@ class TextPreprocessor:
             res = " ".join(
                 [self.lemma.lemmatize(word) for word in res.split()])
 
-        res = preprocessing.remove_stopwords(res)
-        res = " ".join(word for word in res.split() if word not in stp_wrds)
+        #res = preprocessing.remove_stopwords(res)
+        #res = " ".join(word for word in res.split() if word not in stp_wrds)
 
 
         if self.settings['strip_short']:

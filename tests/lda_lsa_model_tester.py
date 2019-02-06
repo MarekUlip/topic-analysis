@@ -7,7 +7,11 @@ class LModelTester:
     def __init__(self, training_docs, testing_docs, num_of_topics, log_writer, topic_names):
         """
 
+        :param training_docs: docs in form of list containing tuples (topic_index, doc) used for training
         :param testing_docs: docs in form of list containing tuples (topic_index, doc) used in test
+        :param num_of_topics: number of topics occuring in provided texts
+        :param log_writer: instance of log writer to write output
+        :param topic_names: list of tuples in form of (topic id, topic name)
         """
         self.testing_docs = testing_docs
         self.training_docs = training_docs
@@ -35,6 +39,12 @@ class LModelTester:
             self.topic_names[int(item[0])] = item[1]
 
     def prep_train_docs_for_assesment(self, training_docs=None):
+        """
+        Sorts training docs into groups by their respective topics. Used for "gueesing: which model topic index belongs
+        to which real topic id.
+        :param training_docs: if not provided training docs from initialization will be used otherwise no action
+        will be performed
+        """
         if training_docs is not None:
             self.training_docs = training_docs
         for i in range(len(self.training_docs)):
@@ -52,6 +62,9 @@ class LModelTester:
             self.topic_numbers.append(key)
 
     def add_descriptions_to_confusion_matrix(self):
+        """
+        Adds topic names into confusion matrix
+        """
         topic_names = []
         for topic_num in self.topic_numbers:
             topic_names.append(self.topic_names[topic_num])
@@ -63,6 +76,12 @@ class LModelTester:
 
 
     def test_model(self, model, test_name):
+        """
+        Tests provided instance of a model and outputs results using provided test_name
+        :param model: model to be tested
+        :param test_name: name which will be used for output
+        :return: accuracy in range (0 - 1)
+        """
         statistics = []
         stats = []
         for item in model.get_topics():
@@ -102,24 +121,32 @@ class LModelTester:
 
 
     def connect_topic_id_to_topics(self, model):
+        """
+        Connects topic indexes from model to topic ids from dataset. Note that some ids might not get connected due various reasons.
+        :param model: model containing topics to connect
+        """
         #t = model.get_topics()
         for key, value in self.representants.items():
             connection_results = {}
             for article in value:
                 try:
+                    #get most possible index
                     topic_index = max(model.analyse_text(article[1]), key=lambda item: item[1])[0]
                 except ValueError:
                     print("No topic index returned continuing")#TODO replace with if
                     continue
+                #add most possible index for this article to counter
                 if topic_index not in connection_results:
                     connection_results[topic_index] = 1
                 else:
                     connection_results[topic_index] += 1
-
+            #find index that occured mostly
             best_candidates = max(connection_results.items(), key=operator.itemgetter(1))
             print(best_candidates)
             self.log_writer.add_log("Best candidate with index {} is connected to topic {} with {}% accuracy".format(best_candidates[0], key, (connection_results[best_candidates[0]]/len(value))*100))
+            #create connection between topic id and model topic index
             self.topic_indexes[key] = best_candidates[0]
+            #creat connection in opposite direction if there already is some connection add found index to that connection (some model topic index can represent more than one real topic)
             if best_candidates[0] not in self.topics_of_index:
                 self.topics_of_index[best_candidates[0]] = [key]
             else:

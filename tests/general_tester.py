@@ -32,6 +32,14 @@ class GeneralTester:
         self.preprocess_style = preprocess_style
 
     def do_test(self, model_type, num_of_tests, statistics, params, test_params):
+        """
+        Do test on provided model type. Also sets things up before the test.
+        :param model_type: ModelType enum for model that should be tested
+        :param num_of_tests: number of tests to be performed on this model
+        :param statistics: list to which accuracy and other information will be written
+        :param params: Parameters for tested model
+        :param test_params: Parameters for test
+        """
         self.num_of_tests = num_of_tests
         accuracies = []
         statistics.append([])
@@ -60,6 +68,13 @@ class GeneralTester:
         self.log_writer.add_log("Total accuracy is: {}".format(total_accuracy))
 
     def test_model(self, model_type, test_name, params):
+        """
+        Runs actual test on a model
+        :param model_type:  ModelType enum for model that should be tested
+        :param test_name: name that will be used for creating output folder
+        :param params: Parameters for tested model
+        :return: Accuracy of provided model
+        """
         model = None
         if model_type == ModelType.LDA:
             model = Lda(self.num_of_topics, params=params)
@@ -87,12 +102,20 @@ class GeneralTester:
                                                                       preprocess_index, test_num)
 
     def output_model_comparison(self):
+        """
+        Creates png chart that shows accuracy comparision of all tested model based on current preprocessing.
+        """
         for result in self.model_results:
             self.log_writer.add_to_plot(result[0], result[1])
         self.log_writer.draw_plot("Porovnaní modelů", "\\results\\charts\\{}\\{}model-compare".format(self.start_time, self.preprocess_style[:2]), self.num_of_tests)
         self.model_results.clear()
 
     def output_preprocess_comparison(self, dset_name):
+        """
+        Creates png chart that shows accuracy impacts to model accuracy with different preprocessing settings
+        :param dset_name: Name of actual dataset
+        :return:
+        """
         for key, value in self.preproces_results.items():
             for result in value:
                 self.log_writer.add_to_plot(result[0], result[1])

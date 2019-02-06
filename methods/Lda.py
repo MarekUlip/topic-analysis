@@ -80,9 +80,18 @@ class Lda:
         self.dictionary = corpora.Dictionary.load(self.dictionary_path)
 
     def analyse_text(self, text):
+        """
+        Analyses provided text and returns index of most significant topic
+        :param text: text to be analysed in form of string
+        :return: index number of most significant topic
+        """
         bow = self.dictionary.doc2bow(text.split())
         return self.model[bow]
 
     def get_topics(self):
+        """
+        Get model topics with their words base on topic_word_count parameter.
+        :return: model topics with their words.
+        """
         return self.model.print_topics(-1, self.topic_word_count)
 

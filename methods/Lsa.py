@@ -4,20 +4,34 @@ from gensim import corpora
 from gensim.test.utils import datapath
 
 class Lsa:
-    def __init__(self, topic_count, topic_word_count, one_pass=True, power_iter=1, extra_samples=1, decay=1.0, use_tfidf=True):
-        self.topic_count = topic_count
-        self.topic_word_count = topic_word_count
-        self.one_pass = one_pass
-        self.power_iter = power_iter
-        self.extra_samples = extra_samples
-        self.decay = decay
-        self.use_tfidf = use_tfidf
+    def __init__(self, topic_count=5, topic_word_count=15, one_pass=True, power_iter=1, extra_samples=1, decay=1.0, use_tfidf=True, params=None):
+        if params is not None:
+            self.topic_count = params.get("topic_count", topic_count)
+            self.topic_word_count = params.get("topic_word_count", topic_word_count)
+            self.one_pass = params.get("one_pass", one_pass)
+            self.power_iter = params.get("power_iter", power_iter)
+            self.extra_samples = params.get("extra_samples", extra_samples)
+            self.decay = params.get("decay", decay)
+            self.use_tfidf = params.get("use_tfidf", use_tfidf)
+        else:
+            self.topic_count = topic_count
+            self.topic_word_count = topic_word_count
+            self.one_pass = one_pass
+            self.power_iter = power_iter
+            self.extra_samples = extra_samples
+            self.decay = decay
+            self.use_tfidf = use_tfidf
         self.dictionary = None
         self.model = None
 
-        #topics = "\n".join((str(x[1])) for x in self.find_topics(get_texts(self.app.get_folder_name())))
 
     def train(self, texts):
+        """
+        Trains this model with provided texts
+        :param texts: list of tuples in form (topic_id, text) topic ids dont matter here this format is used only because
+        its more general - easier testing
+        """
+        texts = [text[1].split() for text in texts]
         self.dictionary = corpora.Dictionary(texts)
         corpus = [self.dictionary.doc2bow(doc) for doc in texts]
         if self.use_tfidf:

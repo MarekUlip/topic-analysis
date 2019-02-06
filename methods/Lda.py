@@ -5,17 +5,29 @@ from gensim.test.utils import datapath
 
 
 class Lda:
-    def __init__(self, topic_count, topic_word_count, alpha="auto", eta="auto", kappa=0.5, tau=1.0, minimum_probability=0.0, passes=20, iterations=5, random_state=5):
-        self.topic_count = topic_count
-        self.topic_word_count = topic_word_count
-        self.alpha = alpha
-        self.eta = eta
-        self.kappa = kappa
-        self.tau = tau
-        self.minimum_probability = minimum_probability
-        self.passes = passes
-        self.iterations = iterations
-        self.random_state = random_state
+    def __init__(self, topic_count=5, topic_word_count=15, alpha="auto", eta="auto", kappa=0.5, tau=1.0, minimum_probability=0.0, passes=20, iterations=5, random_state=5, params=None):
+        if params is not None:
+            self.topic_count = params.get("topic_count", topic_count)
+            self.topic_word_count = params.get("topic_word_count", topic_word_count)
+            self.alpha = params.get("alpha", alpha)
+            self.eta = params.get("eta", eta)
+            self.kappa = params.get("kappa", kappa)
+            self.tau = params.get("tau", tau)
+            self.minimum_probability = params.get("minimum_probability", minimum_probability)
+            self.passes = params.get("passes", passes)
+            self.iterations = params.get("iterations", iterations)
+            self.random_state = params.get("random_state", random_state)
+        else:
+            self.topic_count = topic_count
+            self.topic_word_count = topic_word_count
+            self.alpha = alpha
+            self.eta = eta
+            self.kappa = kappa
+            self.tau = tau
+            self.minimum_probability = minimum_probability
+            self.passes = passes
+            self.iterations = iterations
+            self.random_state = random_state
         self.dictionary = None
         self.model = None
         self.model_folder = os.getcwd()+"\\lda\\"
@@ -23,6 +35,12 @@ class Lda:
         self.dictionary_path = self.model_folder+"dictionary"
 
     def train(self, texts):
+        """
+        Trains this model with provided texts
+        :param texts: list of tuples in form (topic_id, text) topic ids dont matter here this format is used only because
+        its more general - easier testing
+        """
+        texts = [text[1].split() for text in texts]
         self.dictionary = corpora.Dictionary(texts)
         # TODO maybe test work with dict self.dictionary.filter_extremes(no_below=2, no_above=0.5, keep_n=100000)
         doc_term_matrix = [self.dictionary.doc2bow(doc) for doc in texts]

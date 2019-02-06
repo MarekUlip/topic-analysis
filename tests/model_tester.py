@@ -1,6 +1,6 @@
 import operator
 
-class TestChecker:
+class ModelTester:
     def __init__(self, training_docs, testing_docs, num_of_topics, log_writer, topic_names):
         """
 
@@ -20,9 +20,14 @@ class TestChecker:
         self.prep_train_docs_for_assesment()
         self.count_topic_dist()
         self.confusion_matrix = [[0 for y in range(num_of_topics)] for x in range(num_of_topics)]
+        self.confusion_matrix_true = [[0 for y in range(num_of_topics)] for x in range(num_of_topics)]
         self.create_topic_names_dict(topic_names)
 
     def create_topic_names_dict(self, topic_names_list):
+        """
+        Creates dictionary where key is topic number and value is its name
+        :param topic_names_list: list of tuples containing topic number[0] and its name[1]
+        """
         for item in topic_names_list:
             self.topic_names[int(item[0])] = item[1]
 
@@ -33,13 +38,7 @@ class TestChecker:
             if self.training_docs[i][0] not in self.representants:
                 self.representants[self.training_docs[i][0]] = [self.training_docs[i]]
             else:
-                """if len(self.representants[self.training_docs[i][0]]) == max_rep_len:
-                    continue"""
                 self.representants[self.training_docs[i][0]].append(self.training_docs[i])
-                """if len(self.representants[self.training_docs[i][0]]) == max_rep_len:
-                    count_of_filled_reps += 1
-                    if count_of_filled_reps == num_of_topics:
-                        break"""
 
     def count_topic_dist(self):
         if len(self.representants) == 0:
@@ -67,34 +66,6 @@ class TestChecker:
             statistics.append(item)
         statistics.append(["Article topic", "Model topic index"])
         self.connect_topic_id_to_topics(model)
-        """for rep in self.representants:
-            self.topic_positions[rep[0]] = max(model.analyse_text(rep[1]), key=lambda item: item[1])[0]"""
-        """for i in range(self.num_of_topics):
-            rep = self.representants[i+1].pop()
-            self.topic_positions[rep[0]] = max(model.analyse_text(rep[1]), key=lambda item: item[1])[0]
-
-        contains_duplicity = True
-        dup_checker = {}
-        while contains_duplicity:
-            was_cycle_broken = False
-            for key, value in self.topic_positions.items():
-                if value not in dup_checker:
-                    dup_checker[value] = 1
-                else:
-                    contains_duplicity = True
-                    was_cycle_broken = True
-                    dup_checker = {}
-                    self.log_writer.add_log("Topic index estimation contains duplicity. Running estimation on new samples")
-                    break
-            if not was_cycle_broken:
-                break
-            for i in range(self.num_of_topics):
-                if len(self.representants[i + 1]) == 0:
-                    self.log_writer.add_log(
-                        "Unable to establish correct index estimation skipping this test.")
-                    return 0
-                rep = self.representants[i + 1].pop()
-                self.topic_positions[rep[0]] = max(model.analyse_text(rep[1]), key=lambda item: item[1])[0]"""
 
         for article in self.testing_docs:
             analysis_res = model.analyse_text(article[1])
@@ -117,11 +88,13 @@ class TestChecker:
             else:
                 guessed_topic_number_index = self.topic_numbers.index(self.topics_of_index[res[0]][0])
             self.confusion_matrix[guessed_topic_number_index][topic_number_index] += 1
+            self.confusion_matrix_true[res[0]][topic_number_index] += 1
             #self.log_writer.add_log("Article with topic {} was assigned {} with {} certainty.".format(article[0], "correctly" if res[0] == self.topic_positions[article[0]] else "wrong", res[1]))
 
         self.log_writer.write_2D_list(test_name, statistics)
         self.add_descriptions_to_confusion_matrix()
         self.log_writer.write_2D_list(test_name+"-confusion-matrix", self.confusion_matrix)
+        self.log_writer.write_2D_list(test_name+"-confusion-matrix-true", self.confusion_matrix_true)
         return sum(stats)/len(stats)
 
 
@@ -130,7 +103,6 @@ class TestChecker:
         for key, value in self.representants.items():
             connection_results = {}
             for article in value:
-                #a = model.analyse_text(article[1])
                 try:
                     topic_index = max(model.analyse_text(article[1]), key=lambda item: item[1])[0]
                 except ValueError:

@@ -2,6 +2,7 @@ import datetime
 import csv
 import os
 import matplotlib.pyplot as plt
+from tests.ModelType import ModelType
 
 class LogWriter:
     def __init__(self, log_file_path):
@@ -33,8 +34,17 @@ class LogWriter:
             for item in statistics:
                 list_writer.writerow(item)
 
-    def save_as_plot(self, file_name, points):
+    def add_to_plot(self, line_name, points):
         points = [x * 100 for x in points]
-        plt.plot(points)
-        plt.savefig(os.getcwd()+file_name+".png")
+        plt.plot(points, label=line_name)
+
+    def draw_plot(self, plot_name, file_name, num_of_tests):
+        plt.axis([0, num_of_tests, 0, 100])
+        plt.title(plot_name)
+        plt.xlabel("Číslo testu")
+        plt.ylabel("Přesnost (%)")
+        plt.legend()
+        path = os.getcwd()+file_name+".png"
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        plt.savefig(path)
         plt.clf()

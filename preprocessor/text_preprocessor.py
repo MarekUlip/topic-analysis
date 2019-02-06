@@ -61,7 +61,8 @@ class TextPreprocessor:
                             break
         return articles
 
-    def load_csv(self, csvs, delimeter=';'):
+    @staticmethod
+    def load_csv(csvs, delimeter=';'):
         articles = []
         for item in csvs:
             with open(item, encoding='utf-8', errors='ignore') as csvfile:

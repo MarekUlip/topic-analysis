@@ -10,7 +10,7 @@ sys.path.append(file_dir)
 
 from preprocessor.text_preprocessor import TextPreprocessor
 from tests.log_writer import LogWriter
-from tests.test_checker import TestChecker
+from tests.model_tester import ModelTester
 
 log_writer = LogWriter("log.txt")
 
@@ -51,7 +51,7 @@ texts_for_train = text_preprocessor.load_and_prep_csv([test_csv],"eng",False,2,'
 log_writer.add_log("Preprocessing finished")
 
 log_writer.add_log("Starting preprocessing texts for testing")
-test_checker = TestChecker(text_preprocessor.load_and_prep_csv([test_csv],"eng",True,2,','),4,log_writer)
+test_checker = ModelTester(text_preprocessor.load_and_prep_csv([test_csv], "eng", True, 2, ','), 4, log_writer)
 log_writer.add_log("Preprocessing finished")
 
 

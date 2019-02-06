@@ -8439,3 +8439,1042 @@
 
 
 2018-12-03 03:12:00.803029: Total accuracy is: 0.8388776942035392
+*****************
+2019-02-06 15:25:09.254047: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:25:12.230949: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:25:12.658952: Preprocessing finished
+2019-02-06 15:25:12.658952: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:25:12.800999: Preprocessing finished
+2019-02-06 15:25:12.800999: Starting training ModelType.LDA model
+2019-02-06 15:25:19.857909: Starting testing ModelType.LDA model
+2019-02-06 15:25:20.436901: Best candidate with index 8 is connected to topic 4 with 12.468671679197994% accuracy
+2019-02-06 15:25:20.476901: Best candidate with index 2 is connected to topic 23 with 13.008130081300814% accuracy
+2019-02-06 15:25:21.353889: Best candidate with index 6 is connected to topic 7 with 15.985915492957748% accuracy
+*****************
+2019-02-06 15:29:11.518802: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:29:14.517758: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:29:14.913752: Preprocessing finished
+2019-02-06 15:29:14.913752: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:29:15.054751: Preprocessing finished
+2019-02-06 15:29:15.054751: Starting training ModelType.LDA model
+2019-02-06 15:29:22.166659: Starting testing ModelType.LDA model
+2019-02-06 15:29:22.751652: Best candidate with index 2 is connected to topic 4 with 12.218045112781954% accuracy
+2019-02-06 15:29:22.790652: Best candidate with index 6 is connected to topic 23 with 20.32520325203252% accuracy
+2019-02-06 15:29:23.675695: Best candidate with index 1 is connected to topic 7 with 17.359154929577464% accuracy
+2019-02-06 15:29:23.774695: Best candidate with index 7 is connected to topic 14 with 12.612612612612612% accuracy
+2019-02-06 15:29:23.888637: Best candidate with index 2 is connected to topic 19 with 14.229249011857709% accuracy
+2019-02-06 15:29:23.931646: Best candidate with index 4 is connected to topic 18 with 20.0% accuracy
+2019-02-06 15:29:23.972691: Best candidate with index 0 is connected to topic 10 with 15.463917525773196% accuracy
+2019-02-06 15:29:24.040690: Best candidate with index 0 is connected to topic 16 with 20.418848167539267% accuracy
+2019-02-06 15:29:24.161636: Best candidate with index 0 is connected to topic 0 with 16.400000000000002% accuracy
+2019-02-06 15:29:24.205689: Best candidate with index 6 is connected to topic 2 with 16.666666666666664% accuracy
+2019-02-06 15:29:24.205689: Out of 10 real topics only 6 were learned
+2019-02-06 15:29:25.037621: Testing ModelType.LDA model done with 24.122612172367834% accuracy
+2019-02-06 15:29:25.037621: 
+
+
+2019-02-06 15:29:25.037621: Starting training ModelType.LDA model
+2019-02-06 15:29:32.310527: Starting testing ModelType.LDA model
+2019-02-06 15:29:32.900520: Best candidate with index 0 is connected to topic 4 with 11.340852130325814% accuracy
+2019-02-06 15:29:32.941525: Best candidate with index 2 is connected to topic 23 with 13.821138211382115% accuracy
+2019-02-06 15:29:33.856564: Best candidate with index 2 is connected to topic 7 with 18.591549295774648% accuracy
+2019-02-06 15:29:33.951507: Best candidate with index 1 is connected to topic 14 with 15.765765765765765% accuracy
+2019-02-06 15:29:34.066506: Best candidate with index 6 is connected to topic 19 with 15.810276679841898% accuracy
+2019-02-06 15:29:34.114502: Best candidate with index 0 is connected to topic 18 with 21.11111111111111% accuracy
+2019-02-06 15:29:34.158502: Best candidate with index 7 is connected to topic 10 with 17.525773195876287% accuracy
+2019-02-06 15:29:34.228508: Best candidate with index 6 is connected to topic 16 with 14.659685863874344% accuracy
+2019-02-06 15:29:34.355500: Best candidate with index 6 is connected to topic 0 with 17.599999999999998% accuracy
+2019-02-06 15:29:34.399500: Best candidate with index 1 is connected to topic 2 with 13.88888888888889% accuracy
+2019-02-06 15:29:34.406506: Out of 10 real topics only 5 were learned
+2019-02-06 15:29:35.217488: Testing ModelType.LDA model done with 38.75555555555555% accuracy
+2019-02-06 15:29:35.217488: 
+
+
+2019-02-06 15:29:36.641477: Total accuracy is: 0.3143908386396169
+2019-02-06 15:29:36.641477: Starting training ModelType.LSA model
+2019-02-06 15:29:55.070300: Starting testing ModelType.LSA model
+2019-02-06 15:29:55.702225: Best candidate with index 1 is connected to topic 4 with 97.74436090225564% accuracy
+2019-02-06 15:29:55.745224: Best candidate with index 1 is connected to topic 23 with 72.35772357723577% accuracy
+2019-02-06 15:29:56.705212: Best candidate with index 0 is connected to topic 7 with 73.3450704225352% accuracy
+2019-02-06 15:29:56.803211: Best candidate with index 1 is connected to topic 14 with 84.23423423423422% accuracy
+2019-02-06 15:29:56.923215: Best candidate with index 1 is connected to topic 19 with 92.88537549407114% accuracy
+2019-02-06 15:29:56.976265: Best candidate with index 1 is connected to topic 18 with 98.88888888888889% accuracy
+2019-02-06 15:29:57.019263: Best candidate with index 1 is connected to topic 10 with 89.69072164948454% accuracy
+2019-02-06 15:29:57.093263: Best candidate with index 1 is connected to topic 16 with 87.43455497382199% accuracy
+2019-02-06 15:29:57.225207: Best candidate with index 1 is connected to topic 0 with 94.39999999999999% accuracy
+2019-02-06 15:29:57.274261: Best candidate with index 1 is connected to topic 2 with 97.22222222222221% accuracy
+2019-02-06 15:29:57.274261: Out of 10 real topics only 2 were learned
+2019-02-06 15:29:58.183191: Testing ModelType.LSA model done with 92.71111111111111% accuracy
+2019-02-06 15:29:58.183191: 
+
+
+2019-02-06 15:29:58.184191: Starting training ModelType.LSA model
+2019-02-06 15:30:16.013034: Starting testing ModelType.LSA model
+2019-02-06 15:30:16.644954: Best candidate with index 0 is connected to topic 4 with 86.96741854636592% accuracy
+2019-02-06 15:30:16.694954: Best candidate with index 0 is connected to topic 23 with 47.96747967479675% accuracy
+2019-02-06 15:30:17.657997: Best candidate with index 0 is connected to topic 7 with 77.53521126760563% accuracy
+2019-02-06 15:30:17.761939: Best candidate with index 0 is connected to topic 14 with 60.810810810810814% accuracy
+2019-02-06 15:30:17.888938: Best candidate with index 0 is connected to topic 19 with 97.23320158102767% accuracy
+2019-02-06 15:30:17.936937: Best candidate with index 0 is connected to topic 18 with 92.22222222222223% accuracy
+2019-02-06 15:30:17.982935: Best candidate with index 0 is connected to topic 10 with 65.97938144329896% accuracy
+2019-02-06 15:30:18.058934: Best candidate with index 0 is connected to topic 16 with 56.54450261780105% accuracy
+2019-02-06 15:30:18.193932: Best candidate with index 0 is connected to topic 0 with 83.2% accuracy
+2019-02-06 15:30:18.240932: Best candidate with index 0 is connected to topic 2 with 99.07407407407408% accuracy
+2019-02-06 15:30:18.240932: Out of 10 real topics only 1 were learned
+2019-02-06 15:30:19.157978: Testing ModelType.LSA model done with 93.81672597864768% accuracy
+*****************
+2019-02-06 15:33:39.116719: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:33:42.104737: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:33:42.497731: Preprocessing finished
+2019-02-06 15:33:42.497731: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:33:42.640672: Preprocessing finished
+2019-02-06 15:33:42.640672: Starting training ModelType.NB model
+2019-02-06 15:33:43.930655: Starting testing ModelType.NB model
+2019-02-06 15:33:43.953661: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 15:33:43.953661: 
+
+
+2019-02-06 15:33:43.953661: Starting training ModelType.NB model
+*****************
+2019-02-06 15:37:56.255720: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:37:59.290624: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:37:59.692620: Preprocessing finished
+2019-02-06 15:37:59.692620: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:37:59.836616: Preprocessing finished
+2019-02-06 15:37:59.836616: Starting training ModelType.NB model
+2019-02-06 15:38:01.145599: Starting testing ModelType.NB model
+2019-02-06 15:38:01.164606: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 15:38:01.164606: 
+
+
+2019-02-06 15:38:01.164606: Starting training ModelType.NB model
+*****************
+2019-02-06 15:40:49.906672: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:40:58.403562: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:40:58.852555: Preprocessing finished
+2019-02-06 15:40:58.852555: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:40:59.018554: Preprocessing finished
+2019-02-06 15:40:59.018554: Starting training ModelType.NB model
+2019-02-06 15:41:00.825530: Starting testing ModelType.NB model
+2019-02-06 15:41:04.259152: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 15:41:04.259152: 
+
+
+2019-02-06 15:41:04.259152: Starting training ModelType.NB model
+*****************
+2019-02-06 15:44:11.740678: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 15:44:20.773986: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 15:44:21.222980: Preprocessing finished
+2019-02-06 15:44:21.222980: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 15:44:21.387978: Preprocessing finished
+2019-02-06 15:44:21.387978: Starting training ModelType.NB model
+2019-02-06 15:45:46.167268: Starting testing ModelType.NB model
+2019-02-06 15:45:46.192334: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 15:45:46.192334: 
+
+
+2019-02-06 15:45:46.192334: Starting training ModelType.NB model
+*****************
+2019-02-06 16:12:23.550001: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:12:26.764264: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:12:27.229569: Preprocessing finished
+2019-02-06 16:12:27.229569: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:12:27.394623: Preprocessing finished
+2019-02-06 16:12:27.394623: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:12:32.629497: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:12:34.804472: Best candidate with index 2 is connected to topic 4 with 16.979949874686717% accuracy
+2019-02-06 16:12:34.978470: Best candidate with index 1 is connected to topic 23 with 21.951219512195124% accuracy
+2019-02-06 16:12:38.742421: Best candidate with index 0 is connected to topic 7 with 39.08450704225352% accuracy
+2019-02-06 16:12:39.096416: Best candidate with index 7 is connected to topic 14 with 18.91891891891892% accuracy
+2019-02-06 16:12:39.519409: Best candidate with index 6 is connected to topic 19 with 18.972332015810274% accuracy
+2019-02-06 16:12:39.676407: Best candidate with index 2 is connected to topic 18 with 28.888888888888886% accuracy
+2019-02-06 16:12:39.848404: Best candidate with index 7 is connected to topic 10 with 26.804123711340207% accuracy
+2019-02-06 16:12:40.150401: Best candidate with index 1 is connected to topic 16 with 17.277486910994764% accuracy
+2019-02-06 16:12:40.607394: Best candidate with index 2 is connected to topic 0 with 33.6% accuracy
+2019-02-06 16:12:40.780399: Best candidate with index 5 is connected to topic 2 with 19.444444444444446% accuracy
+2019-02-06 16:12:40.780399: Out of 10 real topics only 6 were learned
+2019-02-06 16:12:44.188098: Testing ModelType.LDA_Sklearn model done with 61.39493558418481% accuracy
+2019-02-06 16:12:44.188098: 
+
+
+2019-02-06 16:12:44.188098: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:12:49.414018: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:12:51.608991: Best candidate with index 6 is connected to topic 4 with 12.969924812030076% accuracy
+2019-02-06 16:12:51.780988: Best candidate with index 2 is connected to topic 23 with 32.52032520325203% accuracy
+2019-02-06 16:12:55.509946: Best candidate with index 0 is connected to topic 7 with 20.73943661971831% accuracy
+2019-02-06 16:12:55.850936: Best candidate with index 1 is connected to topic 14 with 22.07207207207207% accuracy
+2019-02-06 16:12:56.251930: Best candidate with index 6 is connected to topic 19 with 12.648221343873518% accuracy
+2019-02-06 16:12:56.397929: Best candidate with index 2 is connected to topic 18 with 20.0% accuracy
+2019-02-06 16:12:56.549929: Best candidate with index 6 is connected to topic 10 with 48.45360824742268% accuracy
+2019-02-06 16:12:56.818923: Best candidate with index 1 is connected to topic 16 with 27.225130890052355% accuracy
+2019-02-06 16:12:57.241919: Best candidate with index 6 is connected to topic 0 with 19.6% accuracy
+2019-02-06 16:12:57.405972: Best candidate with index 4 is connected to topic 2 with 13.88888888888889% accuracy
+*****************
+2019-02-06 16:15:08.634223: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:15:11.662129: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:15:12.063121: Preprocessing finished
+2019-02-06 16:15:12.064121: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:15:12.207120: Preprocessing finished
+2019-02-06 16:15:12.208126: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:15:26.009949: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:15:28.334911: Best candidate with index 9 is connected to topic 4 with 25.93984962406015% accuracy
+2019-02-06 16:15:28.516910: Best candidate with index 4 is connected to topic 23 with 26.82926829268293% accuracy
+2019-02-06 16:15:32.535858: Best candidate with index 1 is connected to topic 7 with 57.7112676056338% accuracy
+2019-02-06 16:15:32.918850: Best candidate with index 0 is connected to topic 14 with 25.225225225225223% accuracy
+2019-02-06 16:15:33.354903: Best candidate with index 2 is connected to topic 19 with 44.26877470355731% accuracy
+2019-02-06 16:15:33.537846: Best candidate with index 9 is connected to topic 18 with 31.11111111111111% accuracy
+2019-02-06 16:15:33.744842: Best candidate with index 9 is connected to topic 10 with 28.865979381443296% accuracy
+2019-02-06 16:15:34.086838: Best candidate with index 0 is connected to topic 16 with 29.84293193717277% accuracy
+2019-02-06 16:15:34.626828: Best candidate with index 0 is connected to topic 0 with 40.0% accuracy
+2019-02-06 16:15:34.810826: Best candidate with index 7 is connected to topic 2 with 30.555555555555557% accuracy
+2019-02-06 16:15:34.810826: Out of 10 real topics only 6 were learned
+2019-02-06 16:15:38.305781: Testing ModelType.LDA_Sklearn model done with 64.37139049311416% accuracy
+2019-02-06 16:15:38.305781: 
+
+
+2019-02-06 16:15:38.305781: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:15:51.259613: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:15:53.583585: Best candidate with index 5 is connected to topic 4 with 26.81704260651629% accuracy
+2019-02-06 16:15:53.768581: Best candidate with index 8 is connected to topic 23 with 29.268292682926827% accuracy
+2019-02-06 16:15:56.998596: Best candidate with index 0 is connected to topic 7 with 56.690140845070424% accuracy
+2019-02-06 16:15:57.351535: Best candidate with index 8 is connected to topic 14 with 43.24324324324324% accuracy
+2019-02-06 16:15:57.802530: Best candidate with index 1 is connected to topic 19 with 26.877470355731226% accuracy
+2019-02-06 16:15:57.966583: Best candidate with index 8 is connected to topic 18 with 71.11111111111111% accuracy
+2019-02-06 16:15:58.133582: Best candidate with index 1 is connected to topic 10 with 53.608247422680414% accuracy
+2019-02-06 16:15:58.419521: Best candidate with index 8 is connected to topic 16 with 35.602094240837694% accuracy
+2019-02-06 16:15:58.835515: Best candidate with index 8 is connected to topic 0 with 72.0% accuracy
+2019-02-06 16:15:58.999515: Best candidate with index 1 is connected to topic 2 with 21.296296296296298% accuracy
+*****************
+2019-02-06 16:17:27.494959: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:17:30.529860: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:17:30.937912: Preprocessing finished
+2019-02-06 16:17:30.937912: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:17:31.082910: Preprocessing finished
+2019-02-06 16:17:31.082910: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:17:45.844662: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:17:48.220631: Best candidate with index 3 is connected to topic 4 with 27.380952380952383% accuracy
+2019-02-06 16:17:48.414630: Best candidate with index 8 is connected to topic 23 with 38.21138211382114% accuracy
+2019-02-06 16:17:52.759572: Best candidate with index 4 is connected to topic 7 with 27.3943661971831% accuracy
+2019-02-06 16:17:53.158566: Best candidate with index 5 is connected to topic 14 with 31.53153153153153% accuracy
+2019-02-06 16:17:53.620563: Best candidate with index 8 is connected to topic 19 with 44.66403162055336% accuracy
+2019-02-06 16:17:53.770560: Best candidate with index 5 is connected to topic 18 with 65.55555555555556% accuracy
+2019-02-06 16:17:53.971557: Best candidate with index 2 is connected to topic 10 with 35.051546391752574% accuracy
+2019-02-06 16:17:54.323553: Best candidate with index 8 is connected to topic 16 with 24.60732984293194% accuracy
+2019-02-06 16:17:54.868546: Best candidate with index 1 is connected to topic 0 with 40.8% accuracy
+2019-02-06 16:17:55.041545: Best candidate with index 5 is connected to topic 2 with 43.51851851851852% accuracy
+2019-02-06 16:17:55.041545: Out of 10 real topics only 6 were learned
+2019-02-06 16:17:59.078717: Testing ModelType.LDA_Sklearn model done with 55.708573967125716% accuracy
+2019-02-06 16:17:59.078717: 
+
+
+2019-02-06 16:17:59.078717: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:18:13.551462: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:18:15.852439: Best candidate with index 9 is connected to topic 4 with 25.68922305764411% accuracy
+2019-02-06 16:18:16.016432: Best candidate with index 9 is connected to topic 23 with 56.91056910569105% accuracy
+2019-02-06 16:18:20.016378: Best candidate with index 5 is connected to topic 7 with 52.323943661971825% accuracy
+2019-02-06 16:18:20.411375: Best candidate with index 9 is connected to topic 14 with 35.13513513513514% accuracy
+2019-02-06 16:18:20.833368: Best candidate with index 9 is connected to topic 19 with 49.01185770750988% accuracy
+2019-02-06 16:18:21.024422: Best candidate with index 5 is connected to topic 18 with 32.22222222222222% accuracy
+2019-02-06 16:18:21.208363: Best candidate with index 8 is connected to topic 10 with 42.2680412371134% accuracy
+2019-02-06 16:18:21.502359: Best candidate with index 8 is connected to topic 16 with 25.13089005235602% accuracy
+2019-02-06 16:18:21.962353: Best candidate with index 9 is connected to topic 0 with 47.199999999999996% accuracy
+2019-02-06 16:18:22.139352: Best candidate with index 8 is connected to topic 2 with 21.296296296296298% accuracy
+*****************
+2019-02-06 16:19:18.250701: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:19:21.280855: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:19:21.678840: Preprocessing finished
+2019-02-06 16:19:21.678840: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:19:21.822894: Preprocessing finished
+2019-02-06 16:19:21.822894: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:19:35.557659: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:19:37.941634: Best candidate with index 8 is connected to topic 4 with 23.809523809523807% accuracy
+2019-02-06 16:19:38.093627: Best candidate with index 7 is connected to topic 23 with 76.42276422764228% accuracy
+2019-02-06 16:19:41.738581: Best candidate with index 4 is connected to topic 7 with 59.049295774647895% accuracy
+2019-02-06 16:19:42.141572: Best candidate with index 2 is connected to topic 14 with 20.27027027027027% accuracy
+2019-02-06 16:19:42.609568: Best candidate with index 9 is connected to topic 19 with 20.948616600790515% accuracy
+2019-02-06 16:19:42.760568: Best candidate with index 9 is connected to topic 18 with 61.111111111111114% accuracy
+2019-02-06 16:19:42.962563: Best candidate with index 5 is connected to topic 10 with 29.896907216494846% accuracy
+2019-02-06 16:19:43.297558: Best candidate with index 7 is connected to topic 16 with 39.79057591623037% accuracy
+2019-02-06 16:19:43.803551: Best candidate with index 5 is connected to topic 0 with 57.199999999999996% accuracy
+2019-02-06 16:19:43.977551: Best candidate with index 5 is connected to topic 2 with 25.0% accuracy
+2019-02-06 16:19:43.977551: Out of 10 real topics only 6 were learned
+2019-02-06 16:19:47.406512: Testing ModelType.LDA_Sklearn model done with 62.194580186583735% accuracy
+2019-02-06 16:19:47.406512: 
+
+
+2019-02-06 16:19:47.406512: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:20:01.446327: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:20:03.823292: Best candidate with index 6 is connected to topic 4 with 18.984962406015036% accuracy
+2019-02-06 16:20:04.003291: Best candidate with index 1 is connected to topic 23 with 60.16260162601627% accuracy
+2019-02-06 16:20:08.039237: Best candidate with index 5 is connected to topic 7 with 49.04929577464789% accuracy
+2019-02-06 16:20:08.423233: Best candidate with index 9 is connected to topic 14 with 19.36936936936937% accuracy
+2019-02-06 16:20:08.897228: Best candidate with index 3 is connected to topic 19 with 33.59683794466403% accuracy
+2019-02-06 16:20:09.081225: Best candidate with index 7 is connected to topic 18 with 30.0% accuracy
+2019-02-06 16:20:09.262223: Best candidate with index 3 is connected to topic 10 with 30.927835051546392% accuracy
+2019-02-06 16:20:09.547220: Best candidate with index 1 is connected to topic 16 with 39.79057591623037% accuracy
+2019-02-06 16:20:10.026212: Best candidate with index 6 is connected to topic 0 with 38.800000000000004% accuracy
+2019-02-06 16:20:10.182210: Best candidate with index 0 is connected to topic 2 with 26.851851851851855% accuracy
+*****************
+2019-02-06 16:21:15.093304: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:21:23.719141: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:21:24.171129: Preprocessing finished
+2019-02-06 16:21:24.171129: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:21:24.334127: Preprocessing finished
+2019-02-06 16:21:24.335127: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:21:39.481930: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:21:44.257937: Best candidate with index 2 is connected to topic 4 with 22.55639097744361% accuracy
+2019-02-06 16:21:44.625921: Best candidate with index 1 is connected to topic 23 with 23.577235772357724% accuracy
+2019-02-06 16:21:51.616840: Best candidate with index 1 is connected to topic 7 with 68.97887323943662% accuracy
+2019-02-06 16:21:52.436762: Best candidate with index 6 is connected to topic 14 with 28.82882882882883% accuracy
+2019-02-06 16:21:53.508748: Best candidate with index 2 is connected to topic 19 with 33.201581027667984% accuracy
+2019-02-06 16:21:53.898745: Best candidate with index 0 is connected to topic 18 with 35.55555555555556% accuracy
+2019-02-06 16:21:54.278741: Best candidate with index 8 is connected to topic 10 with 42.2680412371134% accuracy
+2019-02-06 16:21:54.835732: Best candidate with index 8 is connected to topic 16 with 57.06806282722513% accuracy
+2019-02-06 16:21:55.955717: Best candidate with index 6 is connected to topic 0 with 32.0% accuracy
+2019-02-06 16:21:56.311713: Best candidate with index 9 is connected to topic 2 with 21.296296296296298% accuracy
+2019-02-06 16:21:56.311713: Out of 10 real topics only 6 were learned
+2019-02-06 16:22:03.040626: Testing ModelType.LDA_Sklearn model done with 61.928031985784095% accuracy
+2019-02-06 16:22:03.040626: 
+
+
+2019-02-06 16:22:03.040626: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:22:18.633423: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:22:23.412418: Best candidate with index 5 is connected to topic 4 with 30.263157894736842% accuracy
+2019-02-06 16:22:23.773363: Best candidate with index 8 is connected to topic 23 with 34.146341463414636% accuracy
+2019-02-06 16:22:31.093319: Best candidate with index 0 is connected to topic 7 with 36.514084507042256% accuracy
+2019-02-06 16:22:31.912252: Best candidate with index 6 is connected to topic 14 with 35.585585585585584% accuracy
+2019-02-06 16:22:32.977236: Best candidate with index 2 is connected to topic 19 with 30.039525691699602% accuracy
+2019-02-06 16:22:33.376289: Best candidate with index 2 is connected to topic 18 with 25.555555555555554% accuracy
+2019-02-06 16:22:33.779284: Best candidate with index 2 is connected to topic 10 with 26.804123711340207% accuracy
+2019-02-06 16:22:34.402219: Best candidate with index 5 is connected to topic 16 with 28.272251308900525% accuracy
+2019-02-06 16:22:35.527206: Best candidate with index 6 is connected to topic 0 with 43.2% accuracy
+2019-02-06 16:22:35.876201: Best candidate with index 7 is connected to topic 2 with 25.0% accuracy
+*****************
+2019-02-06 16:24:10.836606: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:24:13.875564: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:24:14.283554: Preprocessing finished
+2019-02-06 16:24:14.283554: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:24:14.427554: Preprocessing finished
+2019-02-06 16:24:14.427554: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:24:28.896368: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:24:31.276335: Best candidate with index 7 is connected to topic 4 with 23.99749373433584% accuracy
+2019-02-06 16:24:31.471338: Best candidate with index 6 is connected to topic 23 with 38.21138211382114% accuracy
+2019-02-06 16:24:35.538281: Best candidate with index 0 is connected to topic 7 with 34.50704225352113% accuracy
+2019-02-06 16:24:35.923331: Best candidate with index 6 is connected to topic 14 with 29.27927927927928% accuracy
+2019-02-06 16:24:36.395269: Best candidate with index 3 is connected to topic 19 with 37.15415019762846% accuracy
+2019-02-06 16:24:36.572280: Best candidate with index 8 is connected to topic 18 with 40.0% accuracy
+2019-02-06 16:24:36.767265: Best candidate with index 6 is connected to topic 10 with 49.48453608247423% accuracy
+2019-02-06 16:24:37.101265: Best candidate with index 6 is connected to topic 16 with 25.13089005235602% accuracy
+2019-02-06 16:24:37.685250: Best candidate with index 3 is connected to topic 0 with 29.2% accuracy
+2019-02-06 16:24:37.859249: Best candidate with index 7 is connected to topic 2 with 19.444444444444446% accuracy
+2019-02-06 16:24:37.859249: Out of 10 real topics only 5 were learned
+2019-02-06 16:24:41.732257: Testing ModelType.LDA_Sklearn model done with 64.53333333333333% accuracy
+2019-02-06 16:24:41.732257: 
+
+
+2019-02-06 16:24:41.732257: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:24:55.731018: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:24:58.078986: Best candidate with index 1 is connected to topic 4 with 32.581453634085214% accuracy
+2019-02-06 16:24:58.260985: Best candidate with index 7 is connected to topic 23 with 44.71544715447154% accuracy
+2019-02-06 16:25:02.134992: Best candidate with index 8 is connected to topic 7 with 55.70422535211268% accuracy
+2019-02-06 16:25:02.500930: Best candidate with index 1 is connected to topic 14 with 33.78378378378378% accuracy
+2019-02-06 16:25:02.953924: Best candidate with index 1 is connected to topic 19 with 38.73517786561265% accuracy
+2019-02-06 16:25:03.132921: Best candidate with index 1 is connected to topic 18 with 34.44444444444444% accuracy
+2019-02-06 16:25:03.308919: Best candidate with index 2 is connected to topic 10 with 53.608247422680414% accuracy
+2019-02-06 16:25:03.594972: Best candidate with index 3 is connected to topic 16 with 30.36649214659686% accuracy
+2019-02-06 16:25:04.095966: Best candidate with index 2 is connected to topic 0 with 24.4% accuracy
+2019-02-06 16:25:04.264908: Best candidate with index 9 is connected to topic 2 with 23.14814814814815% accuracy
+*****************
+2019-02-06 16:30:49.152122: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:30:52.242143: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:30:52.660075: Preprocessing finished
+2019-02-06 16:30:52.660075: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:30:52.822129: Preprocessing finished
+2019-02-06 16:30:52.822129: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:31:06.407963: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:31:08.744868: Best candidate with index 1 is connected to topic 4 with 22.305764411027567% accuracy
+2019-02-06 16:31:08.912866: Best candidate with index 5 is connected to topic 23 with 39.02439024390244% accuracy
+2019-02-06 16:31:12.442875: Best candidate with index 8 is connected to topic 7 with 61.69014084507042% accuracy
+2019-02-06 16:31:12.810812: Best candidate with index 1 is connected to topic 14 with 44.14414414414414% accuracy
+2019-02-06 16:31:13.277809: Best candidate with index 4 is connected to topic 19 with 20.948616600790515% accuracy
+2019-02-06 16:31:13.459804: Best candidate with index 7 is connected to topic 18 with 35.55555555555556% accuracy
+2019-02-06 16:31:13.649801: Best candidate with index 1 is connected to topic 10 with 32.98969072164948% accuracy
+2019-02-06 16:31:13.947799: Best candidate with index 2 is connected to topic 16 with 37.17277486910995% accuracy
+2019-02-06 16:31:14.450792: Best candidate with index 1 is connected to topic 0 with 49.2% accuracy
+2019-02-06 16:31:14.616790: Best candidate with index 9 is connected to topic 2 with 30.555555555555557% accuracy
+2019-02-06 16:31:14.616790: Out of 10 real topics only 7 were learned
+2019-02-06 16:31:17.897754: Testing ModelType.LDA_Sklearn model done with 68.38365896980461% accuracy
+2019-02-06 16:31:17.897754: 
+
+
+2019-02-06 16:31:17.897754: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:31:31.808624: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:31:34.133537: Best candidate with index 2 is connected to topic 4 with 27.31829573934837% accuracy
+2019-02-06 16:31:34.290592: Best candidate with index 6 is connected to topic 23 with 66.66666666666666% accuracy
+2019-02-06 16:31:38.711478: Best candidate with index 5 is connected to topic 7 with 25.140845070422536% accuracy
+2019-02-06 16:31:39.058472: Best candidate with index 1 is connected to topic 14 with 38.288288288288285% accuracy
+2019-02-06 16:31:39.491468: Best candidate with index 1 is connected to topic 19 with 42.29249011857708% accuracy
+2019-02-06 16:31:39.672465: Best candidate with index 1 is connected to topic 18 with 45.55555555555556% accuracy
+2019-02-06 16:31:39.853465: Best candidate with index 1 is connected to topic 10 with 37.11340206185567% accuracy
+2019-02-06 16:31:40.162515: Best candidate with index 3 is connected to topic 16 with 20.94240837696335% accuracy
+2019-02-06 16:31:40.542456: Best candidate with index 1 is connected to topic 0 with 77.60000000000001% accuracy
+2019-02-06 16:31:40.708452: Best candidate with index 1 is connected to topic 2 with 40.74074074074074% accuracy
+2019-02-06 16:31:40.714452: Out of 10 real topics only 5 were learned
+2019-02-06 16:31:44.855456: Testing ModelType.LDA_Sklearn model done with 73.37777777777778% accuracy
+2019-02-06 16:31:44.855456: 
+
+
+2019-02-06 16:31:45.101394: Total accuracy is: 0.708807183737912
+2019-02-06 16:31:45.216451: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:31:45.216451: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:31:45.631444: Preprocessing finished
+2019-02-06 16:31:45.631444: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:31:45.779386: Preprocessing finished
+2019-02-06 16:31:45.781387: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:31:59.583210: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:32:02.066175: Best candidate with index 3 is connected to topic 4 with 18.734335839598998% accuracy
+2019-02-06 16:32:02.263173: Best candidate with index 2 is connected to topic 23 with 65.04065040650406% accuracy
+2019-02-06 16:32:06.058124: Best candidate with index 4 is connected to topic 7 with 54.11971830985915% accuracy
+2019-02-06 16:32:06.442119: Best candidate with index 7 is connected to topic 14 with 41.891891891891895% accuracy
+2019-02-06 16:32:06.925168: Best candidate with index 3 is connected to topic 19 with 30.434782608695656% accuracy
+2019-02-06 16:32:07.091166: Best candidate with index 6 is connected to topic 18 with 31.11111111111111% accuracy
+2019-02-06 16:32:07.274164: Best candidate with index 1 is connected to topic 10 with 42.2680412371134% accuracy
+2019-02-06 16:32:07.542105: Best candidate with index 7 is connected to topic 16 with 58.63874345549738% accuracy
+2019-02-06 16:32:08.041154: Best candidate with index 7 is connected to topic 0 with 35.6% accuracy
+2019-02-06 16:32:08.209152: Best candidate with index 2 is connected to topic 2 with 35.18518518518518% accuracy
+2019-02-06 16:32:08.209152: Out of 10 real topics only 6 were learned
+2019-02-06 16:32:11.724117: Testing ModelType.LDA_Sklearn model done with 71.03509551310529% accuracy
+2019-02-06 16:32:11.724117: 
+
+
+2019-02-06 16:32:11.724117: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:32:26.138863: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:32:28.603830: Best candidate with index 0 is connected to topic 4 with 21.303258145363408% accuracy
+2019-02-06 16:32:28.775831: Best candidate with index 1 is connected to topic 23 with 43.90243902439025% accuracy
+2019-02-06 16:32:33.105779: Best candidate with index 4 is connected to topic 7 with 28.556338028169016% accuracy
+2019-02-06 16:32:33.518823: Best candidate with index 3 is connected to topic 14 with 34.68468468468468% accuracy
+2019-02-06 16:32:33.998761: Best candidate with index 2 is connected to topic 19 with 33.99209486166008% accuracy
+2019-02-06 16:32:34.155759: Best candidate with index 1 is connected to topic 18 with 67.77777777777779% accuracy
+2019-02-06 16:32:34.327756: Best candidate with index 3 is connected to topic 10 with 39.175257731958766% accuracy
+2019-02-06 16:32:34.626753: Best candidate with index 3 is connected to topic 16 with 48.167539267015705% accuracy
+2019-02-06 16:32:35.177747: Best candidate with index 1 is connected to topic 0 with 52.800000000000004% accuracy
+2019-02-06 16:32:35.354742: Best candidate with index 1 is connected to topic 2 with 32.407407407407405% accuracy
+2019-02-06 16:32:35.354742: Out of 10 real topics only 5 were learned
+2019-02-06 16:32:39.487688: Testing ModelType.LDA_Sklearn model done with 65.77777777777779% accuracy
+2019-02-06 16:32:39.487688: 
+
+
+2019-02-06 16:32:39.603688: Total accuracy is: 0.6840643664544153
+*****************
+2019-02-06 16:36:14.620852: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:36:17.685808: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:36:18.096803: Preprocessing finished
+2019-02-06 16:36:18.096803: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:36:18.241859: Preprocessing finished
+2019-02-06 16:36:18.241859: Starting training ModelType.LDA model
+2019-02-06 16:36:25.806740: Starting testing ModelType.LDA model
+2019-02-06 16:36:26.490742: Best candidate with index 2 is connected to topic 4 with 12.092731829573934% accuracy
+2019-02-06 16:36:26.541731: Best candidate with index 1 is connected to topic 23 with 15.447154471544716% accuracy
+2019-02-06 16:36:27.501720: Best candidate with index 7 is connected to topic 7 with 17.04225352112676% accuracy
+2019-02-06 16:36:27.608717: Best candidate with index 9 is connected to topic 14 with 14.414414414414415% accuracy
+2019-02-06 16:36:27.736716: Best candidate with index 4 is connected to topic 19 with 12.25296442687747% accuracy
+2019-02-06 16:36:27.783721: Best candidate with index 6 is connected to topic 18 with 16.666666666666664% accuracy
+2019-02-06 16:36:27.826772: Best candidate with index 2 is connected to topic 10 with 20.618556701030926% accuracy
+2019-02-06 16:36:27.902714: Best candidate with index 9 is connected to topic 16 with 18.32460732984293% accuracy
+2019-02-06 16:36:28.056718: Best candidate with index 5 is connected to topic 0 with 13.600000000000001% accuracy
+2019-02-06 16:36:28.107711: Best candidate with index 9 is connected to topic 2 with 16.666666666666664% accuracy
+2019-02-06 16:36:28.107711: Out of 10 real topics only 7 were learned
+2019-02-06 16:36:29.060698: Testing ModelType.LDA model done with 24.955595026642985% accuracy
+2019-02-06 16:36:29.060698: 
+
+
+2019-02-06 16:36:29.060698: Starting training ModelType.LDA model
+2019-02-06 16:36:37.842120: Starting testing ModelType.LDA model
+2019-02-06 16:36:38.463527: Best candidate with index 4 is connected to topic 4 with 13.220551378446116% accuracy
+2019-02-06 16:36:38.505527: Best candidate with index 1 is connected to topic 23 with 20.32520325203252% accuracy
+2019-02-06 16:36:39.470049: Best candidate with index 1 is connected to topic 7 with 19.154929577464788% accuracy
+2019-02-06 16:36:39.569048: Best candidate with index 0 is connected to topic 14 with 14.414414414414415% accuracy
+2019-02-06 16:36:39.696046: Best candidate with index 4 is connected to topic 19 with 15.019762845849801% accuracy
+2019-02-06 16:36:39.742048: Best candidate with index 0 is connected to topic 18 with 20.0% accuracy
+2019-02-06 16:36:39.787103: Best candidate with index 3 is connected to topic 10 with 14.432989690721648% accuracy
+2019-02-06 16:36:39.862044: Best candidate with index 4 is connected to topic 16 with 15.18324607329843% accuracy
+2019-02-06 16:36:40.001911: Best candidate with index 0 is connected to topic 0 with 14.399999999999999% accuracy
+2019-02-06 16:36:40.049909: Best candidate with index 9 is connected to topic 2 with 14.814814814814813% accuracy
+2019-02-06 16:36:40.056915: Out of 10 real topics only 5 were learned
+2019-02-06 16:36:40.966425: Testing ModelType.LDA model done with 37.2% accuracy
+2019-02-06 16:36:40.966425: 
+
+
+2019-02-06 16:36:41.243942: Total accuracy is: 0.3107779751332149
+2019-02-06 16:36:41.243942: Starting training ModelType.LSA model
+2019-02-06 16:37:00.526863: Starting testing ModelType.LSA model
+2019-02-06 16:37:01.184724: Best candidate with index 1 is connected to topic 4 with 97.74436090225564% accuracy
+2019-02-06 16:37:01.229723: Best candidate with index 1 is connected to topic 23 with 73.17073170731707% accuracy
+2019-02-06 16:37:02.217371: Best candidate with index 0 is connected to topic 7 with 73.41549295774648% accuracy
+2019-02-06 16:37:02.315704: Best candidate with index 1 is connected to topic 14 with 84.23423423423422% accuracy
+2019-02-06 16:37:02.438262: Best candidate with index 1 is connected to topic 19 with 92.88537549407114% accuracy
+2019-02-06 16:37:02.489255: Best candidate with index 1 is connected to topic 18 with 98.88888888888889% accuracy
+2019-02-06 16:37:02.533310: Best candidate with index 1 is connected to topic 10 with 89.69072164948454% accuracy
+2019-02-06 16:37:02.612360: Best candidate with index 1 is connected to topic 16 with 86.91099476439791% accuracy
+2019-02-06 16:37:02.754353: Best candidate with index 1 is connected to topic 0 with 94.39999999999999% accuracy
+2019-02-06 16:37:02.806868: Best candidate with index 1 is connected to topic 2 with 97.22222222222221% accuracy
+2019-02-06 16:37:02.806868: Out of 10 real topics only 2 were learned
+2019-02-06 16:37:03.785376: Testing ModelType.LSA model done with 92.66340595820365% accuracy
+2019-02-06 16:37:03.785376: 
+
+
+2019-02-06 16:37:03.785376: Starting training ModelType.LSA model
+2019-02-06 16:37:22.962705: Starting testing ModelType.LSA model
+2019-02-06 16:37:23.722694: Best candidate with index 0 is connected to topic 4 with 79.76190476190477% accuracy
+2019-02-06 16:37:23.804208: Best candidate with index 0 is connected to topic 23 with 86.99186991869918% accuracy
+2019-02-06 16:37:24.964748: Best candidate with index 0 is connected to topic 7 with 77.46478873239437% accuracy
+2019-02-06 16:37:25.097747: Best candidate with index 0 is connected to topic 14 with 66.66666666666666% accuracy
+2019-02-06 16:37:25.249745: Best candidate with index 0 is connected to topic 19 with 97.23320158102767% accuracy
+2019-02-06 16:37:25.305744: Best candidate with index 0 is connected to topic 18 with 88.88888888888889% accuracy
+2019-02-06 16:37:25.359742: Best candidate with index 0 is connected to topic 10 with 64.94845360824742% accuracy
+2019-02-06 16:37:25.449742: Best candidate with index 0 is connected to topic 16 with 64.3979057591623% accuracy
+2019-02-06 16:37:25.606746: Best candidate with index 0 is connected to topic 0 with 99.2% accuracy
+2019-02-06 16:37:25.664738: Best candidate with index 0 is connected to topic 2 with 99.07407407407408% accuracy
+2019-02-06 16:37:25.664738: Out of 10 real topics only 1 were learned
+2019-02-06 16:37:26.789243: Testing ModelType.LSA model done with 94.48153093012907% accuracy
+2019-02-06 16:37:26.797242: 
+
+
+2019-02-06 16:37:26.940761: Total accuracy is: 0.9357246844416636
+2019-02-06 16:37:26.940761: Starting training ModelType.NB model
+2019-02-06 16:37:28.518267: Starting testing ModelType.NB model
+2019-02-06 16:37:28.548267: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 16:37:28.548267: 
+
+
+2019-02-06 16:37:28.548267: Starting training ModelType.NB model
+2019-02-06 16:37:30.129772: Starting testing ModelType.NB model
+2019-02-06 16:37:30.225770: Testing ModelType.NB model done with 77.87139689578714% accuracy
+2019-02-06 16:37:30.225770: 
+
+
+2019-02-06 16:37:30.373769: Total accuracy is: 0.7787139689578714
+2019-02-06 16:37:30.380770: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:37:47.194907: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:37:50.113399: Best candidate with index 1 is connected to topic 4 with 23.93483709273183% accuracy
+2019-02-06 16:37:50.329398: Best candidate with index 8 is connected to topic 23 with 54.47154471544715% accuracy
+2019-02-06 16:37:54.851670: Best candidate with index 4 is connected to topic 7 with 48.62676056338028% accuracy
+2019-02-06 16:37:55.303175: Best candidate with index 8 is connected to topic 14 with 31.98198198198198% accuracy
+2019-02-06 16:37:55.872169: Best candidate with index 5 is connected to topic 19 with 28.458498023715418% accuracy
+2019-02-06 16:37:56.088168: Best candidate with index 1 is connected to topic 18 with 51.11111111111111% accuracy
+2019-02-06 16:37:56.310162: Best candidate with index 2 is connected to topic 10 with 48.45360824742268% accuracy
+2019-02-06 16:37:56.668158: Best candidate with index 7 is connected to topic 16 with 53.403141361256544% accuracy
+2019-02-06 16:37:57.301150: Best candidate with index 3 is connected to topic 0 with 32.4% accuracy
+2019-02-06 16:37:57.513311: Best candidate with index 1 is connected to topic 2 with 21.296296296296298% accuracy
+2019-02-06 16:37:57.513311: Out of 10 real topics only 7 were learned
+2019-02-06 16:38:02.041818: Testing ModelType.LDA_Sklearn model done with 62.211367673179396% accuracy
+2019-02-06 16:38:02.041818: 
+
+
+2019-02-06 16:38:02.041818: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:38:17.904477: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:38:20.764503: Best candidate with index 6 is connected to topic 4 with 38.53383458646616% accuracy
+2019-02-06 16:38:20.985499: Best candidate with index 9 is connected to topic 23 with 52.03252032520326% accuracy
+2019-02-06 16:38:25.035030: Best candidate with index 2 is connected to topic 7 with 55.809859154929576% accuracy
+2019-02-06 16:38:25.472605: Best candidate with index 4 is connected to topic 14 with 37.83783783783784% accuracy
+2019-02-06 16:38:26.050066: Best candidate with index 5 is connected to topic 19 with 24.110671936758894% accuracy
+2019-02-06 16:38:26.276064: Best candidate with index 5 is connected to topic 18 with 45.55555555555556% accuracy
+2019-02-06 16:38:26.466062: Best candidate with index 5 is connected to topic 10 with 76.28865979381443% accuracy
+2019-02-06 16:38:26.837057: Best candidate with index 4 is connected to topic 16 with 34.55497382198953% accuracy
+2019-02-06 16:38:27.446572: Best candidate with index 4 is connected to topic 0 with 44.4% accuracy
+2019-02-06 16:38:27.671571: Best candidate with index 3 is connected to topic 2 with 16.666666666666664% accuracy
+2019-02-06 16:38:27.671571: Out of 10 real topics only 6 were learned
+2019-02-06 16:38:31.761554: Testing ModelType.LDA_Sklearn model done with 78.58729453576188% accuracy
+2019-02-06 16:38:31.761554: 
+
+
+2019-02-06 16:38:31.918550: Total accuracy is: 0.7039933110447064
+2019-02-06 16:38:32.196548: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: True.
+2019-02-06 16:38:32.196548: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for training
+2019-02-06 16:38:40.811242: Preprocessing finished
+2019-02-06 16:38:40.811242: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\1 for testing
+2019-02-06 16:38:43.780260: Preprocessing finished
+2019-02-06 16:38:43.783262: Starting training ModelType.LDA model
+2019-02-06 16:38:50.787206: Starting testing ModelType.LDA model
+2019-02-06 16:38:51.454726: Best candidate with index 0 is connected to topic 4 with 12.468671679197994% accuracy
+2019-02-06 16:38:51.500720: Best candidate with index 5 is connected to topic 23 with 14.634146341463413% accuracy
+2019-02-06 16:38:52.489227: Best candidate with index 7 is connected to topic 7 with 17.394366197183096% accuracy
+2019-02-06 16:38:52.600225: Best candidate with index 7 is connected to topic 14 with 13.513513513513514% accuracy
+2019-02-06 16:38:52.729225: Best candidate with index 2 is connected to topic 19 with 13.043478260869565% accuracy
+2019-02-06 16:38:52.774224: Best candidate with index 8 is connected to topic 18 with 14.444444444444443% accuracy
+2019-02-06 16:38:52.827222: Best candidate with index 6 is connected to topic 10 with 15.463917525773196% accuracy
+2019-02-06 16:38:52.908221: Best candidate with index 3 is connected to topic 16 with 18.32460732984293% accuracy
+2019-02-06 16:38:53.056219: Best candidate with index 8 is connected to topic 0 with 12.8% accuracy
+2019-02-06 16:38:53.105218: Best candidate with index 3 is connected to topic 2 with 17.59259259259259% accuracy
+2019-02-06 16:38:53.105218: Out of 10 real topics only 7 were learned
+2019-02-06 16:38:54.090725: Testing ModelType.LDA model done with 18.561278863232683% accuracy
+2019-02-06 16:38:54.090725: 
+
+
+2019-02-06 16:38:54.090725: Starting training ModelType.LDA model
+2019-02-06 16:39:01.278334: Starting testing ModelType.LDA model
+2019-02-06 16:39:01.955325: Best candidate with index 9 is connected to topic 4 with 11.340852130325814% accuracy
+2019-02-06 16:39:02.001323: Best candidate with index 6 is connected to topic 23 with 17.073170731707318% accuracy
+2019-02-06 16:39:03.016830: Best candidate with index 7 is connected to topic 7 with 20.387323943661972% accuracy
+2019-02-06 16:39:03.134827: Best candidate with index 2 is connected to topic 14 with 16.216216216216218% accuracy
+2019-02-06 16:39:03.272825: Best candidate with index 8 is connected to topic 19 with 13.043478260869565% accuracy
+2019-02-06 16:39:03.322341: Best candidate with index 2 is connected to topic 18 with 22.22222222222222% accuracy
+2019-02-06 16:39:03.368339: Best candidate with index 5 is connected to topic 10 with 17.525773195876287% accuracy
+2019-02-06 16:39:03.450338: Best candidate with index 9 is connected to topic 16 with 15.706806282722512% accuracy
+2019-02-06 16:39:03.600335: Best candidate with index 1 is connected to topic 0 with 14.000000000000002% accuracy
+2019-02-06 16:39:03.654335: Best candidate with index 1 is connected to topic 2 with 15.74074074074074% accuracy
+2019-02-06 16:39:03.654335: Out of 10 real topics only 7 were learned
+2019-02-06 16:39:04.652323: Testing ModelType.LDA model done with 33.52575488454707% accuracy
+2019-02-06 16:39:04.652323: 
+
+
+2019-02-06 16:39:04.808320: Total accuracy is: 0.26043516873889877
+2019-02-06 16:39:04.808320: Starting training ModelType.LSA model
+2019-02-06 16:39:20.581645: Starting testing ModelType.LSA model
+2019-02-06 16:39:21.233434: Best candidate with index 1 is connected to topic 4 with 95.98997493734336% accuracy
+2019-02-06 16:39:21.278433: Best candidate with index 1 is connected to topic 23 with 67.47967479674797% accuracy
+2019-02-06 16:39:22.222284: Best candidate with index 0 is connected to topic 7 with 71.37323943661971% accuracy
+2019-02-06 16:39:22.322315: Best candidate with index 1 is connected to topic 14 with 90.54054054054053% accuracy
+2019-02-06 16:39:22.443307: Best candidate with index 1 is connected to topic 19 with 92.88537549407114% accuracy
+2019-02-06 16:39:22.488362: Best candidate with index 1 is connected to topic 18 with 100.0% accuracy
+2019-02-06 16:39:22.531306: Best candidate with index 1 is connected to topic 10 with 98.96907216494846% accuracy
+2019-02-06 16:39:22.607361: Best candidate with index 1 is connected to topic 16 with 64.92146596858639% accuracy
+2019-02-06 16:39:22.742309: Best candidate with index 1 is connected to topic 0 with 92.80000000000001% accuracy
+2019-02-06 16:39:22.791301: Best candidate with index 1 is connected to topic 2 with 99.07407407407408% accuracy
+2019-02-06 16:39:22.791301: Out of 10 real topics only 2 were learned
+2019-02-06 16:39:23.743190: Testing ModelType.LSA model done with 92.96527159394479% accuracy
+2019-02-06 16:39:23.743190: 
+
+
+2019-02-06 16:39:23.744192: Starting training ModelType.LSA model
+2019-02-06 16:39:38.982354: Starting testing ModelType.LSA model
+2019-02-06 16:39:39.628370: Best candidate with index 1 is connected to topic 4 with 96.55388471177945% accuracy
+2019-02-06 16:39:39.670028: Best candidate with index 1 is connected to topic 23 with 77.23577235772358% accuracy
+2019-02-06 16:39:40.603737: Best candidate with index 0 is connected to topic 7 with 72.99295774647887% accuracy
+2019-02-06 16:39:40.701726: Best candidate with index 1 is connected to topic 14 with 89.63963963963964% accuracy
+2019-02-06 16:39:40.829723: Best candidate with index 1 is connected to topic 19 with 94.0711462450593% accuracy
+2019-02-06 16:39:40.871724: Best candidate with index 1 is connected to topic 18 with 98.88888888888889% accuracy
+2019-02-06 16:39:40.917722: Best candidate with index 1 is connected to topic 10 with 97.9381443298969% accuracy
+2019-02-06 16:39:40.995721: Best candidate with index 1 is connected to topic 16 with 87.43455497382199% accuracy
+2019-02-06 16:39:41.131720: Best candidate with index 1 is connected to topic 0 with 98.0% accuracy
+2019-02-06 16:39:41.179718: Best candidate with index 1 is connected to topic 2 with 99.07407407407408% accuracy
+2019-02-06 16:39:41.179718: Out of 10 real topics only 2 were learned
+2019-02-06 16:39:42.158709: Testing ModelType.LSA model done with 93.19395017793595% accuracy
+2019-02-06 16:39:42.158709: 
+
+
+2019-02-06 16:39:42.308703: Total accuracy is: 0.9307961088594037
+2019-02-06 16:39:42.308703: Starting training ModelType.NB model
+2019-02-06 16:39:43.439358: Starting testing ModelType.NB model
+2019-02-06 16:39:43.461297: Testing ModelType.NB model done with 79.55654101995565% accuracy
+2019-02-06 16:39:43.461297: 
+
+
+2019-02-06 16:39:43.461297: Starting training ModelType.NB model
+2019-02-06 16:39:44.575797: Starting testing ModelType.NB model
+2019-02-06 16:39:44.593795: Testing ModelType.NB model done with 79.55654101995565% accuracy
+2019-02-06 16:39:44.593795: 
+
+
+2019-02-06 16:39:44.750793: Total accuracy is: 0.7955654101995565
+2019-02-06 16:39:44.750793: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:39:58.781211: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:40:01.642753: Best candidate with index 1 is connected to topic 4 with 24.185463659147867% accuracy
+2019-02-06 16:40:01.897748: Best candidate with index 4 is connected to topic 23 with 27.64227642276423% accuracy
+2019-02-06 16:40:06.238249: Best candidate with index 4 is connected to topic 7 with 51.86619718309859% accuracy
+2019-02-06 16:40:06.712767: Best candidate with index 9 is connected to topic 14 with 27.027027027027028% accuracy
+2019-02-06 16:40:07.328759: Best candidate with index 1 is connected to topic 19 with 22.92490118577075% accuracy
+2019-02-06 16:40:07.524763: Best candidate with index 9 is connected to topic 18 with 66.66666666666666% accuracy
+2019-02-06 16:40:07.714757: Best candidate with index 6 is connected to topic 10 with 51.546391752577314% accuracy
+2019-02-06 16:40:08.074749: Best candidate with index 7 is connected to topic 16 with 38.7434554973822% accuracy
+2019-02-06 16:40:08.700270: Best candidate with index 2 is connected to topic 0 with 48.0% accuracy
+2019-02-06 16:40:08.927260: Best candidate with index 6 is connected to topic 2 with 20.37037037037037% accuracy
+2019-02-06 16:40:08.927260: Out of 10 real topics only 6 were learned
+2019-02-06 16:40:12.922780: Testing ModelType.LDA_Sklearn model done with 61.52820968458463% accuracy
+2019-02-06 16:40:12.929777: 
+
+
+2019-02-06 16:40:12.929777: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:40:27.766673: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:40:30.321189: Best candidate with index 4 is connected to topic 4 with 25.31328320802005% accuracy
+2019-02-06 16:40:30.497185: Best candidate with index 7 is connected to topic 23 with 53.65853658536586% accuracy
+2019-02-06 16:40:34.108957: Best candidate with index 3 is connected to topic 7 with 53.66197183098591% accuracy
+2019-02-06 16:40:34.541681: Best candidate with index 7 is connected to topic 14 with 25.675675675675674% accuracy
+2019-02-06 16:40:35.057624: Best candidate with index 0 is connected to topic 19 with 27.27272727272727% accuracy
+2019-02-06 16:40:35.237672: Best candidate with index 9 is connected to topic 18 with 56.666666666666664% accuracy
+2019-02-06 16:40:35.411613: Best candidate with index 6 is connected to topic 10 with 40.20618556701031% accuracy
+2019-02-06 16:40:35.744612: Best candidate with index 4 is connected to topic 16 with 39.26701570680628% accuracy
+2019-02-06 16:40:36.267658: Best candidate with index 8 is connected to topic 0 with 47.199999999999996% accuracy
+2019-02-06 16:40:36.451599: Best candidate with index 1 is connected to topic 2 with 41.66666666666667% accuracy
+2019-02-06 16:40:36.451599: Out of 10 real topics only 8 were learned
+2019-02-06 16:40:40.067530: Testing ModelType.LDA_Sklearn model done with 67.82068353306701% accuracy
+2019-02-06 16:40:40.067530: 
+
+
+2019-02-06 16:40:40.205471: Total accuracy is: 0.6467444660882582
+2019-02-06 16:40:41.029138: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False.
+2019-02-06 16:40:41.029138: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\4 for training
+2019-02-06 16:40:44.322019: Preprocessing finished
+2019-02-06 16:40:44.322019: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\4 for testing
+2019-02-06 16:40:46.784957: Preprocessing finished
+2019-02-06 16:40:46.792958: Starting training ModelType.LDA model
+2019-02-06 16:41:02.197161: Starting testing ModelType.LDA model
+2019-02-06 16:41:02.537681: Best candidate with index 1 is connected to topic 0 with 7.888631090487238% accuracy
+2019-02-06 16:41:02.856677: Best candidate with index 4 is connected to topic 1 with 7.3584905660377355% accuracy
+2019-02-06 16:41:03.214673: Best candidate with index 0 is connected to topic 2 with 7.2796934865900385% accuracy
+2019-02-06 16:41:03.524192: Best candidate with index 13 is connected to topic 3 with 6.678700361010831% accuracy
+2019-02-06 16:41:03.802188: Best candidate with index 4 is connected to topic 4 with 7.915057915057915% accuracy
+2019-02-06 16:41:04.205182: Best candidate with index 8 is connected to topic 5 with 8.050089445438283% accuracy
+2019-02-06 16:41:04.500176: Best candidate with index 3 is connected to topic 6 with 7.4074074074074066% accuracy
+2019-02-06 16:41:04.798173: Best candidate with index 15 is connected to topic 7 with 7.003891050583658% accuracy
+2019-02-06 16:41:05.090171: Best candidate with index 10 is connected to topic 8 with 6.9364161849710975% accuracy
+2019-02-06 16:41:05.403690: Best candidate with index 8 is connected to topic 9 with 6.903353057199212% accuracy
+2019-02-06 16:41:05.781684: Best candidate with index 8 is connected to topic 10 with 7.706422018348624% accuracy
+2019-02-06 16:41:06.238201: Best candidate with index 8 is connected to topic 11 with 6.463195691202872% accuracy
+2019-02-06 16:41:06.563193: Best candidate with index 7 is connected to topic 12 with 7.962962962962964% accuracy
+2019-02-06 16:41:06.960199: Best candidate with index 15 is connected to topic 13 with 7.334525939177102% accuracy
+2019-02-06 16:41:07.360194: Best candidate with index 15 is connected to topic 14 with 6.764168190127971% accuracy
+2019-02-06 16:41:07.818189: Best candidate with index 19 is connected to topic 15 with 7.9086115992970125% accuracy
+2019-02-06 16:41:08.189184: Best candidate with index 15 is connected to topic 16 with 6.4833005893909625% accuracy
+2019-02-06 16:41:08.688177: Best candidate with index 16 is connected to topic 17 with 7.797270955165692% accuracy
+2019-02-06 16:41:09.037693: Best candidate with index 19 is connected to topic 18 with 7.328605200945626% accuracy
+2019-02-06 16:41:09.292694: Best candidate with index 0 is connected to topic 19 with 7.621951219512195% accuracy
+2019-02-06 16:41:09.300688: Out of 20 real topics only 11 were learned
+2019-02-06 16:41:14.022191: Testing ModelType.LDA model done with 7.12701463847405% accuracy
+2019-02-06 16:41:14.022191: 
+
+
+2019-02-06 16:41:14.022191: Starting training ModelType.LDA model
+2019-02-06 16:41:30.455700: Starting testing ModelType.LDA model
+2019-02-06 16:41:30.789696: Best candidate with index 3 is connected to topic 0 with 7.65661252900232% accuracy
+2019-02-06 16:41:31.114691: Best candidate with index 6 is connected to topic 1 with 6.226415094339623% accuracy
+2019-02-06 16:41:31.469227: Best candidate with index 7 is connected to topic 2 with 7.2796934865900385% accuracy
+2019-02-06 16:41:31.786230: Best candidate with index 11 is connected to topic 3 with 7.039711191335741% accuracy
+2019-02-06 16:41:32.070221: Best candidate with index 14 is connected to topic 4 with 7.5289575289575295% accuracy
+2019-02-06 16:41:32.461493: Best candidate with index 8 is connected to topic 5 with 7.155635062611807% accuracy
+2019-02-06 16:41:32.771488: Best candidate with index 11 is connected to topic 6 with 7.592592592592593% accuracy
+2019-02-06 16:41:33.074484: Best candidate with index 13 is connected to topic 7 with 6.420233463035019% accuracy
+2019-02-06 16:41:33.383000: Best candidate with index 17 is connected to topic 8 with 6.9364161849710975% accuracy
+2019-02-06 16:41:33.707996: Best candidate with index 8 is connected to topic 9 with 6.903353057199212% accuracy
+2019-02-06 16:41:34.121992: Best candidate with index 1 is connected to topic 10 with 6.7889908256880735% accuracy
+2019-02-06 16:41:34.617985: Best candidate with index 9 is connected to topic 11 with 8.07899461400359% accuracy
+2019-02-06 16:41:34.960981: Best candidate with index 14 is connected to topic 12 with 7.037037037037037% accuracy
+2019-02-06 16:41:35.370022: Best candidate with index 10 is connected to topic 13 with 7.155635062611807% accuracy
+2019-02-06 16:41:35.774015: Best candidate with index 8 is connected to topic 14 with 6.946983546617916% accuracy
+2019-02-06 16:41:36.237011: Best candidate with index 2 is connected to topic 15 with 8.260105448154658% accuracy
+2019-02-06 16:41:36.610005: Best candidate with index 17 is connected to topic 16 with 6.679764243614931% accuracy
+2019-02-06 16:41:37.155998: Best candidate with index 16 is connected to topic 17 with 6.237816764132553% accuracy
+2019-02-06 16:41:37.528993: Best candidate with index 4 is connected to topic 18 with 7.328605200945626% accuracy
+2019-02-06 16:41:37.800989: Best candidate with index 19 is connected to topic 19 with 7.01219512195122% accuracy
+2019-02-06 16:41:37.800989: Out of 20 real topics only 15 were learned
+2019-02-06 16:41:42.318087: Testing ModelType.LDA model done with 6.664696320378306% accuracy
+2019-02-06 16:41:42.318087: 
+
+
+2019-02-06 16:41:42.617082: Total accuracy is: 0.06895855479426177
+2019-02-06 16:41:42.617082: Starting training ModelType.LSA model
+2019-02-06 16:43:03.504738: Starting testing ModelType.LSA model
+2019-02-06 16:43:03.949257: Best candidate with index 0 is connected to topic 0 with 99.76798143851508% accuracy
+2019-02-06 16:43:04.242258: Best candidate with index 0 is connected to topic 1 with 97.73584905660377% accuracy
+2019-02-06 16:43:04.583384: Best candidate with index 0 is connected to topic 2 with 98.08429118773945% accuracy
+2019-02-06 16:43:04.857920: Best candidate with index 0 is connected to topic 3 with 99.27797833935018% accuracy
+2019-02-06 16:43:05.114916: Best candidate with index 0 is connected to topic 4 with 99.03474903474904% accuracy
+2019-02-06 16:43:05.505910: Best candidate with index 0 is connected to topic 5 with 97.13774597495528% accuracy
+2019-02-06 16:43:05.816428: Best candidate with index 0 is connected to topic 6 with 90.18518518518519% accuracy
+2019-02-06 16:43:06.134424: Best candidate with index 0 is connected to topic 7 with 99.41634241245137% accuracy
+2019-02-06 16:43:06.439419: Best candidate with index 0 is connected to topic 8 with 99.8073217726397% accuracy
+2019-02-06 16:43:06.749931: Best candidate with index 0 is connected to topic 9 with 96.25246548323472% accuracy
+2019-02-06 16:43:07.155927: Best candidate with index 0 is connected to topic 10 with 93.39449541284404% accuracy
+2019-02-06 16:43:07.612920: Best candidate with index 0 is connected to topic 11 with 99.82046678635548% accuracy
+2019-02-06 16:43:07.913431: Best candidate with index 0 is connected to topic 12 with 99.25925925925925% accuracy
+2019-02-06 16:43:08.343428: Best candidate with index 0 is connected to topic 13 with 92.66547406082289% accuracy
+2019-02-06 16:43:08.730423: Best candidate with index 0 is connected to topic 14 with 99.45155393053017% accuracy
+2019-02-06 16:43:09.183415: Best candidate with index 0 is connected to topic 15 with 99.47275922671353% accuracy
+2019-02-06 16:43:09.529411: Best candidate with index 0 is connected to topic 16 with 99.60707269155206% accuracy
+2019-02-06 16:43:09.964406: Best candidate with index 0 is connected to topic 17 with 99.80506822612085% accuracy
+2019-02-06 16:43:10.302400: Best candidate with index 0 is connected to topic 18 with 99.29078014184397% accuracy
+2019-02-06 16:43:10.549917: Best candidate with index 0 is connected to topic 19 with 99.6951219512195% accuracy
+2019-02-06 16:43:10.549917: Out of 20 real topics only 1 were learned
+2019-02-06 16:43:14.765172: Testing ModelType.LSA model done with 98.31435753363891% accuracy
+2019-02-06 16:43:14.765172: 
+
+
+2019-02-06 16:43:14.765172: Starting training ModelType.LSA model
+2019-02-06 16:44:35.314934: Starting testing ModelType.LSA model
+2019-02-06 16:44:35.783949: Best candidate with index 0 is connected to topic 0 with 100.0% accuracy
+2019-02-06 16:44:36.094447: Best candidate with index 0 is connected to topic 1 with 97.73584905660377% accuracy
+2019-02-06 16:44:36.414443: Best candidate with index 0 is connected to topic 2 with 98.08429118773945% accuracy
+2019-02-06 16:44:36.706442: Best candidate with index 0 is connected to topic 3 with 98.91696750902527% accuracy
+2019-02-06 16:44:36.967456: Best candidate with index 0 is connected to topic 4 with 99.03474903474904% accuracy
+2019-02-06 16:44:37.347451: Best candidate with index 0 is connected to topic 5 with 97.31663685152057% accuracy
+2019-02-06 16:44:37.611468: Best candidate with index 0 is connected to topic 6 with 90.74074074074075% accuracy
+2019-02-06 16:44:37.863991: Best candidate with index 0 is connected to topic 7 with 99.41634241245137% accuracy
+2019-02-06 16:44:38.130983: Best candidate with index 0 is connected to topic 8 with 100.0% accuracy
+2019-02-06 16:44:38.396979: Best candidate with index 0 is connected to topic 9 with 96.44970414201184% accuracy
+2019-02-06 16:44:38.749973: Best candidate with index 0 is connected to topic 10 with 93.94495412844037% accuracy
+2019-02-06 16:44:39.154487: Best candidate with index 0 is connected to topic 11 with 99.82046678635548% accuracy
+2019-02-06 16:44:39.438484: Best candidate with index 0 is connected to topic 12 with 99.25925925925925% accuracy
+2019-02-06 16:44:39.820477: Best candidate with index 0 is connected to topic 13 with 92.4865831842576% accuracy
+2019-02-06 16:44:40.195473: Best candidate with index 0 is connected to topic 14 with 99.45155393053017% accuracy
+2019-02-06 16:44:40.621991: Best candidate with index 0 is connected to topic 15 with 99.82425307557118% accuracy
+2019-02-06 16:44:40.968986: Best candidate with index 0 is connected to topic 16 with 99.60707269155206% accuracy
+2019-02-06 16:44:41.413981: Best candidate with index 0 is connected to topic 17 with 99.41520467836257% accuracy
+2019-02-06 16:44:41.714499: Best candidate with index 0 is connected to topic 18 with 99.29078014184397% accuracy
+2019-02-06 16:44:41.927496: Best candidate with index 0 is connected to topic 19 with 100.0% accuracy
+2019-02-06 16:44:41.927496: Out of 20 real topics only 1 were learned
+2019-02-06 16:44:46.077851: Testing ModelType.LSA model done with 98.44743457045689% accuracy
+2019-02-06 16:44:46.077851: 
+
+
+2019-02-06 16:44:46.225847: Total accuracy is: 0.9838089605204791
+2019-02-06 16:44:46.225847: Starting training ModelType.NB model
+2019-02-06 16:44:53.118162: Starting testing ModelType.NB model
+2019-02-06 16:44:53.279161: Testing ModelType.NB model done with 59.92321323095098% accuracy
+2019-02-06 16:44:53.279161: 
+
+
+2019-02-06 16:44:53.279161: Starting training ModelType.NB model
+2019-02-06 16:45:00.146051: Starting testing ModelType.NB model
+2019-02-06 16:45:00.386440: Testing ModelType.NB model done with 59.92321323095098% accuracy
+2019-02-06 16:45:00.386440: 
+
+
+2019-02-06 16:45:00.589681: Total accuracy is: 0.5992321323095098
+2019-02-06 16:45:00.589681: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:45:37.450951: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:45:38.250123: Best candidate with index 5 is connected to topic 0 with 9.744779582366588% accuracy
+2019-02-06 16:45:39.123115: Best candidate with index 8 is connected to topic 1 with 7.735849056603773% accuracy
+2019-02-06 16:45:40.045294: Best candidate with index 13 is connected to topic 2 with 9.770114942528735% accuracy
+2019-02-06 16:45:40.892671: Best candidate with index 17 is connected to topic 3 with 9.2057761732852% accuracy
+2019-02-06 16:45:41.624177: Best candidate with index 11 is connected to topic 4 with 12.934362934362934% accuracy
+2019-02-06 16:45:42.732966: Best candidate with index 12 is connected to topic 5 with 10.912343470483005% accuracy
+2019-02-06 16:45:43.501774: Best candidate with index 15 is connected to topic 6 with 7.222222222222221% accuracy
+2019-02-06 16:45:44.243160: Best candidate with index 1 is connected to topic 7 with 9.33852140077821% accuracy
+2019-02-06 16:45:44.948325: Best candidate with index 5 is connected to topic 8 with 9.633911368015415% accuracy
+2019-02-06 16:45:45.784308: Best candidate with index 5 is connected to topic 9 with 10.453648915187378% accuracy
+2019-02-06 16:45:46.942809: Best candidate with index 14 is connected to topic 10 with 11.926605504587156% accuracy
+2019-02-06 16:45:48.344860: Best candidate with index 8 is connected to topic 11 with 11.490125673249551% accuracy
+2019-02-06 16:45:49.142044: Best candidate with index 17 is connected to topic 12 with 8.88888888888889% accuracy
+2019-02-06 16:45:50.205539: Best candidate with index 1 is connected to topic 13 with 10.912343470483005% accuracy
+2019-02-06 16:45:51.387541: Best candidate with index 4 is connected to topic 14 with 8.226691042047532% accuracy
+2019-02-06 16:45:52.608217: Best candidate with index 5 is connected to topic 15 with 12.82952548330404% accuracy
+2019-02-06 16:45:53.641106: Best candidate with index 8 is connected to topic 16 with 9.233791748526523% accuracy
+2019-02-06 16:45:55.156607: Best candidate with index 19 is connected to topic 17 with 13.060428849902534% accuracy
+2019-02-06 16:45:56.175630: Best candidate with index 8 is connected to topic 18 with 7.5650118203309695% accuracy
+2019-02-06 16:45:56.955623: Best candidate with index 5 is connected to topic 19 with 10.365853658536585% accuracy
+2019-02-06 16:45:56.955623: Out of 20 real topics only 11 were learned
+2019-02-06 16:46:14.736745: Testing ModelType.LDA_Sklearn model done with 23.613780866479374% accuracy
+2019-02-06 16:46:14.736745: 
+
+
+2019-02-06 16:46:14.736745: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:46:55.058157: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:46:55.944145: Best candidate with index 16 is connected to topic 0 with 11.36890951276102% accuracy
+2019-02-06 16:46:56.906135: Best candidate with index 7 is connected to topic 1 with 11.50943396226415% accuracy
+2019-02-06 16:46:58.048119: Best candidate with index 7 is connected to topic 2 with 8.812260536398467% accuracy
+2019-02-06 16:46:59.073620: Best candidate with index 4 is connected to topic 3 with 11.552346570397113% accuracy
+2019-02-06 16:46:59.876094: Best candidate with index 16 is connected to topic 4 with 10.617760617760617% accuracy
+2019-02-06 16:47:01.132197: Best candidate with index 16 is connected to topic 5 with 12.343470483005367% accuracy
+2019-02-06 16:47:02.034701: Best candidate with index 7 is connected to topic 6 with 11.11111111111111% accuracy
+2019-02-06 16:47:02.926689: Best candidate with index 13 is connected to topic 7 with 10.505836575875486% accuracy
+2019-02-06 16:47:03.694579: Best candidate with index 16 is connected to topic 8 with 8.670520231213873% accuracy
+2019-02-06 16:47:04.580572: Best candidate with index 5 is connected to topic 9 with 9.072978303747535% accuracy
+2019-02-06 16:47:05.799600: Best candidate with index 5 is connected to topic 10 with 9.724770642201836% accuracy
+2019-02-06 16:47:07.418579: Best candidate with index 13 is connected to topic 11 with 12.746858168761221% accuracy
+2019-02-06 16:47:08.270100: Best candidate with index 4 is connected to topic 12 with 8.333333333333332% accuracy
+2019-02-06 16:47:09.442608: Best candidate with index 1 is connected to topic 13 with 11.091234347048301% accuracy
+2019-02-06 16:47:10.740117: Best candidate with index 16 is connected to topic 14 with 9.323583180987203% accuracy
+2019-02-06 16:47:12.026472: Best candidate with index 16 is connected to topic 15 with 12.478031634446397% accuracy
+2019-02-06 16:47:13.185226: Best candidate with index 16 is connected to topic 16 with 11.00196463654224% accuracy
+2019-02-06 16:47:14.962721: Best candidate with index 17 is connected to topic 17 with 8.966861598440545% accuracy
+2019-02-06 16:47:16.073244: Best candidate with index 13 is connected to topic 18 with 10.638297872340425% accuracy
+2019-02-06 16:47:16.839337: Best candidate with index 16 is connected to topic 19 with 11.585365853658537% accuracy
+2019-02-06 16:47:16.839337: Out of 20 real topics only 7 were learned
+2019-02-06 16:47:34.874498: Testing ModelType.LDA_Sklearn model done with 22.325787838437638% accuracy
+2019-02-06 16:47:34.875498: 
+
+
+2019-02-06 16:47:35.011494: Total accuracy is: 0.22969784352458505
+2019-02-06 16:47:35.159493: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: True.
+2019-02-06 16:47:35.159493: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\4 for training
+2019-02-06 16:48:00.457126: Preprocessing finished
+2019-02-06 16:48:00.465125: Starting preprocessing texts of C:\Users\Fredred\PycharmProjects\topic-analysis\csv_folder\4 for testing
+2019-02-06 16:48:16.624493: Preprocessing finished
+2019-02-06 16:48:16.631494: Starting training ModelType.LDA model
+2019-02-06 16:48:29.335074: Starting testing ModelType.LDA model
+2019-02-06 16:48:29.623067: Best candidate with index 0 is connected to topic 0 with 7.65661252900232% accuracy
+2019-02-06 16:48:29.899063: Best candidate with index 15 is connected to topic 1 with 9.245283018867925% accuracy
+2019-02-06 16:48:30.177583: Best candidate with index 6 is connected to topic 2 with 7.854406130268199% accuracy
+2019-02-06 16:48:30.470578: Best candidate with index 6 is connected to topic 3 with 7.2202166064981945% accuracy
+2019-02-06 16:48:30.720577: Best candidate with index 17 is connected to topic 4 with 7.142857142857142% accuracy
+2019-02-06 16:48:31.058734: Best candidate with index 17 is connected to topic 5 with 11.270125223613595% accuracy
+2019-02-06 16:48:31.315729: Best candidate with index 17 is connected to topic 6 with 7.4074074074074066% accuracy
+2019-02-06 16:48:31.596729: Best candidate with index 4 is connected to topic 7 with 7.976653696498054% accuracy
+2019-02-06 16:48:31.857921: Best candidate with index 5 is connected to topic 8 with 6.358381502890173% accuracy
+2019-02-06 16:48:32.123441: Best candidate with index 11 is connected to topic 9 with 6.903353057199212% accuracy
+2019-02-06 16:48:32.459433: Best candidate with index 18 is connected to topic 10 with 7.522935779816514% accuracy
+2019-02-06 16:48:32.891428: Best candidate with index 4 is connected to topic 11 with 7.899461400359066% accuracy
+2019-02-06 16:48:33.188953: Best candidate with index 10 is connected to topic 12 with 7.592592592592593% accuracy
+2019-02-06 16:48:33.558938: Best candidate with index 16 is connected to topic 13 with 7.334525939177102% accuracy
+2019-02-06 16:48:33.930933: Best candidate with index 15 is connected to topic 14 with 7.129798903107861% accuracy
+2019-02-06 16:48:34.336928: Best candidate with index 13 is connected to topic 15 with 6.32688927943761% accuracy
+2019-02-06 16:48:34.656085: Best candidate with index 7 is connected to topic 16 with 6.4833005893909625% accuracy
+2019-02-06 16:48:35.078076: Best candidate with index 19 is connected to topic 17 with 7.212475633528265% accuracy
+2019-02-06 16:48:35.376070: Best candidate with index 3 is connected to topic 18 with 6.619385342789598% accuracy
+2019-02-06 16:48:35.598066: Best candidate with index 8 is connected to topic 19 with 7.926829268292683% accuracy
+2019-02-06 16:48:35.598066: Out of 20 real topics only 15 were learned
+2019-02-06 16:48:39.647753: Testing ModelType.LDA model done with 7.25580020688636% accuracy
+2019-02-06 16:48:39.647753: 
+
+
+2019-02-06 16:48:39.647753: Starting training ModelType.LDA model
+2019-02-06 16:48:52.027688: Starting testing ModelType.LDA model
+2019-02-06 16:48:52.316685: Best candidate with index 12 is connected to topic 0 with 7.65661252900232% accuracy
+2019-02-06 16:48:52.570225: Best candidate with index 7 is connected to topic 1 with 7.735849056603773% accuracy
+2019-02-06 16:48:52.868219: Best candidate with index 1 is connected to topic 2 with 7.471264367816093% accuracy
+2019-02-06 16:48:53.142273: Best candidate with index 1 is connected to topic 3 with 6.31768953068592% accuracy
+2019-02-06 16:48:53.438751: Best candidate with index 6 is connected to topic 4 with 6.563706563706563% accuracy
+2019-02-06 16:48:53.798746: Best candidate with index 5 is connected to topic 5 with 7.5134168157423975% accuracy
+2019-02-06 16:48:54.058273: Best candidate with index 14 is connected to topic 6 with 7.962962962962964% accuracy
+2019-02-06 16:48:54.314276: Best candidate with index 3 is connected to topic 7 with 7.198443579766536% accuracy
+2019-02-06 16:48:54.577271: Best candidate with index 17 is connected to topic 8 with 6.74373795761079% accuracy
+2019-02-06 16:48:54.832262: Best candidate with index 11 is connected to topic 9 with 6.903353057199212% accuracy
+2019-02-06 16:48:55.149803: Best candidate with index 9 is connected to topic 10 with 7.155963302752294% accuracy
+2019-02-06 16:48:55.529796: Best candidate with index 19 is connected to topic 11 with 6.642728904847396% accuracy
+2019-02-06 16:48:55.777818: Best candidate with index 3 is connected to topic 12 with 7.4074074074074066% accuracy
+2019-02-06 16:48:56.089329: Best candidate with index 16 is connected to topic 13 with 7.6923076923076925% accuracy
+2019-02-06 16:48:56.437324: Best candidate with index 9 is connected to topic 14 with 6.39853747714808% accuracy
+2019-02-06 16:48:56.791325: Best candidate with index 16 is connected to topic 15 with 7.5571177504393665% accuracy
+2019-02-06 16:48:57.077322: Best candidate with index 6 is connected to topic 16 with 6.679764243614931% accuracy
+2019-02-06 16:48:57.472311: Best candidate with index 18 is connected to topic 17 with 7.797270955165692% accuracy
+2019-02-06 16:48:57.762313: Best candidate with index 13 is connected to topic 18 with 8.747044917257684% accuracy
+2019-02-06 16:48:57.975311: Best candidate with index 12 is connected to topic 19 with 7.01219512195122% accuracy
+2019-02-06 16:48:57.975311: Out of 20 real topics only 14 were learned
+2019-02-06 16:49:01.654874: Testing ModelType.LDA model done with 6.665681347916051% accuracy
+2019-02-06 16:49:01.654874: 
+
+
+2019-02-06 16:49:01.775875: Total accuracy is: 0.06960740777401206
+2019-02-06 16:49:01.775875: Starting training ModelType.LSA model
+2019-02-06 16:50:00.227998: Starting testing ModelType.LSA model
+2019-02-06 16:50:00.586541: Best candidate with index 0 is connected to topic 0 with 100.0% accuracy
+2019-02-06 16:50:00.829887: Best candidate with index 0 is connected to topic 1 with 97.16981132075472% accuracy
+2019-02-06 16:50:01.077403: Best candidate with index 0 is connected to topic 2 with 97.5095785440613% accuracy
+2019-02-06 16:50:01.319397: Best candidate with index 0 is connected to topic 3 with 94.7653429602888% accuracy
+2019-02-06 16:50:01.556396: Best candidate with index 0 is connected to topic 4 with 98.26254826254826% accuracy
+2019-02-06 16:50:01.874392: Best candidate with index 0 is connected to topic 5 with 99.10554561717353% accuracy
+2019-02-06 16:50:02.125910: Best candidate with index 0 is connected to topic 6 with 92.96296296296296% accuracy
+2019-02-06 16:50:02.373906: Best candidate with index 0 is connected to topic 7 with 99.61089494163424% accuracy
+2019-02-06 16:50:02.619901: Best candidate with index 0 is connected to topic 8 with 99.03660886319847% accuracy
+2019-02-06 16:50:02.866900: Best candidate with index 0 is connected to topic 9 with 97.0414201183432% accuracy
+2019-02-06 16:50:03.157895: Best candidate with index 0 is connected to topic 10 with 94.12844036697248% accuracy
+2019-02-06 16:50:03.498886: Best candidate with index 0 is connected to topic 11 with 99.46140035906643% accuracy
+2019-02-06 16:50:03.749368: Best candidate with index 0 is connected to topic 12 with 99.07407407407408% accuracy
+2019-02-06 16:50:04.067364: Best candidate with index 0 is connected to topic 13 with 90.16100178890876% accuracy
+2019-02-06 16:50:04.362363: Best candidate with index 0 is connected to topic 14 with 98.90310786106032% accuracy
+2019-02-06 16:50:04.696880: Best candidate with index 0 is connected to topic 15 with 99.82425307557118% accuracy
+2019-02-06 16:50:04.986877: Best candidate with index 0 is connected to topic 16 with 99.41060903732809% accuracy
+2019-02-06 16:50:05.371871: Best candidate with index 0 is connected to topic 17 with 99.22027290448344% accuracy
+2019-02-06 16:50:05.646869: Best candidate with index 0 is connected to topic 18 with 100.0% accuracy
+2019-02-06 16:50:05.849386: Best candidate with index 0 is connected to topic 19 with 100.0% accuracy
+2019-02-06 16:50:05.849386: Out of 20 real topics only 1 were learned
+2019-02-06 16:50:09.381854: Testing ModelType.LSA model done with 98.66785079928952% accuracy
+2019-02-06 16:50:09.389855: 
+
+
+2019-02-06 16:50:09.390855: Starting training ModelType.LSA model
+2019-02-06 16:51:09.671867: Starting testing ModelType.LSA model
+2019-02-06 16:51:10.035858: Best candidate with index 0 is connected to topic 0 with 100.0% accuracy
+2019-02-06 16:51:10.278862: Best candidate with index 0 is connected to topic 1 with 97.9245283018868% accuracy
+2019-02-06 16:51:10.518851: Best candidate with index 0 is connected to topic 2 with 97.5095785440613% accuracy
+2019-02-06 16:51:10.760375: Best candidate with index 0 is connected to topic 3 with 94.94584837545126% accuracy
+2019-02-06 16:51:10.979372: Best candidate with index 0 is connected to topic 4 with 98.26254826254826% accuracy
+2019-02-06 16:51:11.280368: Best candidate with index 0 is connected to topic 5 with 98.38998211091234% accuracy
+2019-02-06 16:51:11.511384: Best candidate with index 0 is connected to topic 6 with 92.5925925925926% accuracy
+2019-02-06 16:51:11.748906: Best candidate with index 0 is connected to topic 7 with 99.80544747081711% accuracy
+2019-02-06 16:51:11.988904: Best candidate with index 0 is connected to topic 8 with 99.8073217726397% accuracy
+2019-02-06 16:51:12.223242: Best candidate with index 0 is connected to topic 9 with 97.43589743589743% accuracy
+2019-02-06 16:51:12.503266: Best candidate with index 0 is connected to topic 10 with 93.94495412844037% accuracy
+2019-02-06 16:51:12.851262: Best candidate with index 0 is connected to topic 11 with 97.12746858168761% accuracy
+2019-02-06 16:51:13.120258: Best candidate with index 0 is connected to topic 12 with 99.25925925925925% accuracy
+2019-02-06 16:51:13.453772: Best candidate with index 0 is connected to topic 13 with 93.38103756708408% accuracy
+2019-02-06 16:51:13.786769: Best candidate with index 0 is connected to topic 14 with 98.90310786106032% accuracy
+2019-02-06 16:51:14.162764: Best candidate with index 0 is connected to topic 15 with 99.64850615114236% accuracy
+2019-02-06 16:51:14.477273: Best candidate with index 0 is connected to topic 16 with 99.80353634577604% accuracy
+2019-02-06 16:51:14.849273: Best candidate with index 0 is connected to topic 17 with 97.85575048732943% accuracy
+2019-02-06 16:51:15.116576: Best candidate with index 0 is connected to topic 18 with 99.76359338061465% accuracy
+2019-02-06 16:51:15.317534: Best candidate with index 0 is connected to topic 19 with 100.0% accuracy
+2019-02-06 16:51:15.317534: Out of 20 real topics only 1 were learned
+2019-02-06 16:51:19.065694: Testing ModelType.LSA model done with 98.6090559337082% accuracy
+2019-02-06 16:51:19.065694: 
+
+
+2019-02-06 16:51:19.207213: Total accuracy is: 0.9863845336649886
+2019-02-06 16:51:19.207213: Starting training ModelType.NB model
+2019-02-06 16:51:23.975518: Starting testing ModelType.NB model
+2019-02-06 16:51:24.116516: Testing ModelType.NB model done with 63.98405197873597% accuracy
+2019-02-06 16:51:24.116516: 
+
+
+2019-02-06 16:51:24.116516: Starting training ModelType.NB model
+2019-02-06 16:51:28.980251: Starting testing ModelType.NB model
+2019-02-06 16:51:29.109249: Testing ModelType.NB model done with 63.98405197873597% accuracy
+2019-02-06 16:51:29.109249: 
+
+
+2019-02-06 16:51:29.243248: Total accuracy is: 0.6398405197873597
+2019-02-06 16:51:29.243248: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:52:06.165193: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:52:07.114181: Best candidate with index 6 is connected to topic 0 with 12.064965197215777% accuracy
+2019-02-06 16:52:08.093175: Best candidate with index 15 is connected to topic 1 with 12.075471698113208% accuracy
+2019-02-06 16:52:09.023160: Best candidate with index 5 is connected to topic 2 with 16.091954022988507% accuracy
+2019-02-06 16:52:09.964026: Best candidate with index 2 is connected to topic 3 with 17.14801444043321% accuracy
+2019-02-06 16:52:10.778477: Best candidate with index 0 is connected to topic 4 with 9.073359073359073% accuracy
+2019-02-06 16:52:12.020405: Best candidate with index 5 is connected to topic 5 with 16.99463327370304% accuracy
+2019-02-06 16:52:12.830391: Best candidate with index 15 is connected to topic 6 with 10.37037037037037% accuracy
+2019-02-06 16:52:13.779141: Best candidate with index 4 is connected to topic 7 with 9.53307392996109% accuracy
+2019-02-06 16:52:14.655130: Best candidate with index 4 is connected to topic 8 with 10.597302504816955% accuracy
+2019-02-06 16:52:15.531639: Best candidate with index 11 is connected to topic 9 with 10.453648915187378% accuracy
+2019-02-06 16:52:16.619142: Best candidate with index 15 is connected to topic 10 with 12.844036697247708% accuracy
+2019-02-06 16:52:18.055125: Best candidate with index 0 is connected to topic 11 with 16.337522441651707% accuracy
+2019-02-06 16:52:18.930763: Best candidate with index 0 is connected to topic 12 with 12.037037037037036% accuracy
+2019-02-06 16:52:20.115764: Best candidate with index 6 is connected to topic 13 with 10.912343470483005% accuracy
+2019-02-06 16:52:21.326747: Best candidate with index 15 is connected to topic 14 with 9.323583180987203% accuracy
+2019-02-06 16:52:22.692788: Best candidate with index 6 is connected to topic 15 with 19.332161687170473% accuracy
+2019-02-06 16:52:23.876087: Best candidate with index 4 is connected to topic 16 with 19.25343811394892% accuracy
+2019-02-06 16:52:25.526104: Best candidate with index 11 is connected to topic 17 with 19.298245614035086% accuracy
+2019-02-06 16:52:26.721089: Best candidate with index 11 is connected to topic 18 with 9.456264775413711% accuracy
+2019-02-06 16:52:27.521597: Best candidate with index 6 is connected to topic 19 with 19.20731707317073% accuracy
+2019-02-06 16:52:27.521597: Out of 20 real topics only 7 were learned
+2019-02-06 16:52:44.933221: Testing ModelType.LDA_Sklearn model done with 27.947921290131678% accuracy
+2019-02-06 16:52:44.934221: 
+
+
+2019-02-06 16:52:44.934221: Starting training ModelType.LDA_Sklearn model
+2019-02-06 16:53:23.203933: Starting testing ModelType.LDA_Sklearn model
+2019-02-06 16:53:24.188453: Best candidate with index 12 is connected to topic 0 with 13.921113689095128% accuracy
+2019-02-06 16:53:25.146681: Best candidate with index 15 is connected to topic 1 with 13.018867924528301% accuracy
+2019-02-06 16:53:26.079662: Best candidate with index 11 is connected to topic 2 with 13.793103448275861% accuracy
+2019-02-06 16:53:27.080741: Best candidate with index 7 is connected to topic 3 with 12.093862815884476% accuracy
+2019-02-06 16:53:28.000722: Best candidate with index 7 is connected to topic 4 with 13.127413127413126% accuracy
+2019-02-06 16:53:29.320771: Best candidate with index 15 is connected to topic 5 with 12.522361359570661% accuracy
+2019-02-06 16:53:30.178338: Best candidate with index 9 is connected to topic 6 with 7.777777777777778% accuracy
+2019-02-06 16:53:31.053321: Best candidate with index 3 is connected to topic 7 with 11.86770428015564% accuracy
+2019-02-06 16:53:31.861829: Best candidate with index 17 is connected to topic 8 with 10.211946050096339% accuracy
+2019-02-06 16:53:32.701404: Best candidate with index 14 is connected to topic 9 with 9.861932938856016% accuracy
+2019-02-06 16:53:33.825243: Best candidate with index 14 is connected to topic 10 with 12.477064220183486% accuracy
+2019-02-06 16:53:35.345045: Best candidate with index 14 is connected to topic 11 with 12.387791741472173% accuracy
+2019-02-06 16:53:36.235032: Best candidate with index 7 is connected to topic 12 with 8.88888888888889% accuracy
+2019-02-06 16:53:37.440226: Best candidate with index 19 is connected to topic 13 with 13.059033989266547% accuracy
+2019-02-06 16:53:38.677210: Best candidate with index 10 is connected to topic 14 with 9.323583180987203% accuracy
+2019-02-06 16:53:40.179707: Best candidate with index 10 is connected to topic 15 with 15.992970123022848% accuracy
+2019-02-06 16:53:41.348217: Best candidate with index 12 is connected to topic 16 with 12.180746561886052% accuracy
+2019-02-06 16:53:42.936716: Best candidate with index 14 is connected to topic 17 with 14.619883040935672% accuracy
+2019-02-06 16:53:44.060221: Best candidate with index 10 is connected to topic 18 with 14.657210401891252% accuracy
+2019-02-06 16:53:44.848218: Best candidate with index 12 is connected to topic 19 with 15.548780487804878% accuracy
+2019-02-06 16:53:44.848218: Out of 20 real topics only 10 were learned
+2019-02-06 16:54:02.463963: Testing ModelType.LDA_Sklearn model done with 25.184856551316177% accuracy
+2019-02-06 16:54:02.463963: 
+
+
+2019-02-06 16:54:02.602961: Total accuracy is: 0.26566388920723927

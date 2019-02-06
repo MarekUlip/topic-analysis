@@ -13,7 +13,7 @@ sys.path.append(file_dir)
 
 from preprocessor.text_preprocessor import TextPreprocessor
 from tests.log_writer import LogWriter
-from tests.test_checker import TestChecker
+from tests.model_tester import ModelTester
 
 def create_variations(depth, field, all_vars, possibilities):
     if depth == len(all_vars):
@@ -112,7 +112,7 @@ for i in range(len(data_sets)):
                         lda_statistics.append([])"""
                 for j in range(num_of_test):
                     # every row means jth test
-                    test_checker_lda = TestChecker(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer) #"""numpy.asfarray(test_checker_lda.topic_distributions)"""
+                    test_checker_lda = ModelTester(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer) #"""numpy.asfarray(test_checker_lda.topic_distributions)"""
                     lda = Lda(data_sets[i][2], 15, kappa=model_settings[0], tau=model_settings[1], passes=model_settings[2], iterations=model_settings[3]) #TODO remember random state
                     log_writer.add_log("Starting training LDA model")
                     lda.train(texts_for_train)
@@ -134,7 +134,7 @@ for i in range(len(data_sets)):
             statistics.append([])
             for model_settings_index, model_settings in enumerate(lsa_variations):
                 for j in range(num_of_test):
-                    test_checker_lsa = TestChecker(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer)
+                    test_checker_lsa = ModelTester(texts_for_topic_asses, texts_for_testing, data_sets[i][2], log_writer)
                     lsa = Lsa(model_settings[3], 15, one_pass=model_settings[0],power_iter=model_settings[1], use_tfidf=model_settings[2])
                     lsa.train(texts_for_train)
                     log_writer.add_log("Starting testing LSA model")

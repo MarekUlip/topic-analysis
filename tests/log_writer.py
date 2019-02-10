@@ -3,6 +3,7 @@ import csv
 import os
 import matplotlib.pyplot as plt
 from tests.ModelType import ModelType
+import json
 
 class LogWriter:
     def __init__(self, log_file_path):
@@ -75,3 +76,14 @@ class LogWriter:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         plt.savefig(path)
         plt.clf()
+
+    def write_model_params(self, file_name, params):
+        params_to_save = {}
+        for key, value in params.items():
+            params_to_save[key.name] = value
+        filename = os.getcwd() + file_name + ".txt"
+        print(filename)
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, mode='w+', newline='') as params_file:
+            #params_writer = csv.writer(params_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            params_file.write(json.dumps(params_to_save))

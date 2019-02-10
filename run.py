@@ -47,7 +47,7 @@ data_sets = [(csv_folder + "1", 10,
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params]
 # preproces_variations = []
-preproces_variations = [[False,False,False,False], [True,True,False,True]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
+preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
 # create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
@@ -70,10 +70,10 @@ lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 # create_variations(0,[],lsa_all_vals,lsa_variations)
 
 hdp_variations = []
-num_of_tests = 2
+num_of_tests = 10
 
 test_model = {ModelType.LDA: True,
-              ModelType.LSA: True,
+              ModelType.LSA: False,
               ModelType.LDA_Sklearn: True,
               ModelType.NB: True
               }
@@ -92,8 +92,8 @@ for i in range(len(data_sets)):
             "topic_word_count": 15,
             "kappa": 0.51,
             "tau": 2.0,
-            "passes": 1,
-            "iterations": 1
+            "passes": 25,
+            "iterations": 25
         },
         ModelType.LSA: {
             "topic_count": data_sets[i][1],
@@ -104,13 +104,14 @@ for i in range(len(data_sets)):
         },
         ModelType.LDA_Sklearn: {
             "topic_count": data_sets[i][1],
-            "passes": 1,
-            "iterations": 1
+            "passes": 25,
+            "iterations": 25
         },
         ModelType.NB: {
 
         }
     }
+    log_writer.write_model_params("\\results\\results{}{}\\model-settings".format(data_sets[i][2],start_time),models_params)
     for preprocess_index, preproces_settings in enumerate(preproces_variations):
         seed = 5
         settings = {'strip_nums': preproces_settings[0],

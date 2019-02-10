@@ -29,7 +29,7 @@ class LdaSklearn:
         """
         texts = [text[1] for text in texts]
         train = self.tf_vectorizer.fit_transform(texts)
-        self.model = LatentDirichletAllocation(n_components=self.topic_count, max_iter=self.iterations)
+        self.model = LatentDirichletAllocation(n_components=self.topic_count, max_iter=self.iterations, learning_offset=2.0, learning_decay=0.51)
         self.model.n_iter_ = self.passes
         self.model.fit(train)
 

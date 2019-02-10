@@ -101,13 +101,13 @@ class GeneralTester:
         return "\\results\\results{}{}\\{}\\preprocess{}\\test_num{}".format(dataset_name, start_time, model_name,
                                                                       preprocess_index, test_num)
 
-    def output_model_comparison(self):
+    def output_model_comparison(self, dset_name):
         """
         Creates png chart that shows accuracy comparision of all tested model based on current preprocessing.
         """
         for result in self.model_results:
             self.log_writer.add_to_plot(result[0], result[1])
-        self.log_writer.draw_plot("Porovnaní modelů", "\\results\\charts\\{}\\{}model-compare".format(self.start_time, self.preprocess_style[:2]), self.num_of_tests)
+        self.log_writer.draw_plot("Porovnaní modelů", "\\results\\charts\\{}\\{}{}model-compare".format(self.start_time, self.preprocess_style[:2], dset_name), self.num_of_tests)
         self.model_results.clear()
 
     def output_preprocess_comparison(self, dset_name):

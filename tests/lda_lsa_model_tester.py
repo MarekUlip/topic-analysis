@@ -73,6 +73,7 @@ class LModelTester:
         topic_names_for_matrix = topic_names.copy()
         topic_names_for_matrix.insert(0,"")
         self.confusion_matrix.insert(0,topic_names_for_matrix)
+        self.confusion_matrix_true.insert(0,topic_names_for_matrix)
 
 
     def test_model(self, model, test_name):

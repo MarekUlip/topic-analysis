@@ -1,6 +1,7 @@
 from tests.ModelType import ModelType
 from tests.lda_lsa_model_tester import LModelTester
 from tests.naive_bayes_model_tester import NBModelTester
+from tests.lsa_tester import LSAModelTester
 from methods.Lda import Lda
 from methods.Lsa import Lsa
 from methods.Lda_sklearn import LdaSklearn
@@ -31,7 +32,7 @@ class GeneralTester:
         self.training_docs = training_docs
         self.preprocess_style = preprocess_style
 
-    def do_test(self, model_type, num_of_tests, statistics, params, test_params):
+    def do_test(self, model_type, num_of_tests, statistics, params, test_params, stable=False):
         """
         Do test on provided model type. Also sets things up before the test.
         :param model_type: ModelType enum for model that should be tested
@@ -39,11 +40,12 @@ class GeneralTester:
         :param statistics: list to which accuracy and other information will be written
         :param params: Parameters for tested model
         :param test_params: Parameters for test
+        :param stable: Indicates whether algorithm is deterministic. If True only one test will be commited and the rest of results will be padded with same result (for charts comparisons).
         """
         self.num_of_tests = num_of_tests
         accuracies = []
         statistics.append([])
-        statistics.append(model_type.name)
+        statistics.append([model_type.name])
         statistics.append([x for x in range(num_of_tests)])
         statistics[len(statistics) - 1].append("Average")
         statistics.append([])
@@ -55,6 +57,11 @@ class GeneralTester:
             statistics[len(statistics) - 1].append(accuracy)
             self.log_writer.add_log("Testing {} model done with {}% accuracy".format(model_type, accuracy * 100))
             self.log_writer.add_log("\n\n")
+            if stable:
+                for j in range(num_of_tests-1):
+                    accuracies.append(accuracy)
+                    statistics[len(statistics) - 1].append(accuracy)
+                break
         total_accuracy = sum(accuracies) / len(accuracies)
         self.log_writer.add_to_plot(model_type.name, accuracies)
         self.log_writer.draw_plot(model_type.name+" "+self.preprocess_style, "\\results\\results{0}{1}\\{2}\\preprocess{3}\\graph{3}-{2}{0}{1}".format(test_params.get("dataset_name","none"), self.start_time,
@@ -78,8 +85,6 @@ class GeneralTester:
         model = None
         if model_type == ModelType.LDA:
             model = Lda(self.num_of_topics, params=params)
-        elif model_type == ModelType.LSA:
-            model = Lsa(self.num_of_topics, params=params)
         elif model_type == ModelType.LDA_Sklearn:
             model = LdaSklearn(self.num_of_topics, params=params)
         if model is not None:
@@ -88,6 +93,15 @@ class GeneralTester:
             self.log_writer.add_log("Starting testing {} model".format(model_type))
             tester = LModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer, self.topic_names)
             return tester.test_model(model,test_name)
+
+        if model_type == ModelType.LSA:
+            model = Lsa(self.num_of_topics, params=params)
+            self.log_writer.add_log("Starting training {} model".format(model_type))
+            model.train(self.training_docs)  # TODO watch out for rewrites
+            self.log_writer.add_log("Starting testing {} model".format(model_type))
+            tester = LSAModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer,
+                                    self.topic_names)
+            return tester.test_model(model, test_name)
 
         if model_type == ModelType.NB:
             model = NaiveBayes()

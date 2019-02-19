@@ -39,16 +39,19 @@ def get_time_in_millis():
 log_writer = LogWriter("log.txt")
 base_path = os.getcwd()
 csv_folder = base_path + "\\csv_folder\\"
-data_sets = [(csv_folder + "1", 10,
-              "-reuters-"), (csv_folder+"4",20,"-20newsgroups-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
+data_sets = [(csv_folder + "1", 10, "-reuters-"),
+             (csv_folder + "2", 11, "-DBpedia-"),
+             (csv_folder + "3", 4, "-AGsNews-"),
+             (csv_folder+"4",20,"-20newsgroups-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 # data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 
 
-strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = [True, False]
-preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params]
-# preproces_variations = []
-preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
-# create_variations(0, [], preproces_all_vals, preproces_variations)
+strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = remove_stop_words = [True, False]
+preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params, remove_stop_words]
+#preproces_variations = [[False,False,False,False,False], [False,False,False,False,True]]
+#preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
+preproces_variations = []
+create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
 lda_tau = [2.0]
@@ -70,11 +73,16 @@ lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 # create_variations(0,[],lsa_all_vals,lsa_variations)
 
 hdp_variations = []
-num_of_tests = 10
+num_of_tests = 3
 
-test_model = {ModelType.LDA: True,
+test_model = {ModelType.LDA: False,
               ModelType.LSA: False,
-              ModelType.LDA_Sklearn: True,
+              ModelType.LDA_Sklearn: False,
+              ModelType.NB: True
+              }
+is_stable = {ModelType.LDA: False,
+              ModelType.LSA: True,
+              ModelType.LDA_Sklearn: False,
               ModelType.NB: True
               }
 start_time = get_time_in_millis()
@@ -117,11 +125,12 @@ for i in range(len(data_sets)):
         settings = {'strip_nums': preproces_settings[0],
                     'use_stemmer': preproces_settings[1],
                     'use_lemmatizer': preproces_settings[2],
-                    'strip_short': preproces_settings[3]
+                    'strip_short': preproces_settings[3],
+                    'remove_stop_words': preproces_settings[4]
                     }
         log_writer.add_log(
-            "Initializing text preprocessor with strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}.".format(
-                preproces_settings[0], preproces_settings[1], preproces_settings[2], preproces_settings[3]))
+            "Initializing text preprocessor with strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}, remove_stop_words: {}.".format(
+                preproces_settings[0], preproces_settings[1], preproces_settings[2], preproces_settings[3], preproces_settings[4]))
         preprocessor = TextPreprocessor(settings)
 
         log_writer.add_log("Starting preprocessing texts of {} for training".format(data_sets[i][0]))
@@ -137,25 +146,26 @@ for i in range(len(data_sets)):
         # LdaSklearn(data_sets[i][1], passes=lda_passes[0],iterations=lda_iterations[0]),
 
         statistics = []
-        preprocess_style = "{} No nums: {}, Stemmer: {}, Lemmatize {}, No short: {}.".format(preprocess_index,
+        preprocess_style = "{} No nums: {}, Stemmer: {}, Lemmatize {}, No short: {}, Rm stopwords: {}".format(preprocess_index,
                                                                                              preproces_settings[0],
                                                                                              preproces_settings[1],
                                                                                              preproces_settings[2],
-                                                                                             preproces_settings[3])
+                                                                                             preproces_settings[3],
+                                                                                             preproces_settings[4])
         statistics.append([preprocess_style])
         tester.set_new_preprocess_docs(texts_for_train, texts_for_testing, preprocess_style)
         test_params = {"preprocess_index": preprocess_index, "dataset_name": data_sets[i][2]}
         for m_index, model in enumerate(models_for_test):
             if test_model[model]:
                 # For every preprocesing add line that descripbes methods used
-                accuracies = []
+                """accuracies = []
                 statistics.append([])
                 statistics.append([model.name])
                 statistics.append([x for x in range(num_of_tests)])
                 statistics[len(statistics) - 1].append("Average")
-                statistics.append([])  # TODO dont forget to add test params
-                tester.do_test(model, num_of_tests, statistics, models_params[model], test_params)
-        tester.output_model_comparison()
+                statistics.append([])  # TODO dont forget to add test params"""
+                tester.do_test(model, num_of_tests, statistics, models_params[model], test_params, is_stable[model])
+        tester.output_model_comparison(data_sets[i][2])
         statistics.append([])
         statistics_to_merge.append(statistics)
 

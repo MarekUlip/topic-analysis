@@ -5,7 +5,7 @@ from gensim.test.utils import datapath
 
 
 class Lda:
-    def __init__(self, topic_count=5, topic_word_count=15, alpha="auto", eta="auto", kappa=0.5, tau=1.0, minimum_probability=0.0, passes=20, iterations=5, random_state=5, params=None):
+    def __init__(self, topic_count=5, topic_word_count=15, alpha="auto", eta="auto", kappa=0.51, tau=2.0, minimum_probability=0.0, passes=25, iterations=25, random_state=5, params=None):
         if params is not None:
             self.topic_count = params.get("topic_count", topic_count)
             self.topic_word_count = params.get("topic_word_count", topic_word_count)

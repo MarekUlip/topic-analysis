@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix
 
 base_path = os.getcwd()
 csv_folder = base_path+"\\csv_folder\\"
-data_sets = [(csv_folder+"4",10,"-reuters-")]#, (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
+data_sets = [(csv_folder+"4",20,"-reuters-")]#, (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 #data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 
 
@@ -31,20 +31,23 @@ for index, preproces_settings in enumerate(preproces_variations):
     texts_for_train = text_preprocessor.load_and_prep_csv([data_sets[i][0]+"\\train.csv"], "eng", False, 1, ';')
     log_writer.add_log("Preprocessing finished")"""
 
-    texts_for_topic_asses = text_preprocessor.load_and_prep_csv([data_sets[0][0] + "\\train.csv"], "eng", True, 1, ';')
-    texts_for_testing = text_preprocessor.load_and_prep_csv([data_sets[0][0] + "\\test.csv"], "eng", True, 1, ';')
-    texts = texts_for_topic_asses.copy()
-    texts.extend(texts_for_testing)
+    textsss= text_preprocessor.experimental_preprocess([data_sets[0][0] + "\\test.csv"])
+    #texts_for_topic_asses = text_preprocessor.load_and_prep_csv([data_sets[0][0] + "\\train.csv"], "eng", True, 1, ';')
+    #texts_for_testing = text_preprocessor.load_and_prep_csv([data_sets[0][0] + "\\test.csv"], "eng", True, 1, ';')
+    #texts = texts_for_topic_asses.copy()
+    #texts.extend(texts_for_testing)
+    textsss.shuffle()
+    texts = textsss[:int(len(textsss)/2)]
     articles = []
     topics = []
-    for text in texts:
+    for text in textsss:
         articles.append(text[1])
         topics.append(text[0])
 
     counts = CountVectorizer().fit_transform(articles)
     tfidf = TfidfTransformer().fit_transform(counts)  # TODO try with fit_transform
     tst = tfidf[0]
-    i = len(texts_for_topic_asses)
+    i = int(len(textsss)/2)#len(texts_for_topic_asses)
     """X_train, X_test, y_train, y_test = train_test_split(counts, topics, test_size=0.5, random_state=69)
     model = MultinomialNB().fit(X_train, y_train)
     predicted = model.predict(X_test)

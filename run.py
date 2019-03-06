@@ -42,16 +42,19 @@ csv_folder = base_path + "\\csv_folder\\"
 data_sets = [(csv_folder + "1", 10, "-reuters-"),
              (csv_folder + "2", 11, "-DBpedia-"),
              (csv_folder + "3", 4, "-AGsNews-"),
-             (csv_folder+"4",20,"-20newsgroups-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
+             (csv_folder+"4",20,"-20newsgroups-"),
+             (csv_folder + "5", 14, "-DBpediaReal-"),
+             (csv_folder + "6", 4, "-AGsNewsReal-"),
+             (csv_folder + "7", 8, "-Yelp-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 # data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 
 
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = remove_stop_words = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params, remove_stop_words]
-#preproces_variations = [[False,False,False,False,False], [False,False,False,False,True]]
+preproces_variations = [[False,True,False,True,True]]
 #preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
-preproces_variations = []
-create_variations(0, [], preproces_all_vals, preproces_variations)
+#preproces_variations = []
+#create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
 lda_tau = [2.0]
@@ -73,11 +76,11 @@ lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 # create_variations(0,[],lsa_all_vals,lsa_variations)
 
 hdp_variations = []
-num_of_tests = 3
+num_of_tests = 10
 
-test_model = {ModelType.LDA: False,
-              ModelType.LSA: False,
-              ModelType.LDA_Sklearn: False,
+test_model = {ModelType.LDA: True,
+              ModelType.LSA: True,
+              ModelType.LDA_Sklearn: True,
               ModelType.NB: True
               }
 is_stable = {ModelType.LDA: False,
@@ -90,7 +93,7 @@ start_time = get_time_in_millis()
 models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn]
 
 tester = GeneralTester(log_writer, start_time)
-for i in range(len(data_sets)):
+for i in [0,1,2,3]:#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([data_sets[i][0] + "\\topic-names.csv"])
     tester.set_new_dataset(data_sets[i][1], topic_names)
     statistics_to_merge = []

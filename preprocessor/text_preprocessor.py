@@ -10,7 +10,6 @@ from lang_detector import detect_lang
 from gensim.parsing import preprocessing
 from settings import Settings
 import csv
-import sys
 import glob
 
 csv.field_size_limit(2**24) #(sys.maxsize) in 64 bit version sys.maxsize throws overflowError hence use of 2**24
@@ -151,6 +150,42 @@ class TextPreprocessor:
             if exc.errno != errno.EISDIR:
                 raise
         return doc
+
+    """def experimental_preprocess(self, csvs):
+        topic_nums = []
+        texts = []
+        stepper = 0
+        print(stepper)
+        stepper += 1
+        for item in csvs:
+            with open(item, encoding='utf-8', errors='ignore') as csvfile:
+                csv_read = csv.reader(csvfile, delimiter=";")
+                for row in csv_read:
+                    topic_nums.append(int(row[0]))
+                    texts.append(row[1])
+
+        print(stepper)
+        stepper += 1
+        bigram = gensim.models.Phrases(texts)
+        print(stepper)
+        stepper += 1
+        #text = " ".join(gensim.utils.simple_preprocess(text, deacc=True, min_len=3))
+        stops = set(stopwords.words('english'))
+        texts = [word for word in texts if word not in stops]
+        print(stepper)
+        stepper += 1
+        texts = [bigram[line] for line in texts]
+        print(stepper)
+        stepper += 1
+        texts = [
+            [word.split('/')[0] for word in lemmatize(' '.join(line), allowed_tags=nltk.re.compile('(NN)'), min_length=3)]
+            for line in texts]
+        print(stepper)
+        stepper += 1
+        #text = [word for word in text if word not in stops]
+        #text = big
+        print(texts)
+        return zip(topic_nums, texts)"""
 
     def prep_text_czech(self, text):
         res = preprocessing.strip_punctuation(text.lower())

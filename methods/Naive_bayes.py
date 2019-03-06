@@ -25,7 +25,7 @@ class NaiveBayes:
         topics = []
         self.test_start_index = len(texts_for_train)
         texts = texts_for_train.copy()
-        texts.extend(texts_for_test) #TODO careful
+        texts.extend(texts_for_test) #TODO careful for rewrites
         for text in texts:
             self.articles.append(text[1])
             topics.append(text[0])

@@ -9,6 +9,7 @@ from czech_stopwords import cz_stopwords
 from lang_detector import detect_lang
 from gensim.parsing import preprocessing
 from settings import Settings
+from alternative_preprocess import preprocess
 import csv
 import glob
 
@@ -205,6 +206,8 @@ class TextPreprocessor:
 
     def prep_text_eng(self, text):
         # TODO optimalize
+        if self.settings['use_alternative']:
+            return preprocess(text)
         res = preprocessing.strip_punctuation(text.lower())
         if self.settings['strip_nums']:
             res = preprocessing.strip_numeric(res)

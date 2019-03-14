@@ -45,7 +45,8 @@ data_sets = [(csv_folder + "1", 10, "-reuters-"),
              (csv_folder+"4",20,"-20newsgroups-"),
              (csv_folder + "5", 14, "-DBpediaReal-"),
              (csv_folder + "6", 4, "-AGsNewsReal-"),
-             (csv_folder + "7", 8, "-Yelp-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
+             (csv_folder + "7", 8, "-Yelp-"),
+             (csv_folder + "8", 7, "-20newsgroupsReduced-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 # data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 
 
@@ -76,7 +77,7 @@ lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 # create_variations(0,[],lsa_all_vals,lsa_variations)
 
 hdp_variations = []
-num_of_tests = 10
+num_of_tests = 1
 
 test_model = {ModelType.LDA: True,
               ModelType.LSA: True,
@@ -93,7 +94,7 @@ start_time = get_time_in_millis()
 models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn]
 
 tester = GeneralTester(log_writer, start_time)
-for i in [0,1,2,3]:#range(len(data_sets)):
+for i in [7]:#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([data_sets[i][0] + "\\topic-names.csv"])
     tester.set_new_dataset(data_sets[i][1], topic_names)
     statistics_to_merge = []
@@ -129,7 +130,8 @@ for i in [0,1,2,3]:#range(len(data_sets)):
                     'use_stemmer': preproces_settings[1],
                     'use_lemmatizer': preproces_settings[2],
                     'strip_short': preproces_settings[3],
-                    'remove_stop_words': preproces_settings[4]
+                    'remove_stop_words': preproces_settings[4],
+                    'use_alternative': True
                     }
         log_writer.add_log(
             "Initializing text preprocessor with strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}, remove_stop_words: {}.".format(

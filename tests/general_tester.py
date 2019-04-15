@@ -24,10 +24,21 @@ class GeneralTester:
         self.num_of_tests = 1
 
     def set_new_dataset(self, num_of_topics, topic_names):
+        """
+        Notifies that new dataset has been set and updates num_of_topics and topic_names atribtes
+        :param num_of_topics:
+        :param topic_names:
+        """
         self.num_of_topics = num_of_topics
         self.topic_names = topic_names
 
     def set_new_preprocess_docs(self, training_docs, testing_docs, preprocess_style):
+        """
+        Sets new dataset documents to be tested
+        :param training_docs:
+        :param testing_docs:
+        :param preprocess_style:
+        """
         self.testing_docs = testing_docs
         self.training_docs = training_docs
         self.preprocess_style = preprocess_style
@@ -112,6 +123,15 @@ class GeneralTester:
             return tester.test_model(model,test_name)
 
     def create_test_name(self, dataset_name, start_time, model_name, preprocess_index, test_num):
+        """
+        Helper function to create path to a current test folder
+        :param dataset_name: name of a tested dataset
+        :param start_time: can be any unique number. (if number was already used in past test results will rewrite those past test results)
+        :param model_name: name of a tested model
+        :param preprocess_index: Index of a preprocess settings
+        :param test_num: number of a test (if multiple tests are conducted on a single model)
+        :return: path to test folder
+        """
         return "\\results\\results{}{}\\{}\\preprocess{}\\test_num{}".format(dataset_name, start_time, model_name,
                                                                       preprocess_index, test_num)
 

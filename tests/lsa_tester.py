@@ -40,6 +40,12 @@ class LSAModelTester:
         self.confusion_matrix.insert(0,topic_names_for_matrix)
 
     def test_model(self, model, test_name):
+        """
+        Tests the precission of the provided model. Also writes out confuision matrix
+        :param model: model to be tested
+        :param test_name: name of the test
+        :return: model accuracy if form of (accuracy %)/100. also outputs confusion matrix which is not part of return
+        """
         stats = []
         for text in self.testing_docs:
             res = model.analyse_text(text[1])

@@ -15,6 +15,8 @@ import glob
 
 csv.field_size_limit(2**24) #(sys.maxsize) in 64 bit version sys.maxsize throws overflowError hence use of 2**24
 
+#list of stopwords some are not contained in nltk list. Used to make better preprocess
+#TODO remove duplicated stopwords
 stp_wrds = ['a', 'able', 'about', 'across', 'after', 'all', 'almost', 'also', 'am', 'among', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'because', 'been', 'but', 'by', 'can', 'cannot', 'could', 'dear', 'did', 'do', 'does', 'either', 'else', 'ever', 'every', 'for', 'from', 'get', 'got', 'had', 'has', 'have', 'he', 'her', 'hers', 'him', 'his', 'how', 'however', 'i', 'if', 'in', 'into', 'is', 'it', 'its', 'just', 'least', 'let', 'like', 'likely', 'may', 'me', 'might', 'most', 'must', 'my', 'neither', 'no', 'nor', 'not', 'of', 'off', 'often', 'on', 'only', 'or', 'other', 'our', 'own', 'rather', 'said', 'say', 'says', 'she', 'should', 'since', 'so', 'some', 'than', 'that', 'the', 'their', 'them', 'then', 'there', 'these', 'they', 'this', 'tis', 'to', 'too', 'twas', 'us', 'wants', 'was', 'we', 'were', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'will', 'with', 'would', 'yet', 'you', 'your']
 
 class TextPreprocessor:
@@ -31,13 +33,31 @@ class TextPreprocessor:
                     "R": wordnet.ADV}
 
     def reload_settings(self):
+        """
+        Forces reload of settings. If some changes were added after constructing this class this method will apply them.
+        """
         self.settings_manager.load_settings()
         self.settings = self.settings_manager.settings
 
     def preprocess_texts(self):
+        """
+        Preprocesses and saved preprocessed texts onto disk (path must be provided via settings)
+        """
         self.save_texts(self.prep_texts())
 
-    def load_and_prep_csv(self, csvs, lang, load_for_test, row_to_take, delimeter=';', preproces_limit=False, preproces_limit_count=100):
+    def load_and_prep_csv(self, csvs, lang, load_for_test, col_to_take, delimeter=';', preproces_limit=False, preproces_limit_count=100):
+        """
+        Loads and preprocesses provided csv files
+        :param csvs: list csv file paths to be loaded and preprocessed
+        :param lang: language that should be used for preprocessing
+        :param load_for_test: Defines form at which documents will be returned (True: document will be in form of tuple(topic index, string text),
+                False: document will be in form of list of word strings)
+        :param col_to_take: Defines which column in csv row should be preprocessed
+        :param delimeter: Delimeter that was used to divide single items of row
+        :param preproces_limit: Indicates wheter there is a limit to a number of preprocessed documents
+        :param preproces_limit_count: if preproces_limit is set True then this number will be used to limit the number of preprocessed documents
+        :return: List of preprocessed documents where a document form is defined by a parameter load_for_test
+        """
         articles = []
         processed = 0
         if lang == "cz":
@@ -48,13 +68,13 @@ class TextPreprocessor:
             with open(item, encoding='utf-8', errors='ignore') as csvfile:
                 csv_read = csv.reader(csvfile, delimiter=delimeter)
                 for row in csv_read:
-                    if not row[row_to_take]:
+                    if not row[col_to_take]:
                         print("Empty string skipping")
                         continue
                     if load_for_test:
-                        articles.append((int(row[0]), prep_method(row[row_to_take])))
+                        articles.append((int(row[0]), prep_method(row[col_to_take])))
                     else:
-                        articles.append(prep_method(row[row_to_take]).split())
+                        articles.append(prep_method(row[col_to_take]).split())
                     if preproces_limit:
                         processed += 1
                         if processed >= preproces_limit_count:
@@ -63,6 +83,12 @@ class TextPreprocessor:
 
     @staticmethod
     def load_csv(csvs, delimeter=';'):
+        """
+        Loads csv files and returns list of rows from all provided csvs. No preprocessing is done
+        :param csvs: csv files to be loaded
+        :param delimeter: Delimeter that was used to divide single items of row
+        :return: ist of rows from all provided csvs
+        """
         articles = []
         for item in csvs:
             with open(item, encoding='utf-8', errors='ignore') as csvfile:
@@ -72,6 +98,12 @@ class TextPreprocessor:
         return articles
 
     def prep_texts(self, docs=None, lang=None):
+        """
+        Preprocesses provided docs and returns them as list
+        :param docs: list of documents to be preprocessed if no list is provided csv file from settings path is loaded instead
+        :param lang: Languange to be used with preprocessing. If no language is specified language is guessed based on number of stopwords.
+        :return: list of preprocessed documents
+        """
         if docs is None:
             docs = self.get_texts()
         clean_docs = []
@@ -86,9 +118,13 @@ class TextPreprocessor:
         return clean_docs
 
     def prep_texts_by_one(self, path=None, lang=None):
+        """
+        Preprocesses text files in a provided folders. Files are rewritten with their preprocessed version.
+        :param path: path to text files to be preprocessed if no list is provided csv file from settings path is loaded instead
+        :param lang: Languange to be used with preprocessing. If no language is specified language is guessed based on number of stopwords.
+        """
         if path is None:
             path = self.settings["file_folder"]
-        docs = []
         path += "/*.txt"
         files = glob.glob(path)
         for name in files:
@@ -107,9 +143,13 @@ class TextPreprocessor:
             except IOError as exc:
                 if exc.errno != errno.EISDIR:
                     raise
-        return docs
+        return [] #empty list for compatability reasons
 
     def save_texts(self, docs):
+        """
+        Saves provided texts into a file folder set in settings
+        :param docs: documents to be saved
+        """
         path = self.settings["file_folder"]
         path += "/*.txt"
         files = glob.glob(path)
@@ -123,6 +163,11 @@ class TextPreprocessor:
                     raise
 
     def get_texts(self, path=None):
+        """
+        Loads documents from provided path
+        :param path: path from which documents will be loaded. If no path is specified path set via settings will be used instead.
+        :return: list containing documents strings
+        """
         if path is None:
             path = self.settings["file_folder"]
         docs = []
@@ -139,8 +184,14 @@ class TextPreprocessor:
         return docs
 
     def get_text(self, path):
+        """
+        Loads single text file from provided path
+        :param path: path from which document will be loaded
+        :return: loaded document string not processed
+        """
         if path is None:
-            path = self.settings["file_folder"]
+            print("No path specified returning")
+            return ""
         doc = None
         file = glob.glob(path)
         try:
@@ -151,42 +202,6 @@ class TextPreprocessor:
             if exc.errno != errno.EISDIR:
                 raise
         return doc
-
-    """def experimental_preprocess(self, csvs):
-        topic_nums = []
-        texts = []
-        stepper = 0
-        print(stepper)
-        stepper += 1
-        for item in csvs:
-            with open(item, encoding='utf-8', errors='ignore') as csvfile:
-                csv_read = csv.reader(csvfile, delimiter=";")
-                for row in csv_read:
-                    topic_nums.append(int(row[0]))
-                    texts.append(row[1])
-
-        print(stepper)
-        stepper += 1
-        bigram = gensim.models.Phrases(texts)
-        print(stepper)
-        stepper += 1
-        #text = " ".join(gensim.utils.simple_preprocess(text, deacc=True, min_len=3))
-        stops = set(stopwords.words('english'))
-        texts = [word for word in texts if word not in stops]
-        print(stepper)
-        stepper += 1
-        texts = [bigram[line] for line in texts]
-        print(stepper)
-        stepper += 1
-        texts = [
-            [word.split('/')[0] for word in lemmatize(' '.join(line), allowed_tags=nltk.re.compile('(NN)'), min_length=3)]
-            for line in texts]
-        print(stepper)
-        stepper += 1
-        #text = [word for word in text if word not in stops]
-        #text = big
-        print(texts)
-        return zip(topic_nums, texts)"""
 
     def prep_text_czech(self, text):
         res = preprocessing.strip_punctuation(text.lower())
@@ -231,6 +246,12 @@ class TextPreprocessor:
         return res
 
     def get_wordnet_pos(self, word):
+        """
+        Returns Part Of Speech tag for a provided word. Used with lemmatizer. Note that using this method makes lemmatization
+        very slow
+        :param word: word for which POS tag should be found
+        :return: POS tag
+        """
         """Map POS tag to first character lemmatize() accepts"""
 
         return self.tag_dict.get(nltk.pos_tag([word])[0][1][0].upper(), wordnet.NOUN)

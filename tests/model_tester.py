@@ -32,6 +32,10 @@ class ModelTester:
             self.topic_names[int(item[0])] = item[1]
 
     def prep_train_docs_for_assesment(self, training_docs=None):
+        """
+        Divides training documents into topic groups
+        :param training_docs: if not None this list will be used for preparation
+        """
         if training_docs is not None:
             self.training_docs = training_docs
         for i in range(len(self.training_docs)):
@@ -41,6 +45,9 @@ class ModelTester:
                 self.representants[self.training_docs[i][0]].append(self.training_docs[i])
 
     def count_topic_dist(self):
+        """
+        Counts topic distribution. Can be used as alpha parameter in LDA model.
+        """
         if len(self.representants) == 0:
             self.log_writer("Representants not set. Cannot make topic dist.")
             return
@@ -49,6 +56,9 @@ class ModelTester:
             self.topic_numbers.append(key)
 
     def add_descriptions_to_confusion_matrix(self):
+        """
+        Adds topic names into confusion matrix as new first row and column.
+        """
         topic_names = []
         for topic_num in self.topic_numbers:
             topic_names.append(self.topic_names[topic_num])
@@ -60,6 +70,12 @@ class ModelTester:
 
 
     def test_model(self, model, test_name):
+        """
+        Runs actual test on a model
+        :param model_type:  ModelType enum for model that should be tested
+        :param test_name: name that will be used for creating output folder
+        :return: Accuracy of provided model
+        """
         statistics = []
         stats = []
         for item in model.get_topics():
@@ -99,6 +115,10 @@ class ModelTester:
 
 
     def connect_topic_id_to_topics(self, model):
+        """
+        Attempts to guess what real topic number has each learned topic in a model
+        :param model: model to be guessed
+        """
         #t = model.get_topics()
         for key, value in self.representants.items():
             connection_results = {}

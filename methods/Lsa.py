@@ -5,6 +5,13 @@ from gensim.test.utils import datapath
 
 class Lsa:
     def __init__(self, topic_count=10, topic_word_count=15, one_pass=False, power_iter=2, extra_samples=1, decay=1.0, use_tfidf=True, params=None):
+        """
+        Creates untrained LSA model with specified parameters.
+        :param topic_count: number of topics that will be encountered in dataset
+        :param topic_word_count: number of words that will be printed with get_topics method
+        :param use_tfidf: Indicates whether lsa should work with tfidf matrix
+        :param params: parameters for this model represented with dictionary. None specified values will be converted into default values.
+        """
         if params is not None:
             self.topic_count = params.get("topic_count", topic_count)
             self.topic_word_count = params.get("topic_word_count", topic_word_count)
@@ -59,6 +66,11 @@ class Lsa:
         #return lsamodel.print_topics(num_topics=self.topic_count, num_words=self.topic_word_count)
 
     def analyse_text(self, text):
+        """
+        Analyses provided text and returns topic index of the most possible topic
+        :param text:
+        :return: integer index of topic
+        """
         vec_bow = self.dictionary.doc2bow(text.split())
         vec_lsi = self.model[vec_bow]
         sims = self.index[vec_lsi]
@@ -68,4 +80,7 @@ class Lsa:
         return self.topics[sim[0]]#[self.topics[sim[0]], sim[1]]#self.model[bow]
 
     def get_topics(self):
+        """
+        :return: words assosiated with each topic
+        """
         return self.model.print_topics(-1, self.topic_word_count)

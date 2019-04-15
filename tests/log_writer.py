@@ -7,6 +7,9 @@ import json
 
 class LogWriter:
     def __init__(self, log_file_path):
+        """
+        :param log_file_path: path to a file into which logs will be written
+        """
         self.path = log_file_path
         self.logs = ["*****************\n"]
 
@@ -78,6 +81,11 @@ class LogWriter:
         plt.clf()
 
     def write_model_params(self, file_name, params):
+        """
+        Writes params of the tested model into a file
+        :param file_name: path to a file into which the params should be written. If file does not exist it will be created.
+        :param params: Paramas to be written into a file
+        """
         params_to_save = {}
         for key, value in params.items():
             params_to_save[key.name] = value

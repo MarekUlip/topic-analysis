@@ -36,7 +36,15 @@ class NaiveBayes:
         self.end = len(self.articles)
 
     def analyse_texts(self):
+        """
+        Analyses texts for test which are provided via constructor
+        :return: list of topic indexes for each document contained in texts for tests
+        """
         return self.model.predict(self.tfidf[self.test_start_index:self.end])
 
     def get_topics(self):
+        """
+        This model does not return topics. (Functuion was kept for compatability reasons)
+        :return: list
+        """
         return ["Naive bayes only knows indexes. Topic words ommited."]

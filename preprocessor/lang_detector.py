@@ -25,5 +25,6 @@ def detect_lang(text):
 
 def prep_text(text):
     text = preprocessing.strip_punctuation(text.lower())
+    #Stripping short word due to similarity of some English and Czech short words (i.e. on, a etc.)
     text = preprocessing.strip_short(text, minsize=3)
     return set(text.split())

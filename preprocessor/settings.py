@@ -13,7 +13,9 @@ class Settings:
             'strip_nums': False,
             'use_stemmer': False,
             'use_lemmatizer': True,
-            'strip_short': False
+            'strip_short': False,
+            'use_alternative': False,
+            'remove_stop_words': True
         }
         self.load_settings()
 

@@ -1,24 +1,16 @@
 import os
 import sys
-import random
-import numpy
 import time
 
-from methods.Lda import Lda
-from methods.Lsa import Lsa
-from methods.Hdp import Hdp
-from methods.Lda_sklearn import LdaSklearn
-from methods.Naive_bayes import NaiveBayes
 from tests.ModelType import ModelType
 from tests.general_tester import GeneralTester
 
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)
 
-import preprocessor.text_preprocessor
 from preprocessor.text_preprocessor import TextPreprocessor
 from tests.log_writer import LogWriter
-from tests.model_tester import ModelTester
+
 
 
 def create_variations(depth, field, all_vars, possibilities):
@@ -94,6 +86,7 @@ start_time = get_time_in_millis()
 models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn]
 
 tester = GeneralTester(log_writer, start_time)
+#array to iterate should contain valid indexes (ranging from 0 to length of data_sets) of datasets that are present in list data_sets
 for i in [7]:#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([data_sets[i][0] + "\\topic-names.csv"])
     tester.set_new_dataset(data_sets[i][1], topic_names)

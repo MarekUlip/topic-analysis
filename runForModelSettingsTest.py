@@ -15,6 +15,10 @@ from preprocessor.text_preprocessor import TextPreprocessor
 from tests.log_writer import LogWriter
 from tests.model_tester import ModelTester
 
+"""
+Old test used to find best parameters for models LSA and LDA.
+"""
+
 def create_variations(depth, field, all_vars, possibilities):
     if depth == len(all_vars):
         possibilities.append(field)

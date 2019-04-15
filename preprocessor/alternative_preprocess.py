@@ -9,25 +9,52 @@ from nltk.stem import LancasterStemmer, WordNetLemmatizer
 
 stemmer = LancasterStemmer()
 
+
 def strip_html(text):
+    """
+    Removes html tags from text
+    :param text: text from which tags should be removed
+    :return: text without html tags
+    """
     soup = BeautifulSoup(text, "html.parser")
     return soup.get_text()
 
+
 def remove_between_square_brackets(text):
+    """
+    Removes square brackets and all text that is inside those brackets. Use it only if you know that text inside square
+    brackets is not useful for topic analysis
+    :param text: text to be cleared
+    :return: text without square brackets
+    """
     return re.sub('\[[^]]*\]', '', text)
 
+
 def denoise_text(text):
+    """
+    Combines strip_html and remove_between_square_brackets
+    :param text: text to be denoise
+    :return: denoised string
+    """
     text = strip_html(text)
     text = remove_between_square_brackets(text)
     return text
 
 
 def replace_contractions(text):
-    """Replace contractions in string of text"""
+    """
+    Replace contractions in provided text
+    :param text:
+    :return: text with replaced contractions
+    """
     return contractions.fix(text)
 
 def remove_non_ascii(words):
-    """Remove non-ASCII characters from list of tokenized words"""
+    """
+    Remove non-ASCII characters from provided words
+    :param words: list of word strings
+    :return: list of word strings with only ASCII characters
+    """
     new_words = []
     for word in words:
         new_word = unicodedata.normalize('NFKD', word).encode('ascii', 'ignore').decode('utf-8', 'ignore')

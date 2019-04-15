@@ -7,6 +7,10 @@ import numpy as np
 import os
 from sklearn.metrics import confusion_matrix
 
+"""
+Script was used only for implementation testing. 
+"""
+
 base_path = os.getcwd()
 csv_folder = base_path+"\\csv_folder\\"
 data_sets = [(csv_folder+"4",20,"-reuters-")]#, (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]

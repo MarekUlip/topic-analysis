@@ -34,19 +34,38 @@ class LdaSklearn:
         self.model.fit(train)
 
     def extract_important_words(self, topics, keep_values=True):
+        """
+        Not implemented for this model kept back for compatability reasons
+        """
         pass
 
     def save_model(self):
+        """
+        Not implemented for this model kept back for compatability reasons
+        """
         pass
 
     def load_model(self):
+        """
+        Not implemented for this model kept back for compatability reasons
+        """
         pass
 
     def analyse_text(self, text):
+        """
+        Analyses provided text and returns list with topic index of most possible topic
+        :param text: text to be analysed
+        :return: list with topic index of most possible topic
+        """
+        #Returning list of one int is for testing compatability
         test = self.tf_vectorizer.transform(["".join(word for word in text)])
         topic_dist = np.matrix(self.model.transform(test))
         return [(topic_dist.argmax(axis=1).item(0), 1)]
 
     def get_topics(self):
+        """
+        Not implemented kept back for compatability reasons
+        :return: empty list
+        """
         return []#self.model.print_topics(-1, self.topic_word_count)
 

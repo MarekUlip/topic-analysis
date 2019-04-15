@@ -32,6 +32,9 @@ class NBModelTester:
             self.topic_numbers.append(int(item[0]))
 
     def add_descriptions_to_confusion_matrix(self):
+        """
+        Adds topic names into confusion matrix as new first row and column.
+        """
         topic_names = []
         for topic_num in self.topic_numbers:
             topic_names.append(self.topic_names[topic_num])
@@ -43,6 +46,12 @@ class NBModelTester:
 
 
     def test_model(self, model, test_name):
+        """
+        Runs actual test on a model
+        :param model_type:  ModelType enum for model that should be tested
+        :param test_name: name that will be used for creating output folder
+        :return: Accuracy of provided model
+        """
         stats = []
         predicted = model.analyse_texts()
         for index, topic_num in enumerate(predicted):

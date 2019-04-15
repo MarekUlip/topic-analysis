@@ -54,6 +54,10 @@ class LModelTester:
                 self.representants[self.training_docs[i][0]].append(self.training_docs[i])
 
     def count_topic_dist(self):
+        """
+        Counts relative topic distribution. This can be used with LDA alpha parameter.
+        counted value is saved in topic_distribution property
+        """
         if len(self.representants) == 0:
             self.log_writer("Representants not set. Cannot make topic dist.")
             return

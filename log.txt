@@ -25480,3 +25480,388 @@
 
 
 2019-03-11 00:29:33.492411: Total accuracy is: 0.8095167725727797
+*****************
+2019-04-21 14:44:31.987961: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer True, strip_short: True, remove_stop_words: True.
+2019-04-21 14:44:31.987961: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:45:53.999512: Preprocessing finished
+2019-04-21 14:45:53.999512: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:46:03.672740: Preprocessing finished
+2019-04-21 14:46:03.672740: Starting training ModelType.NB model
+2019-04-21 14:46:08.202922: Starting testing ModelType.NB model
+2019-04-21 14:46:08.281002: Testing ModelType.NB model done with 90.2% accuracy
+2019-04-21 14:46:08.281002: 
+
+
+2019-04-21 14:46:09.593227: Total accuracy is: 0.902
+2019-04-21 14:46:09.686954: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer True, strip_short: True, remove_stop_words: False.
+2019-04-21 14:46:09.686954: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:47:41.576580: Preprocessing finished
+2019-04-21 14:47:41.576580: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:47:52.996673: Preprocessing finished
+2019-04-21 14:47:53.012291: Starting training ModelType.NB model
+2019-04-21 14:48:00.898405: Starting testing ModelType.NB model
+2019-04-21 14:48:00.945277: Testing ModelType.NB model done with 89.91% accuracy
+2019-04-21 14:48:00.945277: 
+
+
+2019-04-21 14:48:01.054622: Total accuracy is: 0.8991
+2019-04-21 14:48:01.117110: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer True, strip_short: False, remove_stop_words: True.
+2019-04-21 14:48:01.132698: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:49:24.951761: Preprocessing finished
+2019-04-21 14:49:24.951761: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:49:37.442849: Preprocessing finished
+2019-04-21 14:49:37.474134: Starting training ModelType.NB model
+2019-04-21 14:49:42.785374: Starting testing ModelType.NB model
+2019-04-21 14:49:42.832212: Testing ModelType.NB model done with 90.13% accuracy
+2019-04-21 14:49:42.832212: 
+
+
+2019-04-21 14:49:42.894730: Total accuracy is: 0.9013
+2019-04-21 14:49:43.035318: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer True, strip_short: False, remove_stop_words: False.
+2019-04-21 14:49:43.035318: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:51:05.366299: Preprocessing finished
+2019-04-21 14:51:05.366299: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:51:15.488926: Preprocessing finished
+2019-04-21 14:51:15.504545: Starting training ModelType.NB model
+2019-04-21 14:51:24.033187: Starting testing ModelType.NB model
+2019-04-21 14:51:24.095675: Testing ModelType.NB model done with 89.79% accuracy
+2019-04-21 14:51:24.095675: 
+
+
+2019-04-21 14:51:24.158161: Total accuracy is: 0.8979
+2019-04-21 14:51:24.204994: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: True, remove_stop_words: True.
+2019-04-21 14:51:24.204994: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:52:05.826129: Preprocessing finished
+2019-04-21 14:52:05.826129: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:52:10.955486: Preprocessing finished
+2019-04-21 14:52:10.986734: Starting training ModelType.NB model
+2019-04-21 14:52:15.359934: Starting testing ModelType.NB model
+2019-04-21 14:52:15.391208: Testing ModelType.NB model done with 90.13% accuracy
+2019-04-21 14:52:15.391208: 
+
+
+2019-04-21 14:52:15.469315: Total accuracy is: 0.9013
+2019-04-21 14:52:15.516180: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: True, remove_stop_words: False.
+2019-04-21 14:52:15.516180: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:53:08.013366: Preprocessing finished
+2019-04-21 14:53:08.013366: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:53:14.573891: Preprocessing finished
+2019-04-21 14:53:14.589510: Starting training ModelType.NB model
+2019-04-21 14:53:22.479149: Starting testing ModelType.NB model
+2019-04-21 14:53:22.525981: Testing ModelType.NB model done with 89.91% accuracy
+2019-04-21 14:53:22.525981: 
+
+
+2019-04-21 14:53:22.635360: Total accuracy is: 0.8991
+2019-04-21 14:53:22.729089: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: False, remove_stop_words: True.
+2019-04-21 14:53:22.729089: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:54:02.856851: Preprocessing finished
+2019-04-21 14:54:02.856851: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:54:08.168466: Preprocessing finished
+2019-04-21 14:54:08.184115: Starting training ModelType.NB model
+2019-04-21 14:54:14.676300: Starting testing ModelType.NB model
+2019-04-21 14:54:14.771053: Testing ModelType.NB model done with 90.16% accuracy
+2019-04-21 14:54:14.771053: 
+
+
+2019-04-21 14:54:14.901585: Total accuracy is: 0.9016
+2019-04-21 14:54:14.987355: Initializing text preprocessor with strip_nums: True, use_stemmer: True, use_lemmatizer False, strip_short: False, remove_stop_words: False.
+2019-04-21 14:54:14.987355: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:55:12.062490: Preprocessing finished
+2019-04-21 14:55:12.062490: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:55:18.701567: Preprocessing finished
+2019-04-21 14:55:18.717155: Starting training ModelType.NB model
+2019-04-21 14:55:28.236044: Starting testing ModelType.NB model
+2019-04-21 14:55:28.360988: Testing ModelType.NB model done with 89.82% accuracy
+2019-04-21 14:55:28.360988: 
+
+
+2019-04-21 14:55:28.423483: Total accuracy is: 0.8982
+2019-04-21 14:55:28.485958: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer True, strip_short: True, remove_stop_words: True.
+2019-04-21 14:55:28.485958: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:56:22.270777: Preprocessing finished
+2019-04-21 14:56:22.270777: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:56:28.946313: Preprocessing finished
+2019-04-21 14:56:28.961934: Starting training ModelType.NB model
+2019-04-21 14:56:33.471586: Starting testing ModelType.NB model
+2019-04-21 14:56:33.518421: Testing ModelType.NB model done with 90.36999999999999% accuracy
+2019-04-21 14:56:33.518421: 
+
+
+2019-04-21 14:56:33.580906: Total accuracy is: 0.9037
+2019-04-21 14:56:33.627769: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer True, strip_short: True, remove_stop_words: False.
+2019-04-21 14:56:33.627769: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:57:15.418892: Preprocessing finished
+2019-04-21 14:57:15.418892: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:57:20.573096: Preprocessing finished
+2019-04-21 14:57:20.588712: Starting training ModelType.NB model
+2019-04-21 14:57:27.902221: Starting testing ModelType.NB model
+2019-04-21 14:57:27.949083: Testing ModelType.NB model done with 89.99000000000001% accuracy
+2019-04-21 14:57:27.949083: 
+
+
+2019-04-21 14:57:28.058406: Total accuracy is: 0.8999
+2019-04-21 14:57:28.152134: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer True, strip_short: False, remove_stop_words: True.
+2019-04-21 14:57:28.152134: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:58:18.640709: Preprocessing finished
+2019-04-21 14:58:18.640709: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:58:25.277039: Preprocessing finished
+2019-04-21 14:58:25.292661: Starting training ModelType.NB model
+2019-04-21 14:58:30.382626: Starting testing ModelType.NB model
+2019-04-21 14:58:30.445111: Testing ModelType.NB model done with 90.35% accuracy
+2019-04-21 14:58:30.445111: 
+
+
+2019-04-21 14:58:30.570082: Total accuracy is: 0.9035
+2019-04-21 14:58:30.695053: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer True, strip_short: False, remove_stop_words: False.
+2019-04-21 14:58:30.695053: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:59:15.083840: Preprocessing finished
+2019-04-21 14:59:15.083840: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:59:20.354024: Preprocessing finished
+2019-04-21 14:59:20.369645: Starting training ModelType.NB model
+2019-04-21 14:59:30.612986: Starting testing ModelType.NB model
+2019-04-21 14:59:30.675499: Testing ModelType.NB model done with 89.79% accuracy
+2019-04-21 14:59:30.675499: 
+
+
+2019-04-21 14:59:30.737957: Total accuracy is: 0.8979
+2019-04-21 14:59:30.800442: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer False, strip_short: True, remove_stop_words: True.
+2019-04-21 14:59:30.800442: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:59:45.579654: Preprocessing finished
+2019-04-21 14:59:45.579654: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:59:47.646787: Preprocessing finished
+2019-04-21 14:59:47.678028: Starting training ModelType.NB model
+2019-04-21 14:59:52.513890: Starting testing ModelType.NB model
+2019-04-21 14:59:52.560754: Testing ModelType.NB model done with 90.35% accuracy
+2019-04-21 14:59:52.560754: 
+
+
+2019-04-21 14:59:52.623239: Total accuracy is: 0.9035
+2019-04-21 14:59:52.687003: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer False, strip_short: True, remove_stop_words: False.
+2019-04-21 14:59:52.702638: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 14:59:59.183604: Preprocessing finished
+2019-04-21 14:59:59.183604: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 14:59:59.983579: Preprocessing finished
+2019-04-21 14:59:59.987669: Starting training ModelType.NB model
+2019-04-21 15:00:08.549174: Starting testing ModelType.NB model
+2019-04-21 15:00:08.596038: Testing ModelType.NB model done with 89.92% accuracy
+2019-04-21 15:00:08.596038: 
+
+
+2019-04-21 15:00:08.678212: Total accuracy is: 0.8992
+2019-04-21 15:00:08.745590: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer False, strip_short: False, remove_stop_words: True.
+2019-04-21 15:00:08.745590: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:00:22.839245: Preprocessing finished
+2019-04-21 15:00:22.839245: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:00:24.720708: Preprocessing finished
+2019-04-21 15:00:24.740620: Starting training ModelType.NB model
+2019-04-21 15:00:29.998910: Starting testing ModelType.NB model
+2019-04-21 15:00:30.047779: Testing ModelType.NB model done with 90.32% accuracy
+2019-04-21 15:00:30.047779: 
+
+
+2019-04-21 15:00:30.577671: Total accuracy is: 0.9032
+2019-04-21 15:00:30.691487: Initializing text preprocessor with strip_nums: True, use_stemmer: False, use_lemmatizer False, strip_short: False, remove_stop_words: False.
+2019-04-21 15:00:30.691487: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:00:35.740205: Preprocessing finished
+2019-04-21 15:00:35.740205: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:00:36.380644: Preprocessing finished
+2019-04-21 15:00:36.380644: Starting training ModelType.NB model
+2019-04-21 15:00:47.034860: Starting testing ModelType.NB model
+2019-04-21 15:00:47.097363: Testing ModelType.NB model done with 89.8% accuracy
+2019-04-21 15:00:47.097363: 
+
+
+2019-04-21 15:00:47.159849: Total accuracy is: 0.898
+2019-04-21 15:00:47.222340: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer True, strip_short: True, remove_stop_words: True.
+2019-04-21 15:00:47.222340: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:02:04.667607: Preprocessing finished
+2019-04-21 15:02:04.667607: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:02:13.865872: Preprocessing finished
+2019-04-21 15:02:13.881490: Starting training ModelType.NB model
+2019-04-21 15:02:18.207459: Starting testing ModelType.NB model
+2019-04-21 15:02:18.238733: Testing ModelType.NB model done with 90.24% accuracy
+2019-04-21 15:02:18.238733: 
+
+
+2019-04-21 15:02:18.301214: Total accuracy is: 0.9024
+2019-04-21 15:02:18.363700: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer True, strip_short: True, remove_stop_words: False.
+2019-04-21 15:02:18.363700: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:03:40.810967: Preprocessing finished
+2019-04-21 15:03:40.810967: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:03:51.410526: Preprocessing finished
+2019-04-21 15:03:51.410526: Starting training ModelType.NB model
+2019-04-21 15:03:58.887190: Starting testing ModelType.NB model
+2019-04-21 15:03:58.934083: Testing ModelType.NB model done with 90.05% accuracy
+2019-04-21 15:03:58.934083: 
+
+
+2019-04-21 15:03:59.002447: Total accuracy is: 0.9005
+2019-04-21 15:03:59.064960: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer True, strip_short: False, remove_stop_words: True.
+2019-04-21 15:03:59.064960: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:05:12.991272: Preprocessing finished
+2019-04-21 15:05:12.991272: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:05:22.111880: Preprocessing finished
+2019-04-21 15:05:22.127500: Starting training ModelType.NB model
+2019-04-21 15:05:26.769278: Starting testing ModelType.NB model
+2019-04-21 15:05:26.800490: Testing ModelType.NB model done with 90.16% accuracy
+2019-04-21 15:05:26.800490: 
+
+
+2019-04-21 15:05:26.863031: Total accuracy is: 0.9016
+2019-04-21 15:05:26.933156: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer True, strip_short: False, remove_stop_words: False.
+2019-04-21 15:05:26.934152: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:06:51.411161: Preprocessing finished
+2019-04-21 15:06:51.411161: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:07:02.499997: Preprocessing finished
+2019-04-21 15:07:02.512932: Starting training ModelType.NB model
+2019-04-21 15:07:11.326658: Starting testing ModelType.NB model
+2019-04-21 15:07:11.393144: Testing ModelType.NB model done with 89.92999999999999% accuracy
+2019-04-21 15:07:11.393144: 
+
+
+2019-04-21 15:07:11.467672: Total accuracy is: 0.8993
+2019-04-21 15:07:11.514536: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer False, strip_short: True, remove_stop_words: True.
+2019-04-21 15:07:11.514536: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:07:50.227295: Preprocessing finished
+2019-04-21 15:07:50.227295: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:07:55.355590: Preprocessing finished
+2019-04-21 15:07:55.371245: Starting training ModelType.NB model
+2019-04-21 15:07:59.710311: Starting testing ModelType.NB model
+2019-04-21 15:07:59.738603: Testing ModelType.NB model done with 90.22% accuracy
+2019-04-21 15:07:59.738603: 
+
+
+2019-04-21 15:07:59.847985: Total accuracy is: 0.9022
+2019-04-21 15:07:59.910471: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer False, strip_short: True, remove_stop_words: False.
+2019-04-21 15:07:59.910471: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:08:50.107705: Preprocessing finished
+2019-04-21 15:08:50.107705: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:08:56.351000: Preprocessing finished
+2019-04-21 15:08:56.374831: Starting training ModelType.NB model
+2019-04-21 15:09:04.394089: Starting testing ModelType.NB model
+2019-04-21 15:09:04.452946: Testing ModelType.NB model done with 89.94% accuracy
+2019-04-21 15:09:04.452946: 
+
+
+2019-04-21 15:09:04.518228: Total accuracy is: 0.8994
+2019-04-21 15:09:04.579285: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer False, strip_short: False, remove_stop_words: True.
+2019-04-21 15:09:04.579285: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:09:43.734727: Preprocessing finished
+2019-04-21 15:09:43.734727: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:09:48.880670: Preprocessing finished
+2019-04-21 15:09:48.896288: Starting training ModelType.NB model
+2019-04-21 15:09:53.394699: Starting testing ModelType.NB model
+2019-04-21 15:09:53.491496: Testing ModelType.NB model done with 90.23% accuracy
+2019-04-21 15:09:53.491496: 
+
+
+2019-04-21 15:09:53.557781: Total accuracy is: 0.9023
+2019-04-21 15:09:53.620267: Initializing text preprocessor with strip_nums: False, use_stemmer: True, use_lemmatizer False, strip_short: False, remove_stop_words: False.
+2019-04-21 15:09:53.620267: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:10:40.972410: Preprocessing finished
+2019-04-21 15:10:40.972410: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:10:46.923869: Preprocessing finished
+2019-04-21 15:10:46.923869: Starting training ModelType.NB model
+2019-04-21 15:10:55.746961: Starting testing ModelType.NB model
+2019-04-21 15:10:55.810942: Testing ModelType.NB model done with 89.92% accuracy
+2019-04-21 15:10:55.810942: 
+
+
+2019-04-21 15:10:55.873429: Total accuracy is: 0.8992
+2019-04-21 15:10:55.920267: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer True, strip_short: True, remove_stop_words: True.
+2019-04-21 15:10:55.920267: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:11:43.296744: Preprocessing finished
+2019-04-21 15:11:43.296744: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:11:49.280256: Preprocessing finished
+2019-04-21 15:11:49.295210: Starting training ModelType.NB model
+2019-04-21 15:11:53.792739: Starting testing ModelType.NB model
+2019-04-21 15:11:53.824017: Testing ModelType.NB model done with 90.36999999999999% accuracy
+2019-04-21 15:11:53.824017: 
+
+
+2019-04-21 15:11:53.888444: Total accuracy is: 0.9037
+2019-04-21 15:11:53.992257: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer True, strip_short: True, remove_stop_words: False.
+2019-04-21 15:11:53.992257: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:12:33.795837: Preprocessing finished
+2019-04-21 15:12:33.795837: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:12:38.810955: Preprocessing finished
+2019-04-21 15:12:38.826601: Starting training ModelType.NB model
+2019-04-21 15:12:46.307207: Starting testing ModelType.NB model
+2019-04-21 15:12:46.354042: Testing ModelType.NB model done with 90.02% accuracy
+2019-04-21 15:12:46.354042: 
+
+
+2019-04-21 15:12:46.486803: Total accuracy is: 0.9002
+2019-04-21 15:12:46.539187: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer True, strip_short: False, remove_stop_words: True.
+2019-04-21 15:12:46.539187: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:13:33.102465: Preprocessing finished
+2019-04-21 15:13:33.102465: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:13:39.038257: Preprocessing finished
+2019-04-21 15:13:39.053848: Starting training ModelType.NB model
+2019-04-21 15:13:43.819820: Starting testing ModelType.NB model
+2019-04-21 15:13:43.866683: Testing ModelType.NB model done with 90.35% accuracy
+2019-04-21 15:13:43.866683: 
+
+
+2019-04-21 15:13:43.988995: Total accuracy is: 0.9035
+2019-04-21 15:13:44.051516: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer True, strip_short: False, remove_stop_words: False.
+2019-04-21 15:13:44.051516: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:14:22.087860: Preprocessing finished
+2019-04-21 15:14:22.087860: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:14:26.931427: Preprocessing finished
+2019-04-21 15:14:26.947049: Starting training ModelType.NB model
+2019-04-21 15:14:36.034821: Starting testing ModelType.NB model
+2019-04-21 15:14:36.097275: Testing ModelType.NB model done with 89.88000000000001% accuracy
+2019-04-21 15:14:36.097275: 
+
+
+2019-04-21 15:14:36.206658: Total accuracy is: 0.8988
+2019-04-21 15:14:36.303524: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: True, remove_stop_words: True.
+2019-04-21 15:14:36.303524: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:14:48.632559: Preprocessing finished
+2019-04-21 15:14:48.632559: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:14:50.219332: Preprocessing finished
+2019-04-21 15:14:50.234951: Starting training ModelType.NB model
+2019-04-21 15:14:54.796954: Starting testing ModelType.NB model
+2019-04-21 15:14:54.843806: Testing ModelType.NB model done with 90.36% accuracy
+2019-04-21 15:14:54.843806: 
+
+
+2019-04-21 15:14:54.906323: Total accuracy is: 0.9036
+2019-04-21 15:14:54.953188: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: True, remove_stop_words: False.
+2019-04-21 15:14:54.953188: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:15:00.269254: Preprocessing finished
+2019-04-21 15:15:00.269254: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:15:00.948577: Preprocessing finished
+2019-04-21 15:15:00.948577: Starting training ModelType.NB model
+2019-04-21 15:15:08.544328: Starting testing ModelType.NB model
+2019-04-21 15:15:08.591192: Testing ModelType.NB model done with 90.0% accuracy
+2019-04-21 15:15:08.591192: 
+
+
+2019-04-21 15:15:08.653711: Total accuracy is: 0.9
+2019-04-21 15:15:08.700575: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False, remove_stop_words: True.
+2019-04-21 15:15:08.700575: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:15:20.318000: Preprocessing finished
+2019-04-21 15:15:20.318000: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:15:21.744905: Preprocessing finished
+2019-04-21 15:15:21.769878: Starting training ModelType.NB model
+2019-04-21 15:15:26.341501: Starting testing ModelType.NB model
+2019-04-21 15:15:26.388333: Testing ModelType.NB model done with 90.32% accuracy
+2019-04-21 15:15:26.388333: 
+
+
+2019-04-21 15:15:26.456403: Total accuracy is: 0.9032
+2019-04-21 15:15:26.570872: Initializing text preprocessor with strip_nums: False, use_stemmer: False, use_lemmatizer False, strip_short: False, remove_stop_words: False.
+2019-04-21 15:15:26.570872: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for training
+2019-04-21 15:15:30.068517: Preprocessing finished
+2019-04-21 15:15:30.068517: Starting preprocessing texts of C:\Users\Marek Ulip\Documents\PycharmProjects\topicAnalysisConsole\csv_folder\7 for testing
+2019-04-21 15:15:30.489924: Preprocessing finished
+2019-04-21 15:15:30.505581: Starting training ModelType.NB model
+2019-04-21 15:15:39.484223: Starting testing ModelType.NB model
+2019-04-21 15:15:39.531087: Testing ModelType.NB model done with 89.85% accuracy
+2019-04-21 15:15:39.531087: 
+
+
+2019-04-21 15:15:39.640472: Total accuracy is: 0.8985

@@ -44,10 +44,10 @@ data_sets = [(csv_folder + "1", 10, "-reuters-"),
 
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = remove_stop_words = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params, remove_stop_words]
-preproces_variations = [[False,True,False,True,True]]
+#preproces_variations = [[False,True,False,True,True]]
 #preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
-#preproces_variations = []
-#create_variations(0, [], preproces_all_vals, preproces_variations)
+preproces_variations = []
+create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
 lda_tau = [2.0]
@@ -71,9 +71,9 @@ lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 hdp_variations = []
 num_of_tests = 1
 
-test_model = {ModelType.LDA: True,
-              ModelType.LSA: True,
-              ModelType.LDA_Sklearn: True,
+test_model = {ModelType.LDA: False,
+              ModelType.LSA: False,
+              ModelType.LDA_Sklearn: False,
               ModelType.NB: True
               }
 is_stable = {ModelType.LDA: False,
@@ -87,7 +87,7 @@ models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Skl
 
 tester = GeneralTester(log_writer, start_time)
 #array to iterate should contain valid indexes (ranging from 0 to length of data_sets) of datasets that are present in list data_sets
-for i in [7]:#range(len(data_sets)):
+for i in [6]:#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([data_sets[i][0] + "\\topic-names.csv"])
     tester.set_new_dataset(data_sets[i][1], topic_names)
     statistics_to_merge = []
@@ -124,7 +124,7 @@ for i in [7]:#range(len(data_sets)):
                     'use_lemmatizer': preproces_settings[2],
                     'strip_short': preproces_settings[3],
                     'remove_stop_words': preproces_settings[4],
-                    'use_alternative': True
+                    'use_alternative': False
                     }
         log_writer.add_log(
             "Initializing text preprocessor with strip_nums: {}, use_stemmer: {}, use_lemmatizer {}, strip_short: {}, remove_stop_words: {}.".format(

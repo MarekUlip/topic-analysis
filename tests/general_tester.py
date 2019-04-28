@@ -6,7 +6,6 @@ from methods.Lda import Lda
 from methods.Lsa import Lsa
 from methods.Lda_sklearn import LdaSklearn
 from methods.Naive_bayes import NaiveBayes
-from methods.Hdp import Hdp
 
 
 

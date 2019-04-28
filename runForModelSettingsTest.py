@@ -6,7 +6,6 @@ import time
 
 from methods.Lda import Lda
 from methods.Lsa import Lsa
-from methods.Hdp import Hdp
 
 file_dir = os.path.dirname(__file__)
 sys.path.append(file_dir)

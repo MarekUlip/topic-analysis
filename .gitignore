@@ -61,5 +61,8 @@ target/
 .idea/
 .ipynb_checkpoints/
 venv/
+
+# Custom ignores
 results/
 csv_folder/
+log*.txt

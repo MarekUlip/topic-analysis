@@ -53,7 +53,7 @@ class NBModelTester:
         :return: Accuracy of provided model
         """
         stats = []
-        predicted = model.analyse_texts()
+        predicted = model.analyse_texts(self.testing_docs)
         for index, topic_num in enumerate(predicted):
             stats.append(1 if topic_num == self.testing_docs[index][0] else 0)
             topic_number_index = self.topic_numbers.index(self.testing_docs[index][0])

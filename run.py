@@ -1,7 +1,7 @@
 import os
 import sys
 import time
-
+from preprocessor.helper_functions import Dataset_Helper
 from tests.ModelType import ModelType
 from tests.general_tester import GeneralTester
 
@@ -31,7 +31,7 @@ def get_time_in_millis():
 log_writer = LogWriter("log.txt")
 base_path = os.getcwd()
 csv_folder = base_path + "\\csv_folder\\"
-data_sets = [(csv_folder + "1", 10, "-reuters-"),
+"""data_sets = [(csv_folder + "1", 10, "-reuters-"),
              (csv_folder + "2", 11, "-DBpedia-"),
              (csv_folder + "3", 4, "-AGsNews-"),
              (csv_folder+"4",20,"-20newsgroups-"),
@@ -40,14 +40,14 @@ data_sets = [(csv_folder + "1", 10, "-reuters-"),
              (csv_folder + "7", 8, "-Yelp-"),
              (csv_folder + "8", 7, "-20newsgroupsReduced-")]  # , (csv_folder+"4",20,"-20newsgroups-")]#,(csv_folder+"1",10,"-reuters-")]#,(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
 # data_sets = [(csv_folder+"2"+"\\train.csv",csv_folder+"2"+"\\test.csv",14)]
-
+"""
 
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = remove_stop_words = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params, remove_stop_words]
-#preproces_variations = [[False,True,False,True,True]]
+preproces_variations = [[False,True,False,True,True]]
 #preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
-preproces_variations = []
-create_variations(0, [], preproces_all_vals, preproces_variations)
+#preproces_variations = []
+#create_variations(0, [], preproces_all_vals, preproces_variations)
 
 lda_kappa = [0.51]
 lda_tau = [2.0]
@@ -61,10 +61,10 @@ lda_all_vals = [lda_kappa, lda_tau, lda_passes, lda_iterations]
 lsa_one_pass = [False]
 lsa_power_iter = [2]
 lsa_use_tfidf = [True]
-lsa_topic_nums = [data_sets[0][1]]
+#lsa_topic_nums = [data_sets[0][1]]
 lsa_extra_samples = [100, 200]
 lsa_decay = [0.5, 1.0, 2.0]
-lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
+#lsa_all_vals = [lsa_one_pass, lsa_power_iter, lsa_use_tfidf, lsa_topic_nums]
 # lsa_variations = []
 # create_variations(0,[],lsa_all_vals,lsa_variations)
 
@@ -74,26 +74,29 @@ num_of_tests = 1
 test_model = {ModelType.LDA: False,
               ModelType.LSA: False,
               ModelType.LDA_Sklearn: False,
-              ModelType.NB: True
+              ModelType.NB: True,
+              ModelType.SVM: True
               }
 is_stable = {ModelType.LDA: False,
               ModelType.LSA: True,
               ModelType.LDA_Sklearn: False,
-              ModelType.NB: True
+              ModelType.NB: True,
+             ModelType.SVM: True
               }
 start_time = get_time_in_millis()
 
-models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn]
+models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM]
 
 tester = GeneralTester(log_writer, start_time)
+datasets_helper = Dataset_Helper(preprocess=True)
 #array to iterate should contain valid indexes (ranging from 0 to length of data_sets) of datasets that are present in list data_sets
-for i in [6]:#range(len(data_sets)):
-    topic_names = TextPreprocessor.load_csv([data_sets[i][0] + "\\topic-names.csv"])
-    tester.set_new_dataset(data_sets[i][1], topic_names)
+while datasets_helper.next_dataset():#range(len(data_sets)):
+    topic_names = TextPreprocessor.load_csv([datasets_helper.get_dataset_folder_path() + "\\topic-names.csv"])
+    tester.set_new_dataset(datasets_helper.get_num_of_topics(), topic_names)
     statistics_to_merge = []
     models_params = {
         ModelType.LDA: {
-            "topic_count": data_sets[i][1],
+            "topic_count": datasets_helper.get_num_of_topics(),
             "topic_word_count": 15,
             "kappa": 0.51,
             "tau": 2.0,
@@ -101,22 +104,25 @@ for i in [6]:#range(len(data_sets)):
             "iterations": 25
         },
         ModelType.LSA: {
-            "topic_count": data_sets[i][1],
+            "topic_count": datasets_helper.get_num_of_topics(),
             "topic_word_count": 15,
             "one_pass": False,
             "power_iter": 2,
             "use_tfidf": True
         },
         ModelType.LDA_Sklearn: {
-            "topic_count": data_sets[i][1],
+            "topic_count": datasets_helper.get_num_of_topics(),
             "passes": 25,
             "iterations": 25
         },
         ModelType.NB: {
 
+        },
+        ModelType.SVM:{
+
         }
     }
-    log_writer.write_model_params("\\results\\results{}{}\\model-settings".format(data_sets[i][2],start_time),models_params)
+    log_writer.write_model_params("\\results\\results{}{}\\model-settings".format(datasets_helper.get_dataset_name(),start_time),models_params)
     for preprocess_index, preproces_settings in enumerate(preproces_variations):
         seed = 5
         settings = {'strip_nums': preproces_settings[0],
@@ -131,12 +137,12 @@ for i in [6]:#range(len(data_sets)):
                 preproces_settings[0], preproces_settings[1], preproces_settings[2], preproces_settings[3], preproces_settings[4]))
         preprocessor = TextPreprocessor(settings)
 
-        log_writer.add_log("Starting preprocessing texts of {} for training".format(data_sets[i][0]))
-        texts_for_train = preprocessor.load_and_prep_csv([data_sets[i][0] + "\\train.csv"], "eng", True, 1, ';')
+        log_writer.add_log("Starting preprocessing texts of {} for training".format(datasets_helper.get_dataset_name()))
+        texts_for_train = preprocessor.load_and_prep_csv([datasets_helper.get_train_file_path()], "eng", True, 1, ';')
         log_writer.add_log("Preprocessing finished")
 
-        log_writer.add_log("Starting preprocessing texts of {} for testing".format(data_sets[i][0]))
-        texts_for_testing = preprocessor.load_and_prep_csv([data_sets[i][0] + "\\test.csv"], "eng", True, 1, ';')
+        log_writer.add_log("Starting preprocessing texts of {} for testing".format(datasets_helper.get_dataset_name()))
+        texts_for_testing = preprocessor.load_and_prep_csv([datasets_helper.get_test_file_path()], "eng", True, 1, ';')
         log_writer.add_log("Preprocessing finished")
 
         # Lda(data_sets[i][1], 15, kappa=lda_kappa[0], tau=lda_tau[0], passes=lda_passes[0], iterations=lda_iterations[0])]
@@ -152,7 +158,7 @@ for i in [6]:#range(len(data_sets)):
                                                                                              preproces_settings[4])
         statistics.append([preprocess_style])
         tester.set_new_preprocess_docs(texts_for_train, texts_for_testing, preprocess_style)
-        test_params = {"preprocess_index": preprocess_index, "dataset_name": data_sets[i][2]}
+        test_params = {"preprocess_index": preprocess_index, "dataset_name": datasets_helper.get_dataset_name()}
         for m_index, model in enumerate(models_for_test):
             if test_model[model]:
                 # For every preprocesing add line that descripbes methods used
@@ -163,7 +169,7 @@ for i in [6]:#range(len(data_sets)):
                 statistics[len(statistics) - 1].append("Average")
                 statistics.append([])  # TODO dont forget to add test params"""
                 tester.do_test(model, num_of_tests, statistics, models_params[model], test_params, is_stable[model])
-        tester.output_model_comparison(data_sets[i][2])
+        tester.output_model_comparison(datasets_helper.get_dataset_name())
         statistics.append([])
         statistics_to_merge.append(statistics)
 
@@ -181,7 +187,7 @@ for i in [6]:#range(len(data_sets)):
     for item in statistics_to_merge:
         for statistic in item:
             output_lda_csv.append(statistic)
-    log_writer.write_2D_list("\\results\\results-stats\\stats{}{}".format(data_sets[i][2], start_time), output_lda_csv)
-    tester.output_preprocess_comparison(data_sets[i][2])
+    log_writer.write_2D_list("\\results\\results-stats\\stats{}{}".format(datasets_helper.get_dataset_name(), start_time), output_lda_csv)
+    tester.output_preprocess_comparison(datasets_helper.get_dataset_name())
 
 log_writer.end_logging()

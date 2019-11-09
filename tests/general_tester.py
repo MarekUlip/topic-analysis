@@ -2,10 +2,13 @@ from tests.ModelType import ModelType
 from tests.lda_lsa_model_tester import LModelTester
 from tests.naive_bayes_model_tester import NBModelTester
 from tests.lsa_tester import LSAModelTester
+from tests.svm_model_tester import SVMModelTester
 from methods.Lda import Lda
 from methods.Lsa import Lsa
 from methods.Lda_sklearn import LdaSklearn
 from methods.Naive_bayes import NaiveBayes
+from methods.SVM import SupportVectorMachines
+
 
 
 
@@ -120,6 +123,15 @@ class GeneralTester:
             self.log_writer.add_log("Starting testing {} model".format(model_type))
             tester = NBModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer, self.topic_names)
             return tester.test_model(model,test_name)
+
+        if model_type == ModelType.SVM:
+            model = SupportVectorMachines()
+            self.log_writer.add_log("Starting training {} model".format(model_type))
+            model.train(self.training_docs)
+            self.log_writer.add_log("Starting testing {} model".format(model_type))
+            tester = SVMModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer,
+                                   self.topic_names)
+            return tester.test_model(model, test_name)
 
     def create_test_name(self, dataset_name, start_time, model_name, preprocess_index, test_num):
         """

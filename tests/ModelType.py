@@ -5,4 +5,5 @@ class ModelType(Enum):
     LSA = 1
     LDA_Sklearn = 2
     NB = 3
+    SVM = 4
 

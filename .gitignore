@@ -65,4 +65,5 @@ venv/
 # Custom ignores
 results/
 csv_folder/
+datasets/
 log*.txt

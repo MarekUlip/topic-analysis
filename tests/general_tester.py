@@ -8,6 +8,8 @@ from methods.Lsa import Lsa
 from methods.Lda_sklearn import LdaSklearn
 from methods.Naive_bayes import NaiveBayes
 from methods.SVM import SupportVectorMachines
+from methods.Decision_tree import DecisionTree
+from methods.Random_forest import RandomForest
 
 
 
@@ -124,8 +126,13 @@ class GeneralTester:
             tester = NBModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer, self.topic_names)
             return tester.test_model(model,test_name)
 
-        if model_type == ModelType.SVM:
-            model = SupportVectorMachines()
+        if model_type == ModelType.SVM or model_type == ModelType.DT or model_type == ModelType == ModelType.RF:
+            if model_type == ModelType.SVM:
+                model = SupportVectorMachines()
+            elif model_type == ModelType.DT:
+                model = DecisionTree()
+            elif model_type == ModelType.RF:
+                model = RandomForest()
             self.log_writer.add_log("Starting training {} model".format(model_type))
             model.train(self.training_docs)
             self.log_writer.add_log("Starting testing {} model".format(model_type))

@@ -6,4 +6,6 @@ class ModelType(Enum):
     LDA_Sklearn = 2
     NB = 3
     SVM = 4
+    DT = 5
+    RF = 6
 

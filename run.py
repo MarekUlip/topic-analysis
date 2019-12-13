@@ -74,18 +74,22 @@ num_of_tests = 1
 test_model = {ModelType.LDA: False,
               ModelType.LSA: False,
               ModelType.LDA_Sklearn: False,
-              ModelType.NB: True,
-              ModelType.SVM: True
+              ModelType.NB: False,
+              ModelType.SVM: False,
+              ModelType.DT: True,
+              ModelType.RF: True
               }
 is_stable = {ModelType.LDA: False,
               ModelType.LSA: True,
               ModelType.LDA_Sklearn: False,
               ModelType.NB: True,
-             ModelType.SVM: True
+             ModelType.SVM: True,
+              ModelType.DT: True,
+              ModelType.RF: True
               }
 start_time = get_time_in_millis()
 
-models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM]
+models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM, ModelType.RF, ModelType.DT]
 
 tester = GeneralTester(log_writer, start_time)
 datasets_helper = Dataset_Helper(preprocess=True)

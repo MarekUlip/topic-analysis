@@ -124,8 +124,49 @@ class LModelTester:
         self.log_writer.write_2D_list(test_name+"-confusion-matrix-true", self.confusion_matrix_true)
         return sum(stats)/len(stats)
 
-
     def connect_topic_id_to_topics(self, model):
+        """
+            Connects model topic indexes to topic ids from dataset. Every model index is assigned and all topic ids are used. Note that this method should be used
+            on balanced datasets because it would prefer smaller topic groups due to higher precentage confidence.
+            :param model: model containing topics to connect
+        """
+        confidence = []
+        for key, value in self.representants.items():
+            connection_results = {}
+            for article in value:
+                try:
+                    # get most possible index
+                    topic_index = max(model.analyse_text(article[1]), key=lambda item: item[1])[0]
+                except ValueError:
+                    print("No topic index returned continuing")  # TODO replace with if
+                    continue
+                # add most possible index for this article to counter
+                if topic_index not in connection_results:
+                    connection_results[topic_index] = 1
+                else:
+                    connection_results[topic_index] += 1
+            # find index that occured mostly
+            print(connection_results)
+            for tp_num, val in connection_results.items():
+                confidence.append([key, tp_num, val / len(value)])
+        confidence = sorted(confidence, key=operator.itemgetter(2), reverse=True)
+        associated_indexes = []
+        associated_topics = []
+        for conf in confidence:
+            if conf[1] in associated_indexes or conf[0] in associated_topics:
+                continue
+            associated_indexes.append(conf[1])
+            associated_topics.append(conf[0])
+            self.log_writer.add_log(
+                'Connecting topic {} to model index {} based on highest unused confidence of {}'.format(conf[0],
+                                                                                                        conf[1],
+                                                                                                        conf[2]))
+            self.topic_indexes[conf[0]] = conf[1]
+
+        for key, value in self.topic_indexes.items():
+            self.topics_of_index[value] = [key]
+
+    def connect_topic_id_to_topics_old(self, model):
         """
         Connects topic indexes from model to topic ids from dataset. Note that some ids might not get connected due various reasons.
         :param model: model containing topics to connect

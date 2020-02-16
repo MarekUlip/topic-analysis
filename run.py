@@ -71,13 +71,13 @@ lsa_decay = [0.5, 1.0, 2.0]
 hdp_variations = []
 num_of_tests = 1
 
-test_model = {ModelType.LDA: False,
-              ModelType.LSA: False,
-              ModelType.LDA_Sklearn: False,
+test_model = {ModelType.LDA: True,
+              ModelType.LSA: True,
+              ModelType.LDA_Sklearn: True,
               ModelType.NB: False,
               ModelType.SVM: False,
-              ModelType.DT: True,
-              ModelType.RF: True
+              ModelType.DT: False,
+              ModelType.RF: False
               }
 is_stable = {ModelType.LDA: False,
               ModelType.LSA: True,
@@ -89,10 +89,11 @@ is_stable = {ModelType.LDA: False,
               }
 start_time = get_time_in_millis()
 
-models_for_test = [ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM, ModelType.RF, ModelType.DT]
+models_for_test = test_model.keys()#[ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM, ModelType.RF, ModelType.DT]
 
 tester = GeneralTester(log_writer, start_time)
 datasets_helper = Dataset_Helper(preprocess=True)
+datasets_helper.set_wanted_datasets(range(4))
 #array to iterate should contain valid indexes (ranging from 0 to length of data_sets) of datasets that are present in list data_sets
 while datasets_helper.next_dataset():#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([datasets_helper.get_dataset_folder_path() + "\\topic-names.csv"])
@@ -120,12 +121,25 @@ while datasets_helper.next_dataset():#range(len(data_sets)):
             "iterations": 25
         },
         ModelType.NB: {
-
+            'alpha':0.1
         },
         ModelType.SVM:{
-
+            'c':100,
+            'kernel':'rbf',
+            'degree':3,
+            'gamma':1
+        },
+        ModelType.RF:{
+            'n_estimators':20,
+            'max_features':10000
+        },
+        ModelType.DT:{
+            'max_features':10000
         }
     }
+    for key,value in test_model.items():
+        if not value:
+            models_params.pop(key)
     log_writer.write_model_params("\\results\\results{}{}\\model-settings".format(datasets_helper.get_dataset_name(),start_time),models_params)
     for preprocess_index, preproces_settings in enumerate(preproces_variations):
         seed = 5

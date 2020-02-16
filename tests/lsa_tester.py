@@ -44,7 +44,7 @@ class LSAModelTester:
         Tests the precission of the provided model. Also writes out confuision matrix
         :param model: model to be tested
         :param test_name: name of the test
-        :return: model accuracy if form of (accuracy %)/100. also outputs confusion matrix which is not part of return
+        :return: model accuracy in form of (accuracy %)/100. also outputs confusion matrix which is not part of return
         """
         stats = []
         for text in self.testing_docs:

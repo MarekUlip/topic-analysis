@@ -119,20 +119,20 @@ class GeneralTester:
             return tester.test_model(model, test_name)
 
         if model_type == ModelType.NB:
-            model = NaiveBayes()
+            model = NaiveBayes(params)
             self.log_writer.add_log("Starting training {} model".format(model_type))
             model.train(self.training_docs,self.testing_docs)
             self.log_writer.add_log("Starting testing {} model".format(model_type))
             tester = NBModelTester(self.training_docs, self.testing_docs, self.num_of_topics, self.log_writer, self.topic_names)
             return tester.test_model(model,test_name)
 
-        if model_type == ModelType.SVM or model_type == ModelType.DT or model_type == ModelType == ModelType.RF:
+        if model_type == ModelType.SVM or model_type == ModelType.DT or model_type == ModelType.RF:
             if model_type == ModelType.SVM:
-                model = SupportVectorMachines()
+                model = SupportVectorMachines(params)
             elif model_type == ModelType.DT:
-                model = DecisionTree()
+                model = DecisionTree(params)
             elif model_type == ModelType.RF:
-                model = RandomForest()
+                model = RandomForest(params)
             self.log_writer.add_log("Starting training {} model".format(model_type))
             model.train(self.training_docs)
             self.log_writer.add_log("Starting testing {} model".format(model_type))

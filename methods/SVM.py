@@ -2,14 +2,16 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.naive_bayes import MultinomialNB
 
 
 
 
 class SupportVectorMachines:
-    def __init__(self):
-        self.model = None
+    def __init__(self, params:dict=None):
+        if params is not None:
+            self.model = SVC(C=100, kernel='rbf', degree=3, gamma=1)
+        else:
+            self.model = SVC(C=params.get('c',100),kernel=params.get('kernel','rbf'),degree=params.get('degree',3),gamma=params.get('gamma',1))
         self.articles = []
         self.tfidf = None
         self.test_start_index = 0
@@ -34,7 +36,7 @@ class SupportVectorMachines:
 
         self.counts = CountVectorizer(max_features=10000)#
         self.tfidf = TfidfTransformer()
-        self.model = SVC(C=1.0, kernel='linear', degree=3, gamma='auto').fit(self.tfidf.fit_transform(self.counts.fit_transform(self.articles)), topics)
+        self.model = self.model.fit(self.tfidf.fit_transform(self.counts.fit_transform(self.articles)), topics)
         self.end = len(self.articles)
 
     def analyse_texts(self, texts):

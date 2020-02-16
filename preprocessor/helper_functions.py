@@ -22,13 +22,18 @@ dataset_folder = base_path + "\\datasets\\"
 
 train_file_name = "new-train"
 test_file_name = "new-test"
-skippable_datasets = [0,1,2,3,4,5,7,8]#[0,1,2,4,5,6,7,8]#[1,3,4,5,6,7]#[1,3,4,5,6,7,8]#[1,4,5,6,7]#[1,4,5]#
-
+skippable_datasets = [0,1,3,4,5,6,7,8]#[0,1,2,4,5,6,7,8]#[1,3,4,5,6,7]#[1,3,4,5,6,7,8]#[1,4,5,6,7]#[1,4,5]#
+wanted_datasets = [3]
 
 def preprocess_sentence(sentence):
+    #sentence = preprocessing.strip_short(sentence, 3)
+    #print(sentence)
+    sentence = sentence.lower()
+    sentence = " ".join(preprocessing.preprocess_string(sentence,[preprocessing.strip_punctuation,preprocessing.strip_multiple_whitespaces, preprocessing.strip_numeric, preprocessing.strip_short]))
     sentence = " ".join(word for word in sentence.split() if word not in stp_wrds)
-    sentence = preprocessing.strip_short(sentence, 3)
-    sentence = preprocessing.stem_text(sentence)
+    #print()
+    #print(sentence)
+    #sentence = preprocessing.stem_text(sentence)
     return sentence
 
 class Dataset_Helper():
@@ -39,6 +44,7 @@ class Dataset_Helper():
         self.current_dataset = None
         self.csv_train_file_stream = None
         self.preprocess = preprocess
+        self.wanted_datasets = range(len(self.dataset_info)) #:list of dataset indexes to be analysed. Defaultly all indexes from file info.csv will be analysed
 
     def load_dataset_info(self):
         with open(dataset_folder+"info.csv",encoding="utf-8", errors="ignore") as settings_file:
@@ -53,12 +59,21 @@ class Dataset_Helper():
             self.csv_train_file_stream = None
         self.csv_train_file_stream = open(self.get_train_file_path(), encoding="utf-8", errors="ignore")
 
+    def set_wanted_datasets(self, wanted_datasets):
+        self.wanted_datasets = wanted_datasets
+
+    def skip_selected_datasets(self, selected_datasets):
+        """
+        Skips provided datasets so they are not analysed.
+        :param selected_datasets: indexes of datasets starting from 0 that should be ignored
+        """
+        self.wanted_datasets = [index for index in self.wanted_datasets if index not in selected_datasets]
     def next_dataset(self):
         self.dataset_position += 1
-        while self.dataset_position in skippable_datasets:
+        while self.dataset_position not in self.wanted_datasets:
             self.dataset_position += 1
-        if self.dataset_position >= len(self.dataset_info):
-            return False
+            if self.dataset_position >= len(self.dataset_info):
+                return False
         if self.csv_train_file_stream is not None:
             self.csv_train_file_stream.close()
             self.csv_train_file_stream = None
@@ -111,7 +126,27 @@ class Dataset_Helper():
     def open_file_stream(self, path):
         return open(path, encoding="utf-8", errors="ignore")
 
-    def text_generator(self, csv_file_stream = None):
+    def get_labels(self, path):
+        with self.open_file_stream(path) as csv_file_stream:
+            labels = []
+            for s in csv.reader(csv_file_stream, delimiter=';'):
+                # print("getting item based on {}".format(item))
+                labels.append(int(s[0]))
+        return labels
+
+
+
+    def text_generator(self, csv_file_stream=None):
+        if csv_file_stream is None:
+            csv_file_stream = self.csv_train_file_stream
+        for s in csv.reader(csv_file_stream, delimiter=';'):
+            # print("getting item based on {}".format(item))
+            if self.preprocess:
+                yield preprocess_sentence(s[1])
+            else:
+                yield s[1]
+
+    def text_generator_b(self, csv_file_stream = None):
         if csv_file_stream is None:
             csv_file_stream = self.csv_train_file_stream
         for text in csv_file_stream:
@@ -119,7 +154,8 @@ class Dataset_Helper():
                 break
             s = text.split(";")
             if len(s) <= 1:
-                break
+                print('uups')
+                continue
             if self.preprocess:
                 yield preprocess_sentence(s[1])
             else:

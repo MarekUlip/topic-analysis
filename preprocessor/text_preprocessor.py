@@ -12,6 +12,9 @@ from settings import Settings
 import csv
 import glob
 
+from preprocessor import czech_lemmatizer, czech_stemmer
+from preprocessor.czech_stopwords import cz_stopwords
+
 csv.field_size_limit(2**24) #(sys.maxsize) in 64 bit version sys.maxsize throws overflowError hence use of 2**24
 
 #list of stopwords some are not contained in nltk list. Used to make better preprocess

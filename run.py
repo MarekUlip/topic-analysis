@@ -44,7 +44,7 @@ csv_folder = base_path + "\\csv_folder\\"
 
 strip_nums_params = use_stemmer_params = use_lemmatizer_params = strip_short_params = remove_stop_words = [True, False]
 preproces_all_vals = [strip_nums_params, use_stemmer_params, use_lemmatizer_params, strip_short_params, remove_stop_words]
-preproces_variations = [[False,True,False,True,True]]
+preproces_variations = [[False,False,True,True,True],[False,True,False,True,True],[False,True,True,True,True]]
 #preproces_variations = [[False,False,False,False], [True,True,False,True], [True,False,True,False]]  # [[False,False,False,False]]#[[True,True,True,True],[False,False,False,False],[True,False,True,False],[True,False,True,True]]
 #preproces_variations = []
 #create_variations(0, [], preproces_all_vals, preproces_variations)
@@ -74,10 +74,10 @@ num_of_tests = 1
 test_model = {ModelType.LDA: True,
               ModelType.LSA: True,
               ModelType.LDA_Sklearn: True,
-              ModelType.NB: False,
-              ModelType.SVM: False,
-              ModelType.DT: False,
-              ModelType.RF: False
+              ModelType.NB: True,
+              ModelType.SVM: True,
+              ModelType.DT: True,
+              ModelType.RF: True
               }
 is_stable = {ModelType.LDA: False,
               ModelType.LSA: True,
@@ -92,8 +92,8 @@ start_time = get_time_in_millis()
 models_for_test = test_model.keys()#[ModelType.LDA, ModelType.LSA, ModelType.NB, ModelType.LDA_Sklearn, ModelType.SVM, ModelType.RF, ModelType.DT]
 
 tester = GeneralTester(log_writer, start_time)
-datasets_helper = Dataset_Helper(preprocess=True)
-datasets_helper.set_wanted_datasets(range(4))
+datasets_helper = Dataset_Helper(preprocess=False)
+datasets_helper.set_wanted_datasets([12])
 #array to iterate should contain valid indexes (ranging from 0 to length of data_sets) of datasets that are present in list data_sets
 while datasets_helper.next_dataset():#range(len(data_sets)):
     topic_names = TextPreprocessor.load_csv([datasets_helper.get_dataset_folder_path() + "\\topic-names.csv"])
@@ -156,11 +156,11 @@ while datasets_helper.next_dataset():#range(len(data_sets)):
         preprocessor = TextPreprocessor(settings)
 
         log_writer.add_log("Starting preprocessing texts of {} for training".format(datasets_helper.get_dataset_name()))
-        texts_for_train = preprocessor.load_and_prep_csv([datasets_helper.get_train_file_path()], "eng", True, 1, ';')
+        texts_for_train = preprocessor.load_and_prep_csv([datasets_helper.get_train_file_path()], "cz", True, 1, ';')
         log_writer.add_log("Preprocessing finished")
 
         log_writer.add_log("Starting preprocessing texts of {} for testing".format(datasets_helper.get_dataset_name()))
-        texts_for_testing = preprocessor.load_and_prep_csv([datasets_helper.get_test_file_path()], "eng", True, 1, ';')
+        texts_for_testing = preprocessor.load_and_prep_csv([datasets_helper.get_test_file_path()], "cz", True, 1, ';')
         log_writer.add_log("Preprocessing finished")
 
         # Lda(data_sets[i][1], 15, kappa=lda_kappa[0], tau=lda_tau[0], passes=lda_passes[0], iterations=lda_iterations[0])]
